@@ -1,0 +1,242 @@
+# An  ontology for the 21 MESAD-Real RARP action classes, covering Tool, Action, Tissue, Phase and Event/Anomaly nodes plus the
+# relations needed by the validator (requires, acts_on, phase_order, contradicts).
+
+# node/relation values below are derived from the semantics of
+# the 21 dataset action-class names using general RARP surgical-workflow
+# knowledge (mesocolon mobilisation -> vas deferens/seminal vesicle
+# dissection -> bladder neck dissection -> prostate dissection/urethra
+# dissection -> specimen extraction -> vesico-urethral anastomosis). 
+
+# TO BE REVIEWED
+
+meta:
+  version: "0.1"
+  snomed_linked: true
+  source_dataset: "SARAS MESAD-Real (RARP)"
+
+tools:
+  - id: grasper
+    snomed: "SCTID:129395002"          # Grasper device (generic)
+  - id: monopolar_scissors
+    snomed: "SCTID:129394003"          # Cutting instrument, device
+  - id: clip_applier
+    snomed: "SCTID:129452003"          # Clip applicator device
+  - id: suction_irrigator
+    snomed: "SCTID:129458009"          # Suction device
+  - id: needle_driver
+    snomed: "SCTID:129433002"          # Needle holder device
+  - id: specimen_bag
+    snomed: "SCTID:706767009"          # Specimen retrieval device
+
+actions:
+  - id: PullingTissue
+    verb: pulling
+    tool: grasper
+    tissue: generic_tissue
+  - id: CuttingTissue
+    verb: cutting
+    tool: monopolar_scissors
+    tissue: generic_tissue
+  - id: ClippingTissue
+    verb: clip_application
+    tool: clip_applier
+    tissue: generic_tissue
+  - id: SuckingBlood
+    verb: suction
+    tool: suction_irrigator
+    tissue: blood
+    event: bleeding
+  - id: SuckingSmoke
+    verb: suction
+    tool: suction_irrigator
+    tissue: smoke_plume
+    event: smoke
+  - id: PullingVasDeferens
+    verb: pulling
+    tool: grasper
+    tissue: vas_deferens
+  - id: ClippingVasDeferens
+    verb: clip_application
+    tool: clip_applier
+    tissue: vas_deferens
+  - id: CuttingVasDeferens
+    verb: cutting
+    tool: monopolar_scissors
+    tissue: vas_deferens
+  - id: PullingSeminalVesicle
+    verb: pulling
+    tool: grasper
+    tissue: seminal_vesicle
+  - id: ClippingSeminalVesicle
+    verb: clip_application
+    tool: clip_applier
+    tissue: seminal_vesicle
+  - id: CuttingSeminalVesicle
+    verb: cutting
+    tool: monopolar_scissors
+    tissue: seminal_vesicle
+  - id: CuttingMesocolon
+    verb: cutting
+    tool: monopolar_scissors
+    tissue: mesocolon
+  - id: BladderNeckDissection
+    verb: dissection
+    tool: monopolar_scissors
+    tissue: bladder_neck
+  - id: PullingBladderNeck
+    verb: pulling
+    tool: grasper
+    tissue: bladder_neck
+  - id: ClippingBladderNeck
+    verb: clip_application
+    tool: clip_applier
+    tissue: bladder_neck
+  - id: PullingProstate
+    verb: pulling
+    tool: grasper
+    tissue: prostate
+  - id: CuttingProstate
+    verb: cutting
+    tool: monopolar_scissors
+    tissue: prostate
+  - id: BaggingProstate
+    verb: bagging
+    tool: specimen_bag
+    tissue: prostate
+  - id: UrethraDissection
+    verb: dissection
+    tool: monopolar_scissors
+    tissue: urethra
+  - id: CuttingThread
+    verb: cutting
+    tool: monopolar_scissors
+    tissue: suture_thread
+  - id: BladderAnastomosis
+    verb: suturing
+    tool: needle_driver
+    tissue: bladder
+
+tissues:
+  - generic_tissue
+  - blood
+  - smoke_plume
+  - vas_deferens
+  - seminal_vesicle
+  - mesocolon
+  - bladder_neck
+  - prostate
+  - urethra
+  - suture_thread
+  - bladder
+
+# Ordered surgical phases for RARP (index = workflow order used by phase_order).
+# "generic_tissue"-acting actions (PullingTissue/CuttingTissue/ClippingTissue/
+# SuckingBlood/SuckingSmoke) are not phase-specific ("any") since the dataset
+# does not disambiguate which anatomical structure "tissue" refers to.
+phases:
+  - id: mesocolon_mobilization
+    order: 1
+    actions: [CuttingMesocolon]
+  - id: vas_deferens_seminal_vesicle_dissection
+    order: 2
+    actions: [PullingVasDeferens, ClippingVasDeferens, CuttingVasDeferens,
+              PullingSeminalVesicle, ClippingSeminalVesicle, CuttingSeminalVesicle]
+  - id: bladder_neck_dissection
+    order: 3
+    actions: [BladderNeckDissection, PullingBladderNeck, ClippingBladderNeck]
+  - id: prostate_dissection
+    order: 4
+    actions: [PullingProstate, CuttingProstate]
+  - id: urethra_dissection
+    order: 5
+    actions: [UrethraDissection]
+  - id: specimen_extraction
+    order: 6
+    actions: [BaggingProstate]
+  - id: bladder_anastomosis
+    order: 7
+    actions: [BladderAnastomosis, CuttingThread]
+
+events:
+  - id: bleeding
+    triggered_by: [SuckingBlood]
+  - id: smoke
+    triggered_by: [SuckingSmoke]
+
+
+# Relations
+
+# requires(Action, Tool): every action instance must co-occur with its tool.
+
+requires:
+  - [PullingTissue, grasper]
+  - [CuttingTissue, monopolar_scissors]
+  - [ClippingTissue, clip_applier]
+  - [SuckingBlood, suction_irrigator]
+  - [SuckingSmoke, suction_irrigator]
+  - [PullingVasDeferens, grasper]
+  - [ClippingVasDeferens, clip_applier]
+  - [CuttingVasDeferens, monopolar_scissors]
+  - [PullingSeminalVesicle, grasper]
+  - [ClippingSeminalVesicle, clip_applier]
+  - [CuttingSeminalVesicle, monopolar_scissors]
+  - [CuttingMesocolon, monopolar_scissors]
+  - [BladderNeckDissection, monopolar_scissors]
+  - [PullingBladderNeck, grasper]
+  - [ClippingBladderNeck, clip_applier]
+  - [PullingProstate, grasper]
+  - [CuttingProstate, monopolar_scissors]
+  - [BaggingProstate, specimen_bag]
+  - [UrethraDissection, monopolar_scissors]
+  - [CuttingThread, monopolar_scissors]
+  - [BladderAnastomosis, needle_driver]
+
+# acts_on(Action, Tissue): derived 1:1 from the `tissue` field above.
+acts_on:
+  - [PullingTissue, generic_tissue]
+  - [CuttingTissue, generic_tissue]
+  - [ClippingTissue, generic_tissue]
+  - [SuckingBlood, blood]
+  - [SuckingSmoke, smoke_plume]
+  - [PullingVasDeferens, vas_deferens]
+  - [ClippingVasDeferens, vas_deferens]
+  - [CuttingVasDeferens, vas_deferens]
+  - [PullingSeminalVesicle, seminal_vesicle]
+  - [ClippingSeminalVesicle, seminal_vesicle]
+  - [CuttingSeminalVesicle, seminal_vesicle]
+  - [CuttingMesocolon, mesocolon]
+  - [BladderNeckDissection, bladder_neck]
+  - [PullingBladderNeck, bladder_neck]
+  - [ClippingBladderNeck, bladder_neck]
+  - [PullingProstate, prostate]
+  - [CuttingProstate, prostate]
+  - [BaggingProstate, prostate]
+  - [UrethraDissection, urethra]
+  - [CuttingThread, suture_thread]
+  - [BladderAnastomosis, bladder]
+
+# phase_order(prev -> next): legal sequential transitions between phases, by phase id, in ascending order. Consecutive-only transitions are legal;
+phase_order:
+  - [mesocolon_mobilization, mesocolon_mobilization]
+  - [mesocolon_mobilization, vas_deferens_seminal_vesicle_dissection]
+  - [vas_deferens_seminal_vesicle_dissection, vas_deferens_seminal_vesicle_dissection]
+  - [vas_deferens_seminal_vesicle_dissection, bladder_neck_dissection]
+  - [bladder_neck_dissection, bladder_neck_dissection]
+  - [bladder_neck_dissection, prostate_dissection]
+  - [prostate_dissection, prostate_dissection]
+  - [prostate_dissection, urethra_dissection]
+  - [urethra_dissection, urethra_dissection]
+  - [urethra_dissection, specimen_extraction]
+  - [specimen_extraction, specimen_extraction]
+  - [specimen_extraction, bladder_anastomosis]
+  - [bladder_anastomosis, bladder_anastomosis]
+
+# contradicts({node_i, node_j}): forbidden co-occurrence within one segment.
+
+contradicts:
+  - [CuttingMesocolon, BladderAnastomosis]         # phase 1 vs phase 7
+  - [CuttingMesocolon, BaggingProstate]            # phase 1 vs phase 6
+  - [CuttingMesocolon, UrethraDissection]          # phase 1 vs phase 5
+  - [BaggingProstate, PullingVasDeferens]          # phase 6 vs phase 2
+  - [BaggingProstate, CuttingVasDeferens]          # phase 6 vs phase 2
+  - [clip_applier, needle_driver]                  # tool-level: can't clip-apply and suture in the same instrument pass

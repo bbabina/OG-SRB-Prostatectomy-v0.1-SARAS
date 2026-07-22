@@ -23,7 +23,6 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from collections import Counter
 from pathlib import Path
 
 import numpy as np
@@ -32,6 +31,7 @@ import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from eval.ontology import load_ontology, DEFAULT_ONTOLOGY_PATH  # noqa: E402
+from baselines.common import build_prediction_record  # noqa: E402
 
 MODEL_NAME = "ViT-L-14-quickgelu"
 PRETRAINED = "openai"
@@ -67,17 +67,6 @@ def pick_device() -> str:
     if torch.cuda.is_available():
         return "cuda"
     return "cpu"
-
-
-def resolve_phase_from_actions(actions: list[str], onto) -> tuple[str | None, bool, list[str]]:
-    """Equal-weight majority vote over predicted actions (no per-frame data
-    available for predictions, unlike map_annotations.py's frame-weighted
-    version for ground truth)."""
-    votes = Counter(onto.phase_for(a) for a in actions if onto.phase_for(a))
-    if not votes:
-        return None, False, []
-    phase = votes.most_common(1)[0][0]
-    return phase, len(votes) > 1, sorted(votes.keys())
 
 
 def predict_actions(probs: np.ndarray, action_ids: list[str], threshold: float, max_actions: int) -> list[str]:
@@ -144,27 +133,10 @@ def main():
             probs = probs / probs.sum()  # standard CLIP zero-shot softmax
 
             pred_actions = predict_actions(probs, action_ids, args.threshold, args.max_actions)
-            tools = sorted({onto.tool_for(a) for a in pred_actions if onto.tool_for(a)})
-            tissues = sorted({onto.tissue_for(a) for a in pred_actions if onto.tissue_for(a)})
-            events = sorted({onto.event_for(a) for a in pred_actions if onto.event_for(a)})
-            phase, phase_ambiguous, phase_candidates = resolve_phase_from_actions(pred_actions, onto)
-
-            record = {
-                "segment_id": seg["segment_id"],
-                "split": seg["split"],
-                "video": seg["video"],
-                "frame_start": seg["frame_start"],
-                "frame_end": seg["frame_end"],
-                "model": f"clip-{MODEL_NAME}-{PRETRAINED}",
-                "actions": pred_actions,
-                "action_probs": {a: round(float(p), 4) for a, p in zip(action_ids, probs)},
-                "tools": tools,
-                "tissues": tissues,
-                "events": events,
-                "phase": phase,
-                "phase_ambiguous": phase_ambiguous,
-                "phase_candidates": phase_candidates,
-            }
+            action_probs = {a: round(float(p), 4) for a, p in zip(action_ids, probs)}
+            record = build_prediction_record(
+                seg, f"clip-{MODEL_NAME}-{PRETRAINED}", pred_actions, action_probs, onto,
+            )
             out_path = args.out_dir / split / seg["video"] / f"{seg['segment_id']}.json"
             out_path.parent.mkdir(parents=True, exist_ok=True)
             out_path.write_text(json.dumps(record, indent=2))

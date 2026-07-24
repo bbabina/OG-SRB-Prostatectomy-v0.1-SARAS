@@ -1,20 +1,7 @@
-"""Shared helpers for VLM baseline scripts.
-
-Every baseline (CLIP zero-shot, the CLIP linear probe, and later LLaVA/
-GPT-4V) ends up with the same problem: it predicts a set of *actions* for a
-segment, and that needs to be translated into the full ontology-node record
-(tools/tissues/events/phase) so eval/evaluator.py can score any baseline the
-same way, in the same schema map_annotations.py uses for ground truth.
-"""
 from __future__ import annotations
-
 from collections import Counter
 
-
 def resolve_phase_from_actions(actions: list[str], onto) -> tuple[str | None, bool, list[str]]:
-    """Equal-weight majority vote over predicted actions (no per-frame data
-    available for predictions, unlike map_annotations.py's frame-weighted
-    version for ground truth)."""
     votes = Counter(onto.phase_for(a) for a in actions if onto.phase_for(a))
     if not votes:
         return None, False, []

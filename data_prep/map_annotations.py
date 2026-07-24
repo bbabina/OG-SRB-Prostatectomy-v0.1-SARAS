@@ -1,20 +1,5 @@
-"""Step 2 (ontology mapping): map raw MESAD-Real action labels onto ontology
-nodes for each segment produced by build_segments.py.
+# (ontology mapping): map raw MESAD-Real action labels onto ontology nodes for each segment produced by build_segments.py.
 
-For every segment this resolves, from its raw_labels (dataset action names,
-which are themselves the ontology's `action` node ids):
-  - tools    : requires(action, tool) for every action present
-  - tissues  : acts_on(action, tissue) for every action present
-  - events   : any event triggered by an action present
-  - phase    : the workflow phase(s) implied by the actions present. Actions
-               with no phase (PullingTissue/CuttingTissue/ClippingTissue/
-               SuckingBlood/SuckingSmoke) don't constrain phase. If the
-               phase-bearing actions in a segment resolve to more than one
-               distinct phase, the segment is marked `phase_ambiguous` and
-               the majority phase (by frame count) is kept as `phase`.
-
-Output: annotations/<split>/<video>/<segment_id>.json (one file per segment).
-"""
 from __future__ import annotations
 
 import argparse
@@ -35,8 +20,7 @@ def map_segment(segment: dict, onto) -> dict:
     tissues = sorted({onto.tissue_for(a) for a in raw_labels if onto.tissue_for(a)})
     events = sorted({onto.event_for(a) for a in raw_labels if onto.event_for(a)})
 
-    # phase resolution: count phase votes weighted by how many frames in the
-    # segment carry each action, so a phase supported by more frames wins.
+    # phase resolution: count phase votes weighted by how many frames in the segment carry each action, so a phase supported by more frames wins.
     phase_votes = Counter()
     for frame_labels in segment["frame_labels"].values():
         for action in frame_labels:

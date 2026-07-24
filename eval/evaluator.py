@@ -1,10 +1,5 @@
-"""Step 5/7: score a model's predictions against ground truth and against
-the ontology's own rules, producing the metrics table from the project doc
-(Section 5 Evaluation Design / Section 5 Expected Results table).
+# score a model's predictions against ground truth and against the ontology's own rules, producing the metrics table from the project doc
 
-Usage:
-    python3 eval/evaluator.py --model clip
-"""
 from __future__ import annotations
 
 import argparse
@@ -18,7 +13,6 @@ from eval.metrics import (  # noqa: E402
     check_requires, check_acts_on, check_contradicts, check_phase_order,
     ontology_factuality, temporal_coherence, macro_f1, top1_accuracy,
 )
-
 
 def load_segments(root: Path) -> dict[str, dict]:
     """Load every segment JSON under root (any split/video layout) keyed by segment_id."""
@@ -49,9 +43,7 @@ def evaluate(gt_by_id: dict[str, dict], pred_by_id: dict[str, dict], onto) -> di
 
     n = len(matched_ids)
 
-    # SOC + TC are computed per video, over the predicted segments ordered
-    # by frame_start, comparing against that same video's ground-truth
-    # phase sequence.
+    # SOC + TC are computed per video, over the predicted segments ordered by frame_start, comparing against that same video's ground-truth phase sequence.
     by_video: dict[str, list[str]] = {}
     for seg_id in matched_ids:
         by_video.setdefault(pred_by_id[seg_id]["video"], []).append(seg_id)

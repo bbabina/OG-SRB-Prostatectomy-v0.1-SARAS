@@ -1,0 +1,53 @@
+{
+  "segment_id": "real3_seg000360_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 360,
+  "frame_end": 360,
+  "model": "clip-linear-probe+decoder",
+  "actions": [
+    "CuttingTissue",
+    "PullingTissue",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0308,
+    "BladderAnastomosis": 0.057,
+    "BladderNeckDissection": 0.0965,
+    "ClippingBladderNeck": 0.0343,
+    "ClippingSeminalVesicle": 0.1673,
+    "ClippingTissue": 0.3385,
+    "ClippingVasDeferens": 0.4376,
+    "CuttingMesocolon": 0.4105,
+    "CuttingProstate": 0.1136,
+    "CuttingSeminalVesicle": 0.291,
+    "CuttingThread": 0.096,
+    "CuttingTissue": 0.6403,
+    "CuttingVasDeferens": 0.4418,
+    "PullingBladderNeck": 0.0683,
+    "PullingProstate": 0.2302,
+    "PullingSeminalVesicle": 0.3744,
+    "PullingTissue": 0.7007,
+    "PullingVasDeferens": 0.5282,
+    "SuckingBlood": 0.3049,
+    "SuckingSmoke": 0.5569,
+    "UrethraDissection": 0.1598
+  },
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "smoke_plume"
+  ],
+  "events": [
+    "smoke"
+  ],
+  "phase": "mesocolon_mobilization",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "mesocolon_mobilization"
+  ]
+}

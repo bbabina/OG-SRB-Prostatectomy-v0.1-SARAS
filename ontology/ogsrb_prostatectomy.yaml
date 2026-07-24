@@ -1,12 +1,3 @@
-# An  ontology for the 21 MESAD-Real RARP action classes, covering Tool, Action, Tissue, Phase and Event/Anomaly nodes plus the
-# relations needed by the validator (requires, acts_on, phase_order, contradicts).
-
-# node/relation values below are derived from the semantics of
-# the 21 dataset action-class names using general RARP surgical-workflow
-# knowledge (mesocolon mobilisation -> vas deferens/seminal vesicle
-# dissection -> bladder neck dissection -> prostate dissection/urethra
-# dissection -> specimen extraction -> vesico-urethral anastomosis). 
-
 # TO BE REVIEWED
 
 meta:
@@ -129,10 +120,6 @@ tissues:
   - suture_thread
   - bladder
 
-# Ordered surgical phases for RARP (index = workflow order used by phase_order).
-# "generic_tissue"-acting actions (PullingTissue/CuttingTissue/ClippingTissue/
-# SuckingBlood/SuckingSmoke) are not phase-specific ("any") since the dataset
-# does not disambiguate which anatomical structure "tissue" refers to.
 phases:
   - id: mesocolon_mobilization
     order: 1
@@ -191,7 +178,8 @@ requires:
   - [CuttingThread, monopolar_scissors]
   - [BladderAnastomosis, needle_driver]
 
-# acts_on(Action, Tissue): derived 1:1 from the `tissue` field above.
+# acts_on(Action, Tissue): derived 1:1 from the 'tissue' field above.
+
 acts_on:
   - [PullingTissue, generic_tissue]
   - [CuttingTissue, generic_tissue]

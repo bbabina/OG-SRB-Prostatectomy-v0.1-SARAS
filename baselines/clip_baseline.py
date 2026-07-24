@@ -1,23 +1,3 @@
-"""Step 3 (VLM baselines): CLIP zero-shot open-vocabulary baseline.
-
-For every segment, compares its precomputed CLIP image embedding (from
-data_prep/extract_embeddings.py) against a fixed set of text prompts — one
-per ontology action node — and predicts which actions are present via
-cosine similarity. Tools/tissues/events/phase are then derived from the
-predicted actions using the same ontology lookups map_annotations.py uses
-for ground truth, so CLIP's predictions live in exactly the same schema as
-the ground-truth annotations and can be scored by eval/evaluator.py.
-
-Multi-label prediction rule (documented choice, no ground truth in the loop
-at prediction time): take the softmax over the 21 action prompts, always
-keep the top-1, and additionally keep any other action with probability
-> --threshold, up to --max-actions total. Ground-truth segments average
-~1.7 actions each (see project analysis), which is why these defaults
-(threshold=0.15, max_actions=3) were picked as a reasonable starting point
-— not tuned against ground truth (that would leak the test signal).
-
-Output: vlm_outputs/clip/<split>/<video>/<segment_id>.json
-"""
 from __future__ import annotations
 
 import argparse

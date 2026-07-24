@@ -1,32 +1,10 @@
-"""Reasoning-validity and recognition metrics (project doc, Section 4 Step 5
-and Section 5 Evaluation Design).
+# Reasoning-validity and recognition metrics
 
-This module is intentionally agnostic to *where* a segment's predicted
-nodes came from — the same functions score ground-truth annotations
-(data_prep/validate_annotations.py, sanity-checking the ontology itself)
-and model predictions (eval/evaluator.py, scoring CLIP/LLaVA/GPT-4V). A
-"segment" here is any dict with: actions, tools, tissues, events, phase.
-
-Ontology-rule metrics (per segment / per video):
-  - requires    -> Requirement Satisfaction (RS)
-  - acts_on     -> Acts-On Consistency (AOC)
-  - contradicts -> Contradiction Rate (CR)
-  - phase_order -> Step-Ordering Consistency (SOC)
-  - node validity -> Ontology Factuality (OF)
-  - phase sequence vs ground truth -> Temporal Coherence (TC)
-
-Recognition metrics (predictions vs ground truth, per action class):
-  - Macro-F1, Top-1 accuracy
-"""
 from __future__ import annotations
-
 from collections import Counter
 
 
-# ---------------------------------------------------------------------------
-# Ontology-rule checks (operate on a single segment's predicted/annotated
-# node set, or on a video's ordered segment list)
-# ---------------------------------------------------------------------------
+# Ontology-rule checks (operate on a single segment's predicted/annotated node set, or on a video's ordered segment list)
 
 def check_requires(segment: dict, onto) -> list[str]:
     violations = []
@@ -73,13 +51,6 @@ def check_phase_order(segments_for_video: list[dict], onto) -> tuple[list[str], 
 
 
 def ontology_factuality(segment: dict, onto) -> float:
-    """Fraction of this segment's predicted nodes that are valid ontology ids.
-
-    On closed-vocabulary baselines (CLIP zero-shot restricted to the 21
-    action prompts) this is always 1.0 by construction — it only becomes
-    discriminating once a model can emit free text (LLaVA/GPT-4V), which is
-    exactly the point of the metric per the project doc.
-    """
     valid_ids = onto.valid_node_ids()
     nodes = list(segment["actions"]) + list(segment["tools"]) + list(segment["tissues"]) + list(segment["events"])
     if segment.get("phase"):
@@ -90,10 +61,7 @@ def ontology_factuality(segment: dict, onto) -> float:
     return n_valid / len(nodes)
 
 
-# ---------------------------------------------------------------------------
-# Temporal Coherence: edit distance between predicted and true phase
-# sequences for a video (1 - normalized Levenshtein distance)
-# ---------------------------------------------------------------------------
+# Temporal Coherence: edit distance between predicted and true phase sequences for a video (1 - normalized Levenshtein distance)
 
 def _levenshtein(a: list[str], b: list[str]) -> int:
     if not a:
@@ -118,9 +86,7 @@ def temporal_coherence(pred_phase_seq: list[str], true_phase_seq: list[str]) -> 
     return 1 - dist / max_len
 
 
-# ---------------------------------------------------------------------------
 # Recognition metrics: predicted actions vs ground-truth actions, per segment
-# ---------------------------------------------------------------------------
 
 def macro_f1(pred_by_segment: dict[str, list[str]], gt_by_segment: dict[str, list[str]],
              action_classes: list[str]) -> dict:
@@ -149,8 +115,7 @@ def macro_f1(pred_by_segment: dict[str, list[str]], gt_by_segment: dict[str, lis
 
 
 def top1_accuracy(pred_top_by_segment: dict[str, str], gt_by_segment: dict[str, list[str]]) -> float:
-    """Fraction of segments where the model's single top-ranked action is
-    anywhere in that segment's (possibly multi-label) ground-truth action set."""
+    #Fraction of segments where the model's single top-ranked action is anywhere in that segment's (possibly multi-label) ground-truth action set
     n = 0
     correct = 0
     for seg_id, gt_actions in gt_by_segment.items():

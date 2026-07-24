@@ -1,26 +1,3 @@
-"""Step 3b (VLM baselines): a supervised linear probe on top of CLIP
-embeddings — still "CLIP", but no longer zero-shot.
-
-Motivation: zero-shot CLIP (clip_baseline.py) scored close to random on
-this dataset (Macro-F1 0.006, Top-1 accuracy 1.9% on val) because generic
-web-image/caption pretraining gives it no way to tell apart 21 fine-grained,
-visually similar surgical actions. This script instead trains one binary
-logistic-regression classifier per action directly on the (already
-computed) 768-d CLIP image embeddings, using the train split's ground-truth
-labels (real1, real2, real4) — a completely different, much easier
-learning problem than zero-shot: "does this embedding look like the ones
-labelled CuttingProstate in *this* dataset," not "does this embedding match
-a generic English sentence about cutting a prostate."
-
-It's a multi-label problem (segments can have >1 action, mean ~1.7), so
-each class is trained one-vs-rest with class_weight="balanced" to handle
-the heavy class imbalance (e.g. BaggingProstate has far fewer examples than
-PullingTissue).
-
-Output:
-  - models/clip_linear_probe.joblib          (trained sklearn classifier)
-  - vlm_outputs/clip_linear_probe/val/<video>/<segment_id>.json
-"""
 from __future__ import annotations
 
 import argparse
@@ -42,13 +19,13 @@ MODEL_NAME = "clip-linear-probe"
 
 def load_split_matrix(reports_dir: Path, features_dir: Path, annotations_dir: Path,
                        split: str, action_ids: list[str]):
-    """Return (segment_ids, X [n,768], Y [n,21] multi-hot) for one split,
-    skipping any segment missing an embedding."""
+    """Return (segment_ids, X [n,768], Y [n,21] multi-hot, phases [n] str|None)
+    for one split, skipping any segment missing an embedding."""
     segments_path = reports_dir / f"segments_{split}.json"
     segments = json.loads(segments_path.read_text())
     action_index = {a: i for i, a in enumerate(action_ids)}
 
-    seg_ids, X, Y = [], [], []
+    seg_ids, X, Y, phases = [], [], [], []
     for seg in segments:
         emb_path = features_dir / split / seg["video"] / f"{seg['segment_id']}.npz"
         ann_path = annotations_dir / split / seg["video"] / f"{seg['segment_id']}.json"
@@ -65,8 +42,9 @@ def load_split_matrix(reports_dir: Path, features_dir: Path, annotations_dir: Pa
         seg_ids.append(seg["segment_id"])
         X.append(embedding)
         Y.append(labels)
+        phases.append(gt["phase"])
 
-    return seg_ids, np.stack(X), np.stack(Y)
+    return seg_ids, np.stack(X), np.stack(Y), phases
 
 
 def predict_actions(probs: np.ndarray, action_ids: list[str], threshold: float) -> list[str]:
@@ -94,9 +72,11 @@ def main():
 
     onto = load_ontology(args.ontology)
     action_ids = sorted(onto.action_by_id.keys())
+    phase_ids = sorted(onto.phase_ids)
+    phase_index = {p: i for i, p in enumerate(phase_ids)}
 
     print("Loading train split (real1, real2, real4) embeddings + labels ...")
-    train_ids, X_train, Y_train = load_split_matrix(
+    train_ids, X_train, Y_train, phases_train = load_split_matrix(
         args.reports_dir, args.features_dir, args.annotations_dir, "train", action_ids,
     )
     print(f"  {X_train.shape[0]} segments, {X_train.shape[1]}-d embeddings, {Y_train.shape[1]} action classes")
@@ -109,24 +89,38 @@ def main():
     )
     clf.fit(X_train, Y_train)
 
+    print("Training phase classifier (single softmax model, phase-bearing segments only) ...")
+    phase_mask = [p is not None for p in phases_train]
+    X_train_phase = X_train[phase_mask]
+    y_train_phase = np.array([phase_index[p] for p in phases_train if p is not None])
+    print("  segments per phase:",
+          {p: int((y_train_phase == i).sum()) for p, i in phase_index.items()})
+    clf_phase = LogisticRegression(max_iter=2000, class_weight="balanced", C=1.0)
+    clf_phase.fit(X_train_phase, y_train_phase)
+
     args.models_dir.mkdir(parents=True, exist_ok=True)
     model_path = args.models_dir / "clip_linear_probe.joblib"
-    joblib.dump({"clf": clf, "action_ids": action_ids}, model_path)
+    joblib.dump({"clf": clf, "action_ids": action_ids, "clf_phase": clf_phase, "phase_ids": phase_ids}, model_path)
     print(f"Saved trained probe -> {model_path}")
 
     print("Scoring val split (real3, held out) ...")
     segments_val = {s["segment_id"]: s for s in json.loads((args.reports_dir / "segments_val.json").read_text())}
-    val_ids, X_val, Y_val = load_split_matrix(
+    val_ids, X_val, Y_val, _phases_val = load_split_matrix(
         args.reports_dir, args.features_dir, args.annotations_dir, "val", action_ids,
     )
     probs = clf.predict_proba(X_val)  # [n_val, 21], independent per-class sigmoid outputs
+    phase_probs_matrix = clf_phase.predict_proba(X_val)  # [n_val, <=7], one softmax dist per segment
 
     n_written = 0
-    for seg_id, prob_row in zip(val_ids, probs):
+    for seg_id, prob_row, phase_prob_row in zip(val_ids, probs, phase_probs_matrix):
         seg = segments_val[seg_id]
         action_probs = {a: round(float(p), 4) for a, p in zip(action_ids, prob_row)}
         pred_actions = predict_actions(prob_row, action_ids, args.threshold)
         record = build_prediction_record(seg, MODEL_NAME, pred_actions, action_probs, onto)
+        # phase_probs is a real softmax distribution over phase_ids (via clf_phase.classes_,
+        # since a phase can be absent from y_train_phase if it had zero training examples).
+        phase_probs = {phase_ids[c]: round(float(p), 4) for c, p in zip(clf_phase.classes_, phase_prob_row)}
+        record["phase_probs"] = {p: phase_probs.get(p, 0.0) for p in phase_ids}
         out_path = args.out_dir / "val" / seg["video"] / f"{seg_id}.json"
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(json.dumps(record, indent=2))

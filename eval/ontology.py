@@ -1,8 +1,3 @@
-"""Loader for the OG-SRB ontology YAML.
-
-Shared by data_prep/ (mapping, QC) and eval/ (metrics) so the ontology is
-parsed in exactly one place.
-"""
 from __future__ import annotations
 
 from dataclasses import dataclass, field

@@ -1,15 +1,4 @@
-"""Step 1 (preprocessing): group raw annotated frames into segments.
-
-The MESAD-Real dataset we have on disk contains no source video, only
-already-extracted frames with per-frame bounding-box + action-label
-annotations. Frame numbers are mostly consecutive but appear in bursts (the surgeons/annotators
-only annotated frames during actions of interest), so there is no reliable
-fps to derive true "2-second" windows from.
-
-
-Output: reports/segments_<split>.json — one record per segment listing its
-frames and the raw (dataset-native) action labels observed in each frame.
-"""
+# group raw annotated frames into segments.
 
 from __future__ import annotations
 

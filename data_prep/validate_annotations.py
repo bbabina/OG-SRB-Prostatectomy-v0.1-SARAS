@@ -1,18 +1,6 @@
-"""Step 2 QC: flag ontology-illegal segments and compute annotation-level
-reasoning-validity metrics as stated) over the ground-truth mapped annotations.
+# Flag ontology-illegal segments and compute annotation-level reasoning-validity metrics as stated) over the ground-truth mapped annotations.
 
-Checks per segment:
-  - requires   : every action's required tool is present in `tools`
-  - acts_on    : every action's tissue is present in `tissues`
-  - contradicts: no forbidden pair present among tools+actions+tissues+
-                 phase+events
-Checks per video (ordered by frame_start):
-  - phase_order: each phase(segment[i]) -> phase(segment[i+1]) transition
-                 (skipping segments with no phase) is in the ontology's
-                 phase_order set.
 
-Output: reports/qc_report.json + reports/qc_summary.json (RS/AOC/CR/SOC).
-"""
 from __future__ import annotations
 
 import argparse
@@ -22,9 +10,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from eval.ontology import load_ontology, DEFAULT_ONTOLOGY_PATH  # noqa: E402
-# check_requires/check_acts_on/check_contradicts/check_phase_order now live in
-# eval/metrics.py, since eval/evaluator.py needs the exact same checks to
-# score VLM predictions later — importing here keeps both call sites in sync.
 from eval.metrics import check_requires, check_acts_on, check_contradicts, check_phase_order  # noqa: E402
 
 
@@ -83,8 +68,7 @@ def main():
                 "contradicts_violations": contra_violations,
             })
 
-    # phase_order is checked per-video, across the full (train+val) frame
-    # timeline for that video.
+    # phase_order is checked per-video, across the full (train+val) frame timeline for that video.
     by_video: dict[str, list[dict]] = {}
     for seg in all_segments:
         by_video.setdefault(seg["video"], []).append(seg)

@@ -1,15 +1,5 @@
-"""Step 1.3 (preprocessing): compute a CLIP ViT-L/14 image embedding for one
-representative frame per segment.
+# preprocessing: compute a CLIP ViT-L/14 image embedding for one representative frame per segment.
 
-For each segment produced by build_segments.py, picks the middle frame of
-its frame list as the "representative frame" (per the project doc's Step 1:
-"export a representative frame per segment"), encodes it with CLIP's image
-tower, and saves the embedding to disk so Step 3 (clip_baseline.py) doesn't
-need to re-run the image encoder for every prompt comparison.
-
-Output: features/<split>/<video>/<segment_id>.npz  (keys: "embedding" [768],
-"frame" [int, the representative frame number])
-"""
 from __future__ import annotations
 
 import argparse
@@ -23,7 +13,7 @@ import torch
 from PIL import Image
 from tqdm import tqdm
 
-MODEL_NAME = "ViT-L-14-quickgelu"  # matches OpenAI's original CLIP activation (avoids a silent accuracy regression)
+MODEL_NAME = "ViT-L-14-quickgelu" 
 PRETRAINED = "openai"
 
 

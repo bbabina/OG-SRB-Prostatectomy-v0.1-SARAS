@@ -6,45 +6,45 @@
   "frame_end": 867,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "ClippingBladderNeck",
-    "PullingBladderNeck",
-    "BladderNeckDissection"
+    "BladderAnastomosis",
+    "ClippingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0058,
-    "BladderAnastomosis": 0.0508,
-    "BladderNeckDissection": 0.2017,
-    "ClippingBladderNeck": 0.3139,
-    "ClippingSeminalVesicle": 0.016,
-    "ClippingTissue": 0.02,
-    "ClippingVasDeferens": 0.0203,
-    "CuttingMesocolon": 0.0164,
-    "CuttingProstate": 0.0064,
-    "CuttingSeminalVesicle": 0.0052,
-    "CuttingThread": 0.0396,
-    "CuttingTissue": 0.0102,
-    "CuttingVasDeferens": 0.0206,
-    "PullingBladderNeck": 0.2113,
-    "PullingProstate": 0.0078,
-    "PullingSeminalVesicle": 0.0054,
-    "PullingTissue": 0.0131,
-    "PullingVasDeferens": 0.0143,
-    "SuckingBlood": 0.0042,
-    "SuckingSmoke": 0.0035,
-    "UrethraDissection": 0.0134
+    "BaggingProstate": 0.0051,
+    "BladderAnastomosis": 0.3431,
+    "BladderNeckDissection": 0.1043,
+    "ClippingBladderNeck": 0.1669,
+    "ClippingSeminalVesicle": 0.0171,
+    "ClippingTissue": 0.0217,
+    "ClippingVasDeferens": 0.019,
+    "CuttingMesocolon": 0.0224,
+    "CuttingProstate": 0.0096,
+    "CuttingSeminalVesicle": 0.0054,
+    "CuttingThread": 0.042,
+    "CuttingTissue": 0.013,
+    "CuttingVasDeferens": 0.0203,
+    "PullingBladderNeck": 0.138,
+    "PullingProstate": 0.0101,
+    "PullingSeminalVesicle": 0.005,
+    "PullingTissue": 0.0149,
+    "PullingVasDeferens": 0.0147,
+    "SuckingBlood": 0.006,
+    "SuckingSmoke": 0.004,
+    "UrethraDissection": 0.0176
   },
   "tools": [
     "clip_applier",
-    "grasper",
-    "monopolar_scissors"
+    "needle_driver"
   ],
   "tissues": [
-    "bladder_neck"
+    "bladder_neck",
+    "urethra"
   ],
   "events": [],
-  "phase": "bladder_neck_dissection",
-  "phase_ambiguous": false,
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

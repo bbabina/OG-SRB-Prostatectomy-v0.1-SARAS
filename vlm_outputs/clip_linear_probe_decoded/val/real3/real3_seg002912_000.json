@@ -6,45 +6,45 @@
   "frame_end": 2913,
   "model": "clip-linear-probe+decoder",
   "actions": [
+    "ClippingTissue",
     "CuttingTissue",
-    "PullingTissue",
-    "PullingVasDeferens"
+    "PullingTissue"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0507,
-    "BladderAnastomosis": 0.0664,
-    "BladderNeckDissection": 0.2313,
-    "ClippingBladderNeck": 0.099,
-    "ClippingSeminalVesicle": 0.1417,
-    "ClippingTissue": 0.4923,
-    "ClippingVasDeferens": 0.4173,
-    "CuttingMesocolon": 0.1857,
-    "CuttingProstate": 0.2449,
-    "CuttingSeminalVesicle": 0.4082,
-    "CuttingThread": 0.0625,
-    "CuttingTissue": 0.6219,
-    "CuttingVasDeferens": 0.4889,
-    "PullingBladderNeck": 0.1203,
-    "PullingProstate": 0.3546,
-    "PullingSeminalVesicle": 0.4372,
-    "PullingTissue": 0.6389,
-    "PullingVasDeferens": 0.5674,
-    "SuckingBlood": 0.3164,
-    "SuckingSmoke": 0.426,
-    "UrethraDissection": 0.1445
+    "BaggingProstate": 0.0768,
+    "BladderAnastomosis": 0.0737,
+    "BladderNeckDissection": 0.2079,
+    "ClippingBladderNeck": 0.1178,
+    "ClippingSeminalVesicle": 0.1905,
+    "ClippingTissue": 0.5788,
+    "ClippingVasDeferens": 0.4065,
+    "CuttingMesocolon": 0.1047,
+    "CuttingProstate": 0.2453,
+    "CuttingSeminalVesicle": 0.3977,
+    "CuttingThread": 0.1741,
+    "CuttingTissue": 0.55,
+    "CuttingVasDeferens": 0.3913,
+    "PullingBladderNeck": 0.1684,
+    "PullingProstate": 0.3787,
+    "PullingSeminalVesicle": 0.4567,
+    "PullingTissue": 0.6596,
+    "PullingVasDeferens": 0.5217,
+    "SuckingBlood": 0.3101,
+    "SuckingSmoke": 0.4535,
+    "UrethraDissection": 0.1743
   },
   "tools": [
+    "clip_applier",
     "grasper",
     "monopolar_scissors"
   ],
   "tissues": [
-    "generic_tissue",
-    "vas_deferens"
+    "generic_tissue"
   ],
   "events": [],
-  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase": "prostate_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "vas_deferens_seminal_vesicle_dissection"
+    "prostate_dissection"
   ]
 }

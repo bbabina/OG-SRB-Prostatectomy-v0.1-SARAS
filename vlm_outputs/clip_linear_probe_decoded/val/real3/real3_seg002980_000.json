@@ -6,32 +6,34 @@
   "frame_end": 2980,
   "model": "clip-linear-probe+decoder",
   "actions": [
+    "CuttingProstate",
     "CuttingTissue",
+    "PullingProstate",
     "PullingTissue",
     "SuckingSmoke"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0382,
-    "BladderAnastomosis": 0.0443,
-    "BladderNeckDissection": 0.316,
-    "ClippingBladderNeck": 0.094,
-    "ClippingSeminalVesicle": 0.1687,
-    "ClippingTissue": 0.2071,
-    "ClippingVasDeferens": 0.155,
-    "CuttingMesocolon": 0.1688,
-    "CuttingProstate": 0.7607,
-    "CuttingSeminalVesicle": 0.483,
-    "CuttingThread": 0.0172,
-    "CuttingTissue": 0.7832,
-    "CuttingVasDeferens": 0.143,
-    "PullingBladderNeck": 0.2608,
-    "PullingProstate": 0.7465,
-    "PullingSeminalVesicle": 0.4735,
-    "PullingTissue": 0.5211,
-    "PullingVasDeferens": 0.3627,
-    "SuckingBlood": 0.3254,
-    "SuckingSmoke": 0.6063,
-    "UrethraDissection": 0.552
+    "BaggingProstate": 0.0335,
+    "BladderAnastomosis": 0.038,
+    "BladderNeckDissection": 0.3044,
+    "ClippingBladderNeck": 0.1021,
+    "ClippingSeminalVesicle": 0.197,
+    "ClippingTissue": 0.216,
+    "ClippingVasDeferens": 0.2231,
+    "CuttingMesocolon": 0.179,
+    "CuttingProstate": 0.7812,
+    "CuttingSeminalVesicle": 0.4684,
+    "CuttingThread": 0.0204,
+    "CuttingTissue": 0.8076,
+    "CuttingVasDeferens": 0.2301,
+    "PullingBladderNeck": 0.2595,
+    "PullingProstate": 0.7782,
+    "PullingSeminalVesicle": 0.4537,
+    "PullingTissue": 0.5065,
+    "PullingVasDeferens": 0.3825,
+    "SuckingBlood": 0.3243,
+    "SuckingSmoke": 0.6369,
+    "UrethraDissection": 0.5666
   },
   "tools": [
     "grasper",
@@ -40,14 +42,15 @@
   ],
   "tissues": [
     "generic_tissue",
+    "prostate",
     "smoke_plume"
   ],
   "events": [
-    "smoke"
+    "smoke_present"
   ],
-  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase": "prostate_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "vas_deferens_seminal_vesicle_dissection"
+    "prostate_dissection"
   ]
 }

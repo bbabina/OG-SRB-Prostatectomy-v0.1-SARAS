@@ -7,47 +7,40 @@
   "model": "clip-linear-probe+decoder",
   "actions": [
     "CuttingTissue",
-    "PullingTissue",
-    "SuckingSmoke"
+    "PullingTissue"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0296,
-    "BladderAnastomosis": 0.1153,
-    "BladderNeckDissection": 0.1692,
-    "ClippingBladderNeck": 0.1325,
-    "ClippingSeminalVesicle": 0.1425,
-    "ClippingTissue": 0.3159,
-    "ClippingVasDeferens": 0.2176,
-    "CuttingMesocolon": 0.1508,
-    "CuttingProstate": 0.5068,
-    "CuttingSeminalVesicle": 0.2172,
-    "CuttingThread": 0.084,
-    "CuttingTissue": 0.6905,
-    "CuttingVasDeferens": 0.218,
-    "PullingBladderNeck": 0.2129,
-    "PullingProstate": 0.5481,
-    "PullingSeminalVesicle": 0.2186,
-    "PullingTissue": 0.7091,
-    "PullingVasDeferens": 0.3866,
-    "SuckingBlood": 0.3569,
-    "SuckingSmoke": 0.5226,
-    "UrethraDissection": 0.5241
+    "BaggingProstate": 0.0623,
+    "BladderAnastomosis": 0.1046,
+    "BladderNeckDissection": 0.162,
+    "ClippingBladderNeck": 0.1266,
+    "ClippingSeminalVesicle": 0.0696,
+    "ClippingTissue": 0.308,
+    "ClippingVasDeferens": 0.219,
+    "CuttingMesocolon": 0.1654,
+    "CuttingProstate": 0.402,
+    "CuttingSeminalVesicle": 0.1797,
+    "CuttingThread": 0.0884,
+    "CuttingTissue": 0.6843,
+    "CuttingVasDeferens": 0.266,
+    "PullingBladderNeck": 0.1878,
+    "PullingProstate": 0.4631,
+    "PullingSeminalVesicle": 0.192,
+    "PullingTissue": 0.6947,
+    "PullingVasDeferens": 0.3568,
+    "SuckingBlood": 0.2991,
+    "SuckingSmoke": 0.4735,
+    "UrethraDissection": 0.3662
   },
   "tools": [
     "grasper",
-    "monopolar_scissors",
-    "suction_irrigator"
+    "monopolar_scissors"
   ],
   "tissues": [
-    "generic_tissue",
-    "smoke_plume"
+    "generic_tissue"
   ],
-  "events": [
-    "smoke"
-  ],
-  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "events": [],
+  "phase": null,
   "phase_ambiguous": false,
-  "phase_candidates": [
-    "vas_deferens_seminal_vesicle_dissection"
-  ]
+  "phase_candidates": []
 }

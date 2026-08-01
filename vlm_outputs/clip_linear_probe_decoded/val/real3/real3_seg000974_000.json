@@ -6,47 +6,44 @@
   "frame_end": 975,
   "model": "clip-linear-probe+decoder",
   "actions": [
+    "ClippingSeminalVesicle",
     "CuttingSeminalVesicle",
     "PullingSeminalVesicle",
-    "PullingVasDeferens",
-    "SuckingSmoke"
+    "PullingVasDeferens"
   ],
   "action_probs": {
-    "BaggingProstate": 0.1925,
-    "BladderAnastomosis": 0.067,
-    "BladderNeckDissection": 0.3632,
-    "ClippingBladderNeck": 0.215,
-    "ClippingSeminalVesicle": 0.4604,
-    "ClippingTissue": 0.3663,
-    "ClippingVasDeferens": 0.3034,
-    "CuttingMesocolon": 0.0768,
-    "CuttingProstate": 0.3397,
-    "CuttingSeminalVesicle": 0.7859,
-    "CuttingThread": 0.0289,
-    "CuttingTissue": 0.4663,
-    "CuttingVasDeferens": 0.1382,
-    "PullingBladderNeck": 0.2378,
-    "PullingProstate": 0.3356,
-    "PullingSeminalVesicle": 0.7927,
-    "PullingTissue": 0.3357,
-    "PullingVasDeferens": 0.6187,
-    "SuckingBlood": 0.493,
-    "SuckingSmoke": 0.5396,
-    "UrethraDissection": 0.1678
+    "BaggingProstate": 0.1463,
+    "BladderAnastomosis": 0.0603,
+    "BladderNeckDissection": 0.2757,
+    "ClippingBladderNeck": 0.206,
+    "ClippingSeminalVesicle": 0.5744,
+    "ClippingTissue": 0.3432,
+    "ClippingVasDeferens": 0.3904,
+    "CuttingMesocolon": 0.1216,
+    "CuttingProstate": 0.291,
+    "CuttingSeminalVesicle": 0.8007,
+    "CuttingThread": 0.0247,
+    "CuttingTissue": 0.4589,
+    "CuttingVasDeferens": 0.2956,
+    "PullingBladderNeck": 0.1632,
+    "PullingProstate": 0.291,
+    "PullingSeminalVesicle": 0.8056,
+    "PullingTissue": 0.3431,
+    "PullingVasDeferens": 0.6575,
+    "SuckingBlood": 0.4171,
+    "SuckingSmoke": 0.4749,
+    "UrethraDissection": 0.1365
   },
   "tools": [
+    "clip_applier",
     "grasper",
-    "monopolar_scissors",
-    "suction_irrigator"
+    "monopolar_scissors"
   ],
   "tissues": [
     "seminal_vesicle",
-    "smoke_plume",
     "vas_deferens"
   ],
-  "events": [
-    "smoke"
-  ],
+  "events": [],
   "phase": "vas_deferens_seminal_vesicle_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [

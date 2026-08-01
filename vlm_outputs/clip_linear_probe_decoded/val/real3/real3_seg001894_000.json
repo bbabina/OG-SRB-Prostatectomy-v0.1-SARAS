@@ -6,35 +6,35 @@
   "frame_end": 1895,
   "model": "clip-linear-probe+decoder",
   "actions": [
+    "ClippingSeminalVesicle",
     "ClippingVasDeferens",
     "CuttingSeminalVesicle",
-    "CuttingTissue",
     "PullingSeminalVesicle",
     "PullingVasDeferens",
     "SuckingSmoke"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0613,
-    "BladderAnastomosis": 0.0657,
-    "BladderNeckDissection": 0.4999,
-    "ClippingBladderNeck": 0.2197,
-    "ClippingSeminalVesicle": 0.4958,
-    "ClippingTissue": 0.2997,
-    "ClippingVasDeferens": 0.5677,
-    "CuttingMesocolon": 0.2536,
-    "CuttingProstate": 0.1768,
-    "CuttingSeminalVesicle": 0.703,
-    "CuttingThread": 0.0392,
-    "CuttingTissue": 0.5644,
-    "CuttingVasDeferens": 0.2741,
-    "PullingBladderNeck": 0.2678,
-    "PullingProstate": 0.1788,
-    "PullingSeminalVesicle": 0.7281,
-    "PullingTissue": 0.4215,
-    "PullingVasDeferens": 0.7591,
-    "SuckingBlood": 0.1896,
-    "SuckingSmoke": 0.6572,
-    "UrethraDissection": 0.2216
+    "BaggingProstate": 0.0782,
+    "BladderAnastomosis": 0.0706,
+    "BladderNeckDissection": 0.5738,
+    "ClippingBladderNeck": 0.2084,
+    "ClippingSeminalVesicle": 0.5536,
+    "ClippingTissue": 0.2123,
+    "ClippingVasDeferens": 0.6411,
+    "CuttingMesocolon": 0.1532,
+    "CuttingProstate": 0.1747,
+    "CuttingSeminalVesicle": 0.7528,
+    "CuttingThread": 0.0228,
+    "CuttingTissue": 0.4796,
+    "CuttingVasDeferens": 0.3825,
+    "PullingBladderNeck": 0.2513,
+    "PullingProstate": 0.1564,
+    "PullingSeminalVesicle": 0.7756,
+    "PullingTissue": 0.3218,
+    "PullingVasDeferens": 0.7845,
+    "SuckingBlood": 0.158,
+    "SuckingSmoke": 0.6312,
+    "UrethraDissection": 0.2661
   },
   "tools": [
     "clip_applier",
@@ -43,13 +43,12 @@
     "suction_irrigator"
   ],
   "tissues": [
-    "generic_tissue",
     "seminal_vesicle",
     "smoke_plume",
     "vas_deferens"
   ],
   "events": [
-    "smoke"
+    "smoke_present"
   ],
   "phase": "vas_deferens_seminal_vesicle_dissection",
   "phase_ambiguous": false,

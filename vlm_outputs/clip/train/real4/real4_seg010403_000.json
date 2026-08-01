@@ -6,43 +6,45 @@
   "frame_end": 10410,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "PullingBladderNeck",
-    "ClippingBladderNeck"
+    "BladderAnastomosis",
+    "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0127,
-    "BladderAnastomosis": 0.0379,
-    "BladderNeckDissection": 0.0514,
-    "ClippingBladderNeck": 0.1511,
-    "ClippingSeminalVesicle": 0.0387,
-    "ClippingTissue": 0.0487,
-    "ClippingVasDeferens": 0.0297,
-    "CuttingMesocolon": 0.0468,
-    "CuttingProstate": 0.0175,
-    "CuttingSeminalVesicle": 0.0141,
-    "CuttingThread": 0.0684,
-    "CuttingTissue": 0.0326,
-    "CuttingVasDeferens": 0.0318,
-    "PullingBladderNeck": 0.2171,
-    "PullingProstate": 0.0298,
-    "PullingSeminalVesicle": 0.0169,
-    "PullingTissue": 0.0532,
-    "PullingVasDeferens": 0.0351,
-    "SuckingBlood": 0.0325,
-    "SuckingSmoke": 0.0214,
-    "UrethraDissection": 0.0126
+    "BaggingProstate": 0.0192,
+    "BladderAnastomosis": 0.2216,
+    "BladderNeckDissection": 0.0629,
+    "ClippingBladderNeck": 0.0885,
+    "ClippingSeminalVesicle": 0.0231,
+    "ClippingTissue": 0.0309,
+    "ClippingVasDeferens": 0.0195,
+    "CuttingMesocolon": 0.0513,
+    "CuttingProstate": 0.0122,
+    "CuttingSeminalVesicle": 0.0103,
+    "CuttingThread": 0.0669,
+    "CuttingTissue": 0.0299,
+    "CuttingVasDeferens": 0.0351,
+    "PullingBladderNeck": 0.1598,
+    "PullingProstate": 0.0171,
+    "PullingSeminalVesicle": 0.0101,
+    "PullingTissue": 0.042,
+    "PullingVasDeferens": 0.0309,
+    "SuckingBlood": 0.039,
+    "SuckingSmoke": 0.0183,
+    "UrethraDissection": 0.0113
   },
   "tools": [
-    "clip_applier",
-    "grasper"
+    "grasper",
+    "needle_driver"
   ],
   "tissues": [
-    "bladder_neck"
+    "bladder_neck",
+    "urethra"
   ],
   "events": [],
-  "phase": "bladder_neck_dissection",
-  "phase_ambiguous": false,
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

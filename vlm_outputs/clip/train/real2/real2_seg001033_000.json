@@ -6,45 +6,45 @@
   "frame_end": 1034,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "ClippingBladderNeck",
-    "BladderNeckDissection",
+    "BladderAnastomosis",
     "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0207,
-    "BladderAnastomosis": 0.0526,
-    "BladderNeckDissection": 0.1805,
-    "ClippingBladderNeck": 0.2229,
-    "ClippingSeminalVesicle": 0.0217,
-    "ClippingTissue": 0.029,
-    "ClippingVasDeferens": 0.0234,
-    "CuttingMesocolon": 0.038,
-    "CuttingProstate": 0.015,
-    "CuttingSeminalVesicle": 0.0063,
-    "CuttingThread": 0.0649,
-    "CuttingTissue": 0.0189,
-    "CuttingVasDeferens": 0.0266,
-    "PullingBladderNeck": 0.1719,
-    "PullingProstate": 0.0129,
-    "PullingSeminalVesicle": 0.0054,
-    "PullingTissue": 0.021,
-    "PullingVasDeferens": 0.0192,
-    "SuckingBlood": 0.0192,
-    "SuckingSmoke": 0.0087,
-    "UrethraDissection": 0.0212
+    "BaggingProstate": 0.0144,
+    "BladderAnastomosis": 0.2575,
+    "BladderNeckDissection": 0.1381,
+    "ClippingBladderNeck": 0.1455,
+    "ClippingSeminalVesicle": 0.0164,
+    "ClippingTissue": 0.0228,
+    "ClippingVasDeferens": 0.0164,
+    "CuttingMesocolon": 0.0313,
+    "CuttingProstate": 0.0103,
+    "CuttingSeminalVesicle": 0.0053,
+    "CuttingThread": 0.0477,
+    "CuttingTissue": 0.0164,
+    "CuttingVasDeferens": 0.0211,
+    "PullingBladderNeck": 0.1629,
+    "PullingProstate": 0.0113,
+    "PullingSeminalVesicle": 0.0049,
+    "PullingTissue": 0.0214,
+    "PullingVasDeferens": 0.0173,
+    "SuckingBlood": 0.0163,
+    "SuckingSmoke": 0.0068,
+    "UrethraDissection": 0.0157
   },
   "tools": [
-    "clip_applier",
     "grasper",
-    "monopolar_scissors"
+    "needle_driver"
   ],
   "tissues": [
-    "bladder_neck"
+    "bladder_neck",
+    "urethra"
   ],
   "events": [],
-  "phase": "bladder_neck_dissection",
-  "phase_ambiguous": false,
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

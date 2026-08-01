@@ -6,41 +6,45 @@
   "frame_end": 2088,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
+    "BladderAnastomosis",
     "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0156,
-    "BladderAnastomosis": 0.0954,
-    "BladderNeckDissection": 0.1037,
-    "ClippingBladderNeck": 0.1049,
-    "ClippingSeminalVesicle": 0.0274,
-    "ClippingTissue": 0.028,
-    "ClippingVasDeferens": 0.0209,
-    "CuttingMesocolon": 0.0537,
-    "CuttingProstate": 0.0194,
-    "CuttingSeminalVesicle": 0.0163,
-    "CuttingThread": 0.055,
-    "CuttingTissue": 0.0344,
-    "CuttingVasDeferens": 0.0375,
-    "PullingBladderNeck": 0.2213,
-    "PullingProstate": 0.0183,
-    "PullingSeminalVesicle": 0.0143,
-    "PullingTissue": 0.0402,
-    "PullingVasDeferens": 0.0339,
-    "SuckingBlood": 0.022,
-    "SuckingSmoke": 0.0149,
-    "UrethraDissection": 0.0229
+    "BaggingProstate": 0.016,
+    "BladderAnastomosis": 0.2509,
+    "BladderNeckDissection": 0.0654,
+    "ClippingBladderNeck": 0.0927,
+    "ClippingSeminalVesicle": 0.025,
+    "ClippingTissue": 0.0284,
+    "ClippingVasDeferens": 0.02,
+    "CuttingMesocolon": 0.0422,
+    "CuttingProstate": 0.0163,
+    "CuttingSeminalVesicle": 0.0127,
+    "CuttingThread": 0.0574,
+    "CuttingTissue": 0.0286,
+    "CuttingVasDeferens": 0.0312,
+    "PullingBladderNeck": 0.1628,
+    "PullingProstate": 0.0174,
+    "PullingSeminalVesicle": 0.0109,
+    "PullingTissue": 0.0359,
+    "PullingVasDeferens": 0.0294,
+    "SuckingBlood": 0.0234,
+    "SuckingSmoke": 0.0169,
+    "UrethraDissection": 0.0166
   },
   "tools": [
-    "grasper"
+    "grasper",
+    "needle_driver"
   ],
   "tissues": [
-    "bladder_neck"
+    "bladder_neck",
+    "urethra"
   ],
   "events": [],
-  "phase": "bladder_neck_dissection",
-  "phase_ambiguous": false,
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

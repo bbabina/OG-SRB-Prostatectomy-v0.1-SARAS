@@ -6,43 +6,47 @@
   "frame_end": 19338,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "PullingBladderNeck",
-    "BladderNeckDissection"
+    "BladderAnastomosis",
+    "BladderNeckDissection",
+    "ClippingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0162,
-    "BladderAnastomosis": 0.0533,
-    "BladderNeckDissection": 0.1737,
-    "ClippingBladderNeck": 0.1439,
-    "ClippingSeminalVesicle": 0.0276,
-    "ClippingTissue": 0.0305,
-    "ClippingVasDeferens": 0.0193,
-    "CuttingMesocolon": 0.0555,
-    "CuttingProstate": 0.0162,
-    "CuttingSeminalVesicle": 0.0136,
-    "CuttingThread": 0.0635,
-    "CuttingTissue": 0.0255,
-    "CuttingVasDeferens": 0.0285,
-    "PullingBladderNeck": 0.1769,
-    "PullingProstate": 0.0178,
-    "PullingSeminalVesicle": 0.011,
-    "PullingTissue": 0.0285,
-    "PullingVasDeferens": 0.022,
-    "SuckingBlood": 0.023,
-    "SuckingSmoke": 0.019,
-    "UrethraDissection": 0.0344
+    "BaggingProstate": 0.0138,
+    "BladderAnastomosis": 0.155,
+    "BladderNeckDissection": 0.1547,
+    "ClippingBladderNeck": 0.1546,
+    "ClippingSeminalVesicle": 0.0292,
+    "ClippingTissue": 0.0326,
+    "ClippingVasDeferens": 0.0207,
+    "CuttingMesocolon": 0.0568,
+    "CuttingProstate": 0.0146,
+    "CuttingSeminalVesicle": 0.0122,
+    "CuttingThread": 0.0499,
+    "CuttingTissue": 0.0227,
+    "CuttingVasDeferens": 0.0259,
+    "PullingBladderNeck": 0.1314,
+    "PullingProstate": 0.0136,
+    "PullingSeminalVesicle": 0.009,
+    "PullingTissue": 0.0225,
+    "PullingVasDeferens": 0.0176,
+    "SuckingBlood": 0.0189,
+    "SuckingSmoke": 0.015,
+    "UrethraDissection": 0.0293
   },
   "tools": [
-    "grasper",
-    "monopolar_scissors"
+    "clip_applier",
+    "monopolar_scissors",
+    "needle_driver"
   ],
   "tissues": [
-    "bladder_neck"
+    "bladder_neck",
+    "urethra"
   ],
   "events": [],
   "phase": "bladder_neck_dissection",
-  "phase_ambiguous": false,
+  "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

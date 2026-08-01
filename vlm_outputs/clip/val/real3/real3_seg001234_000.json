@@ -6,43 +6,45 @@
   "frame_end": 1234,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "PullingBladderNeck",
-    "ClippingBladderNeck"
+    "BladderAnastomosis",
+    "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0145,
-    "BladderAnastomosis": 0.0627,
-    "BladderNeckDissection": 0.1237,
-    "ClippingBladderNeck": 0.1903,
-    "ClippingSeminalVesicle": 0.0166,
-    "ClippingTissue": 0.0212,
-    "ClippingVasDeferens": 0.0165,
-    "CuttingMesocolon": 0.0181,
-    "CuttingProstate": 0.0049,
-    "CuttingSeminalVesicle": 0.0057,
-    "CuttingThread": 0.0287,
-    "CuttingTissue": 0.0097,
-    "CuttingVasDeferens": 0.0167,
-    "PullingBladderNeck": 0.3515,
-    "PullingProstate": 0.0151,
-    "PullingSeminalVesicle": 0.0094,
-    "PullingTissue": 0.0307,
-    "PullingVasDeferens": 0.0265,
-    "SuckingBlood": 0.0152,
-    "SuckingSmoke": 0.015,
-    "UrethraDissection": 0.0075
+    "BaggingProstate": 0.0094,
+    "BladderAnastomosis": 0.3894,
+    "BladderNeckDissection": 0.0806,
+    "ClippingBladderNeck": 0.124,
+    "ClippingSeminalVesicle": 0.0108,
+    "ClippingTissue": 0.0138,
+    "ClippingVasDeferens": 0.0108,
+    "CuttingMesocolon": 0.0118,
+    "CuttingProstate": 0.0032,
+    "CuttingSeminalVesicle": 0.0037,
+    "CuttingThread": 0.0187,
+    "CuttingTissue": 0.0063,
+    "CuttingVasDeferens": 0.0109,
+    "PullingBladderNeck": 0.229,
+    "PullingProstate": 0.0098,
+    "PullingSeminalVesicle": 0.0061,
+    "PullingTissue": 0.02,
+    "PullingVasDeferens": 0.0173,
+    "SuckingBlood": 0.0099,
+    "SuckingSmoke": 0.0097,
+    "UrethraDissection": 0.0049
   },
   "tools": [
-    "clip_applier",
-    "grasper"
+    "grasper",
+    "needle_driver"
   ],
   "tissues": [
-    "bladder_neck"
+    "bladder_neck",
+    "urethra"
   ],
   "events": [],
-  "phase": "bladder_neck_dissection",
-  "phase_ambiguous": false,
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

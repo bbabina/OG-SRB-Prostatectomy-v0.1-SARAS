@@ -1,46 +1,5 @@
 {
-  "segment_violations": [
-    {
-      "segment_id": "real1_seg006343_000",
-      "video": "real1",
-      "split": "train",
-      "requires_violations": [],
-      "acts_on_violations": [],
-      "contradicts_violations": [
-        "contradicts: ['clip_applier', 'needle_driver'] co-occur"
-      ]
-    },
-    {
-      "segment_id": "real2_seg007358_000",
-      "video": "real2",
-      "split": "train",
-      "requires_violations": [],
-      "acts_on_violations": [],
-      "contradicts_violations": [
-        "contradicts: ['clip_applier', 'needle_driver'] co-occur"
-      ]
-    },
-    {
-      "segment_id": "real2_seg007536_000",
-      "video": "real2",
-      "split": "train",
-      "requires_violations": [],
-      "acts_on_violations": [],
-      "contradicts_violations": [
-        "contradicts: ['clip_applier', 'needle_driver'] co-occur"
-      ]
-    },
-    {
-      "segment_id": "real4_seg025273_006",
-      "video": "real4",
-      "split": "train",
-      "requires_violations": [],
-      "acts_on_violations": [],
-      "contradicts_violations": [
-        "contradicts: ['clip_applier', 'needle_driver'] co-occur"
-      ]
-    }
-  ],
+  "segment_violations": [],
   "phase_order_violations": [
     "phase_order: real1_seg002435_000(vas_deferens_seminal_vesicle_dissection) -> real1_seg005149_000(prostate_dissection) illegal",
     "phase_order: real1_seg005240_000(prostate_dissection) -> real1_seg005251_000(bladder_neck_dissection) illegal",
@@ -59,8 +18,8 @@
     "phase_order: real1_seg006181_000(bladder_neck_dissection) -> real1_seg006185_000(vas_deferens_seminal_vesicle_dissection) illegal",
     "phase_order: real1_seg006194_000(bladder_neck_dissection) -> real1_seg006198_000(urethra_dissection) illegal",
     "phase_order: real1_seg006214_000(urethra_dissection) -> real1_seg006225_000(prostate_dissection) illegal",
-    "phase_order: real1_seg006225_000(prostate_dissection) -> real1_seg006230_000(specimen_extraction) illegal",
-    "phase_order: real1_seg006230_000(specimen_extraction) -> real1_seg006275_000(bladder_neck_dissection) illegal",
+    "phase_order: real1_seg006225_000(prostate_dissection) -> real1_seg006230_000(specimen_bagging) illegal",
+    "phase_order: real1_seg006230_000(specimen_bagging) -> real1_seg006275_000(bladder_neck_dissection) illegal",
     "phase_order: real1_seg006275_000(bladder_neck_dissection) -> real1_seg006295_000(bladder_anastomosis) illegal",
     "phase_order: real1_seg006340_000(bladder_anastomosis) -> real1_seg006343_000(bladder_neck_dissection) illegal",
     "phase_order: real1_seg006343_000(bladder_neck_dissection) -> real1_seg006359_000(bladder_anastomosis) illegal",
@@ -104,8 +63,8 @@
     "phase_order: real2_seg006777_000(prostate_dissection) -> real2_seg006952_000(bladder_anastomosis) illegal",
     "phase_order: real2_seg006952_000(bladder_anastomosis) -> real2_seg006986_000(urethra_dissection) illegal",
     "phase_order: real2_seg007025_000(urethra_dissection) -> real2_seg007032_000(prostate_dissection) illegal",
-    "phase_order: real2_seg007032_000(prostate_dissection) -> real2_seg007038_000(specimen_extraction) illegal",
-    "phase_order: real2_seg007042_000(specimen_extraction) -> real2_seg007079_000(bladder_neck_dissection) illegal",
+    "phase_order: real2_seg007032_000(prostate_dissection) -> real2_seg007038_000(specimen_bagging) illegal",
+    "phase_order: real2_seg007042_000(specimen_bagging) -> real2_seg007079_000(bladder_neck_dissection) illegal",
     "phase_order: real2_seg007079_000(bladder_neck_dissection) -> real2_seg007111_000(bladder_anastomosis) illegal",
     "phase_order: real2_seg007199_000(bladder_anastomosis) -> real2_seg007202_000(bladder_neck_dissection) illegal",
     "phase_order: real2_seg007202_001(bladder_neck_dissection) -> real2_seg007227_000(bladder_anastomosis) illegal",
@@ -136,7 +95,7 @@
     "phase_order: real4_seg024110_005(prostate_dissection) -> real4_seg024194_000(bladder_neck_dissection) illegal",
     "phase_order: real4_seg024380_016(prostate_dissection) -> real4_seg024380_017(vas_deferens_seminal_vesicle_dissection) illegal",
     "phase_order: real4_seg024380_017(vas_deferens_seminal_vesicle_dissection) -> real4_seg024380_018(prostate_dissection) illegal",
-    "phase_order: real4_seg024749_009(prostate_dissection) -> real4_seg024923_000(specimen_extraction) illegal",
+    "phase_order: real4_seg024749_009(prostate_dissection) -> real4_seg024923_000(specimen_bagging) illegal",
     "phase_order: real4_seg025273_006(bladder_anastomosis) -> real4_seg025273_007(bladder_neck_dissection) illegal",
     "phase_order: real4_seg025273_008(bladder_neck_dissection) -> real4_seg025406_000(bladder_anastomosis) illegal",
     "phase_order: real4_seg025761_002(bladder_anastomosis) -> real4_seg025804_000(bladder_neck_dissection) illegal",
@@ -151,8 +110,8 @@
     "phase_order: real3_seg003898_000(urethra_dissection) -> real3_seg003907_000(prostate_dissection) illegal",
     "phase_order: real3_seg004053_000(urethra_dissection) -> real3_seg004100_000(prostate_dissection) illegal",
     "phase_order: real3_seg005003_000(urethra_dissection) -> real3_seg005048_000(bladder_neck_dissection) illegal",
-    "phase_order: real3_seg005048_000(bladder_neck_dissection) -> real3_seg005075_000(specimen_extraction) illegal",
-    "phase_order: real3_seg005103_000(specimen_extraction) -> real3_seg005173_000(bladder_neck_dissection) illegal",
+    "phase_order: real3_seg005048_000(bladder_neck_dissection) -> real3_seg005075_000(specimen_bagging) illegal",
+    "phase_order: real3_seg005103_000(specimen_bagging) -> real3_seg005173_000(bladder_neck_dissection) illegal",
     "phase_order: real3_seg005173_000(bladder_neck_dissection) -> real3_seg005194_000(bladder_anastomosis) illegal"
   ]
 }

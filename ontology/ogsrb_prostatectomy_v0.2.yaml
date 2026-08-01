@@ -1,0 +1,576 @@
+# OG-SRB-Prostatectomy ontology configuration
+# Version 0.2 — research prototype
+#
+# Important:
+# - This schema is derived from SARAS MESAD-Real action labels.
+# - It is not yet a clinically validated surgical ontology.
+# - Tool/action/target mappings and contradiction rules require expert review.
+# - Legacy fields are retained where practical so the existing pipeline can be adapted
+#   without a complete rewrite.
+
+meta:
+  version: "0.2"
+  status: "research_prototype_expert_review_required"
+  source_dataset: "SARAS MESAD-Real (RARP)"
+  procedure: "robot_assisted_radical_prostatectomy"
+  ontology_scope: "post_hoc_action_and_workflow_benchmark"
+  clinical_validation: "pending"
+  snomed_linked: false
+  terminology_status: "unverified_candidate_codes"
+  phase_model_status: "dataset_derived_proxy_not_clinical_ground_truth"
+  notes:
+    - "Action labels are treated as dataset observations, not complete descriptions of the operation."
+    - "Generic actions do not provide enough anatomical evidence to assign a specific phase."
+    - "Phase transitions allow local backtracking because surgeons may revisit an earlier step."
+    - "No global contradiction pair is treated as clinically valid without scope and expert review."
+
+# Source recordings were acquired at 30 FPS, while released action annotations are sampled
+# at approximately 1 FPS. Segment duration must therefore be calculated from the released
+# annotation sampling rate rather than from the source-video frame rate.
+temporal_metadata:
+  source_video_fps: 30
+  annotation_sampling_fps: 1
+  segment_duration_seconds: null
+  segment_duration_status: "must_be_set_by_preprocessing_configuration"
+
+# -----------------------------------------------------------------------------
+# Entity vocabularies
+# -----------------------------------------------------------------------------
+
+# "tools" is retained as the legacy field name used by the current code.
+# The SNOMED identifiers below are candidates only and must not be presented as validated.
+tools:
+  - id: grasper
+    entity_type: instrument
+    snomed_candidate: "SCTID:129395002"
+    terminology_status: "unverified_candidate"
+
+  - id: monopolar_scissors
+    entity_type: instrument
+    snomed_candidate: "SCTID:129394003"
+    terminology_status: "unverified_candidate"
+
+  - id: clip_applier
+    entity_type: instrument
+    snomed_candidate: "SCTID:129452003"
+    terminology_status: "unverified_candidate"
+
+  - id: suction_irrigator
+    entity_type: instrument
+    snomed_candidate: "SCTID:129458009"
+    terminology_status: "unverified_candidate"
+
+  - id: needle_driver
+    entity_type: instrument
+    snomed_candidate: "SCTID:129433002"
+    terminology_status: "unverified_candidate"
+
+  - id: specimen_bag
+    entity_type: surgical_device
+    snomed_candidate: "SCTID:706767009"
+    terminology_status: "unverified_candidate"
+
+entity_types:
+  anatomical_structures:
+    - vas_deferens
+    - seminal_vesicle
+    - mesocolon
+    - bladder_neck
+    - prostate
+    - urethra
+    - bladder
+
+  generic_targets:
+    - generic_tissue
+
+  biological_fluids:
+    - blood
+
+  surgical_materials:
+    - suture_thread
+
+  visual_phenomena:
+    - smoke_plume
+
+# Legacy broad target vocabulary. It contains anatomical and non-anatomical targets because
+# the existing evaluator expects one flat list.
+tissues:
+  - generic_tissue
+  - blood
+  - smoke_plume
+  - vas_deferens
+  - seminal_vesicle
+  - mesocolon
+  - bladder_neck
+  - prostate
+  - urethra
+  - suture_thread
+  - bladder
+
+# -----------------------------------------------------------------------------
+# Dataset action mappings
+# -----------------------------------------------------------------------------
+#
+# "tool" and "tissue" are retained as legacy singular fields.
+# "allowed_tools" and "targets" are the preferred extensible fields.
+# "phase_vote: false" means the label must not independently determine the phase.
+
+actions:
+  - id: PullingTissue
+    verb: pulling
+    tool: grasper
+    allowed_tools: [grasper]
+    tissue: generic_tissue
+    targets: [generic_tissue]
+    target_type: generic_target
+    phase_applicability: any
+    phase_vote: false
+    mapping_status: "dataset_assumption_expert_review_required"
+
+  - id: CuttingTissue
+    verb: cutting
+    tool: monopolar_scissors
+    allowed_tools: [monopolar_scissors]
+    tissue: generic_tissue
+    targets: [generic_tissue]
+    target_type: generic_target
+    phase_applicability: any
+    phase_vote: false
+    mapping_status: "dataset_assumption_expert_review_required"
+
+  - id: ClippingTissue
+    verb: clip_application
+    tool: clip_applier
+    allowed_tools: [clip_applier]
+    tissue: generic_tissue
+    targets: [generic_tissue]
+    target_type: generic_target
+    phase_applicability: any
+    phase_vote: false
+    mapping_status: "dataset_assumption_expert_review_required"
+
+  - id: SuckingBlood
+    verb: suction
+    tool: suction_irrigator
+    allowed_tools: [suction_irrigator]
+    tissue: blood
+    targets: [blood]
+    target_type: biological_fluid
+    event: blood_present
+    phase_applicability: any
+    phase_vote: false
+    mapping_status: "dataset_assumption_expert_review_required"
+
+  - id: SuckingSmoke
+    verb: suction
+    tool: suction_irrigator
+    allowed_tools: [suction_irrigator]
+    tissue: smoke_plume
+    targets: [smoke_plume]
+    target_type: visual_phenomenon
+    event: smoke_present
+    phase_applicability: any
+    phase_vote: false
+    mapping_status: "dataset_assumption_expert_review_required"
+
+  - id: PullingVasDeferens
+    verb: pulling
+    tool: grasper
+    allowed_tools: [grasper]
+    tissue: vas_deferens
+    targets: [vas_deferens]
+    target_type: anatomical_structure
+    phase: vas_deferens_seminal_vesicle_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: ClippingVasDeferens
+    verb: clip_application
+    tool: clip_applier
+    allowed_tools: [clip_applier]
+    tissue: vas_deferens
+    targets: [vas_deferens]
+    target_type: anatomical_structure
+    phase: vas_deferens_seminal_vesicle_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: CuttingVasDeferens
+    verb: cutting
+    tool: monopolar_scissors
+    allowed_tools: [monopolar_scissors]
+    tissue: vas_deferens
+    targets: [vas_deferens]
+    target_type: anatomical_structure
+    phase: vas_deferens_seminal_vesicle_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: PullingSeminalVesicle
+    verb: pulling
+    tool: grasper
+    allowed_tools: [grasper]
+    tissue: seminal_vesicle
+    targets: [seminal_vesicle]
+    target_type: anatomical_structure
+    phase: vas_deferens_seminal_vesicle_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: ClippingSeminalVesicle
+    verb: clip_application
+    tool: clip_applier
+    allowed_tools: [clip_applier]
+    tissue: seminal_vesicle
+    targets: [seminal_vesicle]
+    target_type: anatomical_structure
+    phase: vas_deferens_seminal_vesicle_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: CuttingSeminalVesicle
+    verb: cutting
+    tool: monopolar_scissors
+    allowed_tools: [monopolar_scissors]
+    tissue: seminal_vesicle
+    targets: [seminal_vesicle]
+    target_type: anatomical_structure
+    phase: vas_deferens_seminal_vesicle_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: CuttingMesocolon
+    verb: cutting
+    tool: monopolar_scissors
+    allowed_tools: [monopolar_scissors]
+    tissue: mesocolon
+    targets: [mesocolon]
+    target_type: anatomical_structure
+    phase: mesocolon_mobilization
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: BladderNeckDissection
+    verb: dissection
+    tool: monopolar_scissors
+    allowed_tools: [monopolar_scissors]
+    tissue: bladder_neck
+    targets: [bladder_neck]
+    target_type: anatomical_structure
+    phase: bladder_neck_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: PullingBladderNeck
+    verb: pulling
+    tool: grasper
+    allowed_tools: [grasper]
+    tissue: bladder_neck
+    targets: [bladder_neck]
+    target_type: anatomical_structure
+    phase: bladder_neck_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: ClippingBladderNeck
+    verb: clip_application
+    tool: clip_applier
+    allowed_tools: [clip_applier]
+    tissue: bladder_neck
+    targets: [bladder_neck]
+    target_type: anatomical_structure
+    phase: bladder_neck_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: PullingProstate
+    verb: pulling
+    tool: grasper
+    allowed_tools: [grasper]
+    tissue: prostate
+    targets: [prostate]
+    target_type: anatomical_structure
+    phase: prostate_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: CuttingProstate
+    verb: cutting
+    tool: monopolar_scissors
+    allowed_tools: [monopolar_scissors]
+    tissue: prostate
+    targets: [prostate]
+    target_type: anatomical_structure
+    phase: prostate_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: BaggingProstate
+    verb: bagging
+    tool: specimen_bag
+    allowed_tools: [specimen_bag]
+    tissue: prostate
+    targets: [prostate]
+    target_type: anatomical_structure
+    phase: specimen_bagging
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+    note: "Bagging is distinct from physical specimen extraction."
+
+  - id: UrethraDissection
+    verb: dissection
+    tool: monopolar_scissors
+    allowed_tools: [monopolar_scissors]
+    tissue: urethra
+    targets: [urethra]
+    target_type: anatomical_structure
+    phase: urethra_dissection
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: CuttingThread
+    verb: cutting
+    tool: monopolar_scissors
+    allowed_tools: [monopolar_scissors]
+    tissue: suture_thread
+    targets: [suture_thread]
+    target_type: surgical_material
+    phase: bladder_anastomosis
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+
+  - id: BladderAnastomosis
+    verb: suturing
+    tool: needle_driver
+    allowed_tools: [needle_driver]
+    tissue: bladder_neck
+    targets: [bladder_neck, urethra]
+    target_type: anatomical_structure
+    phase: bladder_anastomosis
+    phase_vote: true
+    mapping_status: "dataset_derived_expert_review_required"
+    note: "Represents vesicourethral anastomosis; both bladder neck and urethra are involved."
+
+# -----------------------------------------------------------------------------
+# Dataset-derived proxy phases
+# -----------------------------------------------------------------------------
+# These phases support benchmarking. They must not be described as universally fixed RARP
+# phases or as independently annotated clinical ground truth.
+
+phases:
+  - id: mesocolon_mobilization
+    order: 1
+    actions: [CuttingMesocolon]
+
+  - id: vas_deferens_seminal_vesicle_dissection
+    order: 2
+    actions:
+      - PullingVasDeferens
+      - ClippingVasDeferens
+      - CuttingVasDeferens
+      - PullingSeminalVesicle
+      - ClippingSeminalVesicle
+      - CuttingSeminalVesicle
+
+  - id: bladder_neck_dissection
+    order: 3
+    actions: [BladderNeckDissection, PullingBladderNeck, ClippingBladderNeck]
+
+  - id: prostate_dissection
+    order: 4
+    actions: [PullingProstate, CuttingProstate]
+
+  - id: urethra_dissection
+    order: 5
+    actions: [UrethraDissection]
+
+  - id: specimen_bagging
+    order: 6
+    legacy_aliases: [specimen_extraction]
+    actions: [BaggingProstate]
+
+  - id: bladder_anastomosis
+    order: 7
+    actions: [BladderAnastomosis, CuttingThread]
+
+# These are observations inferred from action labels, not independently annotated events.
+events:
+  - id: blood_present
+    type: observation
+    evidenced_by: [SuckingBlood]
+    inference_strength: indirect
+    note: "Suction of blood does not by itself prove active bleeding."
+
+  - id: smoke_present
+    type: observation
+    evidenced_by: [SuckingSmoke]
+    inference_strength: indirect
+
+# -----------------------------------------------------------------------------
+# Relations
+# -----------------------------------------------------------------------------
+
+# Legacy requires(Action, Tool) relation.
+# These mappings represent the canonical instrument assumed from the dataset label semantics;
+# they are not independent instrument observations.
+requires:
+  - [PullingTissue, grasper]
+  - [CuttingTissue, monopolar_scissors]
+  - [ClippingTissue, clip_applier]
+  - [SuckingBlood, suction_irrigator]
+  - [SuckingSmoke, suction_irrigator]
+  - [PullingVasDeferens, grasper]
+  - [ClippingVasDeferens, clip_applier]
+  - [CuttingVasDeferens, monopolar_scissors]
+  - [PullingSeminalVesicle, grasper]
+  - [ClippingSeminalVesicle, clip_applier]
+  - [CuttingSeminalVesicle, monopolar_scissors]
+  - [CuttingMesocolon, monopolar_scissors]
+  - [BladderNeckDissection, monopolar_scissors]
+  - [PullingBladderNeck, grasper]
+  - [ClippingBladderNeck, clip_applier]
+  - [PullingProstate, grasper]
+  - [CuttingProstate, monopolar_scissors]
+  - [BaggingProstate, specimen_bag]
+  - [UrethraDissection, monopolar_scissors]
+  - [CuttingThread, monopolar_scissors]
+  - [BladderAnastomosis, needle_driver]
+
+# Legacy acts_on(Action, Target) relation.
+# The primary target is retained here for compatibility. Multi-target relations are expressed
+# separately under "additional_targets".
+acts_on:
+  - [PullingTissue, generic_tissue]
+  - [CuttingTissue, generic_tissue]
+  - [ClippingTissue, generic_tissue]
+  - [SuckingBlood, blood]
+  - [SuckingSmoke, smoke_plume]
+  - [PullingVasDeferens, vas_deferens]
+  - [ClippingVasDeferens, vas_deferens]
+  - [CuttingVasDeferens, vas_deferens]
+  - [PullingSeminalVesicle, seminal_vesicle]
+  - [ClippingSeminalVesicle, seminal_vesicle]
+  - [CuttingSeminalVesicle, seminal_vesicle]
+  - [CuttingMesocolon, mesocolon]
+  - [BladderNeckDissection, bladder_neck]
+  - [PullingBladderNeck, bladder_neck]
+  - [ClippingBladderNeck, bladder_neck]
+  - [PullingProstate, prostate]
+  - [CuttingProstate, prostate]
+  - [BaggingProstate, prostate]
+  - [UrethraDissection, urethra]
+  - [CuttingThread, suture_thread]
+  - [BladderAnastomosis, bladder_neck]
+
+additional_targets:
+  - [BladderAnastomosis, urethra]
+
+# Soft transition policy recommended for the benchmark.
+# The current decoder may continue to read "phase_order" as the legal-transition graph.
+phase_transition_policy:
+  mode: soft_local_backtracking
+  allow_stay: true
+  allow_adjacent_forward: true
+  allow_adjacent_backward: true
+  allow_nonadjacent_transitions: false
+  recommended_costs:
+    stay: 0.0
+    adjacent_forward: 0.1
+    adjacent_backward: 0.5
+  note: "Backward transitions are permitted but penalised; they are not treated as impossible."
+
+# Legacy legal-transition graph: stay, adjacent forward, and adjacent backward.
+phase_order:
+  - [mesocolon_mobilization, mesocolon_mobilization]
+  - [mesocolon_mobilization, vas_deferens_seminal_vesicle_dissection]
+
+  - [vas_deferens_seminal_vesicle_dissection, mesocolon_mobilization]
+  - [vas_deferens_seminal_vesicle_dissection, vas_deferens_seminal_vesicle_dissection]
+  - [vas_deferens_seminal_vesicle_dissection, bladder_neck_dissection]
+
+  - [bladder_neck_dissection, vas_deferens_seminal_vesicle_dissection]
+  - [bladder_neck_dissection, bladder_neck_dissection]
+  - [bladder_neck_dissection, prostate_dissection]
+
+  - [prostate_dissection, bladder_neck_dissection]
+  - [prostate_dissection, prostate_dissection]
+  - [prostate_dissection, urethra_dissection]
+
+  - [urethra_dissection, prostate_dissection]
+  - [urethra_dissection, urethra_dissection]
+  - [urethra_dissection, specimen_bagging]
+
+  - [specimen_bagging, urethra_dissection]
+  - [specimen_bagging, specimen_bagging]
+  - [specimen_bagging, bladder_anastomosis]
+
+  - [bladder_anastomosis, specimen_bagging]
+  - [bladder_anastomosis, bladder_anastomosis]
+
+# No unscoped, globally enforced contradiction pairs are considered clinically validated.
+# Leaving this legacy list empty prevents the evaluator from reporting "0% contradictions"
+# merely because a small set of hand-written phase-distance pairs was removed.
+contradicts: []
+
+# Structured candidate rules for future implementation.
+# They require instrument identity and time scope, which the current segment-level labels may
+# not provide. Therefore they must not be flattened into global segment-level contradictions.
+contradiction_rules:
+  - id: same_instrument_cutting_vs_clipping
+    left_verbs: [cutting, dissection]
+    right_verbs: [clip_application]
+    scope: same_instrument_instance_same_timepoint
+    severity: hard
+    evaluable_with_current_annotations: false
+    validation_status: "expert_review_required"
+
+  - id: same_instrument_cutting_vs_suturing
+    left_verbs: [cutting, dissection]
+    right_verbs: [suturing]
+    scope: same_instrument_instance_same_timepoint
+    severity: hard
+    evaluable_with_current_annotations: false
+    validation_status: "expert_review_required"
+
+  - id: same_instrument_clipping_vs_suturing
+    left_verbs: [clip_application]
+    right_verbs: [suturing]
+    scope: same_instrument_instance_same_timepoint
+    severity: hard
+    evaluable_with_current_annotations: false
+    validation_status: "expert_review_required"
+
+  - id: same_instrument_suction_vs_cutting
+    left_verbs: [suction]
+    right_verbs: [cutting, dissection]
+    scope: same_instrument_instance_same_timepoint
+    severity: hard
+    evaluable_with_current_annotations: false
+    validation_status: "expert_review_required"
+
+  - id: phase_distance_is_not_a_contradiction
+    rule_type: modeling_guidance
+    statement: "Actions associated with distant phases are not automatically contradictory within a segment."
+    severity: advisory
+    validation_status: "recommended"
+
+# Suggested evaluator labels so generated metrics are not overstated.
+metric_semantics:
+  requirement_satisfaction:
+    preferred_name: canonical_tool_mapping_conformance
+    limitation: "Tool is deterministically derived from the action label unless predicted independently."
+
+  acts_on_consistency:
+    preferred_name: canonical_target_mapping_conformance
+    limitation: "Target is deterministically derived from the action label unless predicted independently."
+
+  ontology_factuality:
+    preferred_name: schema_vocabulary_conformance
+
+  contradiction_rate:
+    preferred_name: validated_rule_violation_rate
+    limitation: "Report only rules that have an explicit scope and expert validation status."
+
+  step_ordering_consistency:
+    preferred_name: proxy_phase_transition_consistency
+    limitation: "Phases are action-derived proxies and allow legitimate local backtracking."

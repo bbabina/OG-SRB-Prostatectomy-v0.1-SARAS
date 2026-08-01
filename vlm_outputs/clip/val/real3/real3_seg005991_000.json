@@ -6,43 +6,45 @@
   "frame_end": 5992,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "PullingBladderNeck",
-    "BladderNeckDissection"
+    "BladderAnastomosis",
+    "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0214,
-    "BladderAnastomosis": 0.0649,
-    "BladderNeckDissection": 0.1708,
-    "ClippingBladderNeck": 0.0966,
-    "ClippingSeminalVesicle": 0.0145,
-    "ClippingTissue": 0.0162,
-    "ClippingVasDeferens": 0.0112,
-    "CuttingMesocolon": 0.0454,
-    "CuttingProstate": 0.0114,
-    "CuttingSeminalVesicle": 0.0101,
-    "CuttingThread": 0.0622,
-    "CuttingTissue": 0.0205,
-    "CuttingVasDeferens": 0.0231,
-    "PullingBladderNeck": 0.2759,
-    "PullingProstate": 0.0166,
-    "PullingSeminalVesicle": 0.0108,
-    "PullingTissue": 0.0309,
-    "PullingVasDeferens": 0.0226,
-    "SuckingBlood": 0.0411,
-    "SuckingSmoke": 0.018,
-    "UrethraDissection": 0.0159
+    "BaggingProstate": 0.0116,
+    "BladderAnastomosis": 0.349,
+    "BladderNeckDissection": 0.1203,
+    "ClippingBladderNeck": 0.0769,
+    "ClippingSeminalVesicle": 0.0092,
+    "ClippingTissue": 0.0098,
+    "ClippingVasDeferens": 0.0076,
+    "CuttingMesocolon": 0.0296,
+    "CuttingProstate": 0.0064,
+    "CuttingSeminalVesicle": 0.0057,
+    "CuttingThread": 0.0338,
+    "CuttingTissue": 0.0116,
+    "CuttingVasDeferens": 0.0149,
+    "PullingBladderNeck": 0.214,
+    "PullingProstate": 0.009,
+    "PullingSeminalVesicle": 0.006,
+    "PullingTissue": 0.0171,
+    "PullingVasDeferens": 0.0138,
+    "SuckingBlood": 0.0301,
+    "SuckingSmoke": 0.0142,
+    "UrethraDissection": 0.0092
   },
   "tools": [
     "grasper",
-    "monopolar_scissors"
+    "needle_driver"
   ],
   "tissues": [
-    "bladder_neck"
+    "bladder_neck",
+    "urethra"
   ],
   "events": [],
-  "phase": "bladder_neck_dissection",
-  "phase_ambiguous": false,
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

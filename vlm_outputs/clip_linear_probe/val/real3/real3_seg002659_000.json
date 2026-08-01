@@ -6,6 +6,7 @@
   "frame_end": 2659,
   "model": "clip-linear-probe",
   "actions": [
+    "ClippingVasDeferens",
     "CuttingMesocolon",
     "CuttingTissue",
     "CuttingVasDeferens",
@@ -14,29 +15,30 @@
     "UrethraDissection"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0493,
-    "BladderAnastomosis": 0.0586,
-    "BladderNeckDissection": 0.1457,
-    "ClippingBladderNeck": 0.0833,
-    "ClippingSeminalVesicle": 0.1179,
-    "ClippingTissue": 0.3098,
-    "ClippingVasDeferens": 0.3839,
-    "CuttingMesocolon": 0.5947,
-    "CuttingProstate": 0.4084,
-    "CuttingSeminalVesicle": 0.1075,
-    "CuttingThread": 0.0807,
-    "CuttingTissue": 0.7427,
-    "CuttingVasDeferens": 0.504,
-    "PullingBladderNeck": 0.1867,
-    "PullingProstate": 0.3547,
-    "PullingSeminalVesicle": 0.1526,
-    "PullingTissue": 0.8522,
-    "PullingVasDeferens": 0.4566,
-    "SuckingBlood": 0.1873,
-    "SuckingSmoke": 0.523,
-    "UrethraDissection": 0.5207
+    "BaggingProstate": 0.0934,
+    "BladderAnastomosis": 0.0448,
+    "BladderNeckDissection": 0.1388,
+    "ClippingBladderNeck": 0.1086,
+    "ClippingSeminalVesicle": 0.0402,
+    "ClippingTissue": 0.2654,
+    "ClippingVasDeferens": 0.543,
+    "CuttingMesocolon": 0.5671,
+    "CuttingProstate": 0.4196,
+    "CuttingSeminalVesicle": 0.0834,
+    "CuttingThread": 0.0868,
+    "CuttingTissue": 0.7583,
+    "CuttingVasDeferens": 0.5447,
+    "PullingBladderNeck": 0.2069,
+    "PullingProstate": 0.3943,
+    "PullingSeminalVesicle": 0.1058,
+    "PullingTissue": 0.8569,
+    "PullingVasDeferens": 0.4503,
+    "SuckingBlood": 0.152,
+    "SuckingSmoke": 0.5527,
+    "UrethraDissection": 0.5467
   },
   "tools": [
+    "clip_applier",
     "grasper",
     "monopolar_scissors",
     "suction_irrigator"
@@ -49,9 +51,9 @@
     "vas_deferens"
   ],
   "events": [
-    "smoke"
+    "smoke_present"
   ],
-  "phase": "mesocolon_mobilization",
+  "phase": "vas_deferens_seminal_vesicle_dissection",
   "phase_ambiguous": true,
   "phase_candidates": [
     "mesocolon_mobilization",
@@ -59,12 +61,12 @@
     "vas_deferens_seminal_vesicle_dissection"
   ],
   "phase_probs": {
-    "bladder_anastomosis": 0.0502,
-    "bladder_neck_dissection": 0.0873,
-    "mesocolon_mobilization": 0.4193,
-    "prostate_dissection": 0.1451,
-    "specimen_extraction": 0.041,
-    "urethra_dissection": 0.161,
-    "vas_deferens_seminal_vesicle_dissection": 0.0961
+    "bladder_anastomosis": 0.0408,
+    "bladder_neck_dissection": 0.0849,
+    "mesocolon_mobilization": 0.4166,
+    "prostate_dissection": 0.1523,
+    "specimen_bagging": 0.0656,
+    "urethra_dissection": 0.1523,
+    "vas_deferens_seminal_vesicle_dissection": 0.0875
   }
 }

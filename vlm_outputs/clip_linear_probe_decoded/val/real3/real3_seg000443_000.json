@@ -6,35 +6,32 @@
   "frame_end": 443,
   "model": "clip-linear-probe+decoder",
   "actions": [
-    "CuttingSeminalVesicle",
     "CuttingTissue",
-    "PullingSeminalVesicle",
     "PullingTissue",
-    "PullingVasDeferens",
     "SuckingSmoke"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0657,
-    "BladderAnastomosis": 0.0414,
-    "BladderNeckDissection": 0.2319,
-    "ClippingBladderNeck": 0.1302,
-    "ClippingSeminalVesicle": 0.3278,
-    "ClippingTissue": 0.3848,
-    "ClippingVasDeferens": 0.4303,
-    "CuttingMesocolon": 0.1351,
-    "CuttingProstate": 0.3595,
-    "CuttingSeminalVesicle": 0.5901,
-    "CuttingThread": 0.0435,
-    "CuttingTissue": 0.6666,
-    "CuttingVasDeferens": 0.4188,
-    "PullingBladderNeck": 0.1951,
-    "PullingProstate": 0.4467,
-    "PullingSeminalVesicle": 0.6191,
-    "PullingTissue": 0.6975,
-    "PullingVasDeferens": 0.6038,
-    "SuckingBlood": 0.4197,
-    "SuckingSmoke": 0.64,
-    "UrethraDissection": 0.2977
+    "BaggingProstate": 0.0688,
+    "BladderAnastomosis": 0.0348,
+    "BladderNeckDissection": 0.1911,
+    "ClippingBladderNeck": 0.1509,
+    "ClippingSeminalVesicle": 0.3283,
+    "ClippingTissue": 0.4451,
+    "ClippingVasDeferens": 0.4715,
+    "CuttingMesocolon": 0.1269,
+    "CuttingProstate": 0.369,
+    "CuttingSeminalVesicle": 0.6226,
+    "CuttingThread": 0.0502,
+    "CuttingTissue": 0.6767,
+    "CuttingVasDeferens": 0.4554,
+    "PullingBladderNeck": 0.1879,
+    "PullingProstate": 0.4503,
+    "PullingSeminalVesicle": 0.6172,
+    "PullingTissue": 0.6897,
+    "PullingVasDeferens": 0.621,
+    "SuckingBlood": 0.4142,
+    "SuckingSmoke": 0.6341,
+    "UrethraDissection": 0.3244
   },
   "tools": [
     "grasper",
@@ -43,16 +40,14 @@
   ],
   "tissues": [
     "generic_tissue",
-    "seminal_vesicle",
-    "smoke_plume",
-    "vas_deferens"
+    "smoke_plume"
   ],
   "events": [
-    "smoke"
+    "smoke_present"
   ],
-  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase": "mesocolon_mobilization",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "vas_deferens_seminal_vesicle_dissection"
+    "mesocolon_mobilization"
   ]
 }

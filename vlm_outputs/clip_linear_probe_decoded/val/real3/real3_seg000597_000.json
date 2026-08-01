@@ -6,7 +6,6 @@
   "frame_end": 598,
   "model": "clip-linear-probe+decoder",
   "actions": [
-    "ClippingSeminalVesicle",
     "ClippingVasDeferens",
     "CuttingTissue",
     "CuttingVasDeferens",
@@ -15,27 +14,27 @@
     "SuckingSmoke"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0201,
-    "BladderAnastomosis": 0.026,
-    "BladderNeckDissection": 0.0565,
-    "ClippingBladderNeck": 0.0291,
-    "ClippingSeminalVesicle": 0.5142,
-    "ClippingTissue": 0.2857,
-    "ClippingVasDeferens": 0.7682,
-    "CuttingMesocolon": 0.8686,
-    "CuttingProstate": 0.169,
-    "CuttingSeminalVesicle": 0.3965,
-    "CuttingThread": 0.0407,
-    "CuttingTissue": 0.7214,
-    "CuttingVasDeferens": 0.7766,
-    "PullingBladderNeck": 0.031,
-    "PullingProstate": 0.2269,
-    "PullingSeminalVesicle": 0.3689,
-    "PullingTissue": 0.7894,
-    "PullingVasDeferens": 0.7323,
-    "SuckingBlood": 0.1732,
-    "SuckingSmoke": 0.5116,
-    "UrethraDissection": 0.2733
+    "BaggingProstate": 0.0149,
+    "BladderAnastomosis": 0.0245,
+    "BladderNeckDissection": 0.0433,
+    "ClippingBladderNeck": 0.026,
+    "ClippingSeminalVesicle": 0.2274,
+    "ClippingTissue": 0.2017,
+    "ClippingVasDeferens": 0.7085,
+    "CuttingMesocolon": 0.889,
+    "CuttingProstate": 0.1858,
+    "CuttingSeminalVesicle": 0.3571,
+    "CuttingThread": 0.0592,
+    "CuttingTissue": 0.7276,
+    "CuttingVasDeferens": 0.7063,
+    "PullingBladderNeck": 0.0288,
+    "PullingProstate": 0.2155,
+    "PullingSeminalVesicle": 0.3321,
+    "PullingTissue": 0.7852,
+    "PullingVasDeferens": 0.6666,
+    "SuckingBlood": 0.1736,
+    "SuckingSmoke": 0.5414,
+    "UrethraDissection": 0.4174
   },
   "tools": [
     "clip_applier",
@@ -45,12 +44,11 @@
   ],
   "tissues": [
     "generic_tissue",
-    "seminal_vesicle",
     "smoke_plume",
     "vas_deferens"
   ],
   "events": [
-    "smoke"
+    "smoke_present"
   ],
   "phase": "vas_deferens_seminal_vesicle_dissection",
   "phase_ambiguous": false,

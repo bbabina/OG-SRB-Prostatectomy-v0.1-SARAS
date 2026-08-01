@@ -6,45 +6,47 @@
   "frame_end": 4017,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
+    "BladderAnastomosis",
     "PullingBladderNeck",
-    "BladderNeckDissection",
-    "ClippingBladderNeck"
+    "BladderNeckDissection"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0169,
-    "BladderAnastomosis": 0.0281,
-    "BladderNeckDissection": 0.209,
-    "ClippingBladderNeck": 0.1793,
-    "ClippingSeminalVesicle": 0.0111,
-    "ClippingTissue": 0.0182,
-    "ClippingVasDeferens": 0.022,
-    "CuttingMesocolon": 0.047,
-    "CuttingProstate": 0.0147,
-    "CuttingSeminalVesicle": 0.0063,
-    "CuttingThread": 0.0498,
-    "CuttingTissue": 0.0224,
-    "CuttingVasDeferens": 0.0446,
-    "PullingBladderNeck": 0.2161,
-    "PullingProstate": 0.0124,
-    "PullingSeminalVesicle": 0.0051,
-    "PullingTissue": 0.0194,
-    "PullingVasDeferens": 0.0254,
-    "SuckingBlood": 0.0236,
-    "SuckingSmoke": 0.0099,
-    "UrethraDissection": 0.0187
+    "BaggingProstate": 0.0135,
+    "BladderAnastomosis": 0.2242,
+    "BladderNeckDissection": 0.1668,
+    "ClippingBladderNeck": 0.1431,
+    "ClippingSeminalVesicle": 0.0088,
+    "ClippingTissue": 0.0146,
+    "ClippingVasDeferens": 0.0176,
+    "CuttingMesocolon": 0.0375,
+    "CuttingProstate": 0.0117,
+    "CuttingSeminalVesicle": 0.0051,
+    "CuttingThread": 0.0397,
+    "CuttingTissue": 0.0179,
+    "CuttingVasDeferens": 0.0356,
+    "PullingBladderNeck": 0.1725,
+    "PullingProstate": 0.0099,
+    "PullingSeminalVesicle": 0.004,
+    "PullingTissue": 0.0155,
+    "PullingVasDeferens": 0.0203,
+    "SuckingBlood": 0.0188,
+    "SuckingSmoke": 0.0079,
+    "UrethraDissection": 0.0149
   },
   "tools": [
-    "clip_applier",
     "grasper",
-    "monopolar_scissors"
+    "monopolar_scissors",
+    "needle_driver"
   ],
   "tissues": [
-    "bladder_neck"
+    "bladder_neck",
+    "urethra"
   ],
   "events": [],
   "phase": "bladder_neck_dissection",
-  "phase_ambiguous": false,
+  "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

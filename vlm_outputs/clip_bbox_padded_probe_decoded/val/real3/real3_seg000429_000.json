@@ -1,0 +1,51 @@
+{
+  "segment_id": "real3_seg000429_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 429,
+  "frame_end": 430,
+  "model": "clip-bbox-padded-probe+decoder",
+  "actions": [
+    "PullingTissue",
+    "ClippingTissue",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.001,
+    "BladderAnastomosis": 0.0027,
+    "BladderNeckDissection": 0.0034,
+    "ClippingBladderNeck": 0.0116,
+    "ClippingSeminalVesicle": 0.1308,
+    "ClippingTissue": 0.244,
+    "ClippingVasDeferens": 0.1228,
+    "CuttingMesocolon": 0.071,
+    "CuttingProstate": 0.0096,
+    "CuttingSeminalVesicle": 0.0134,
+    "CuttingThread": 0.0206,
+    "CuttingTissue": 0.1919,
+    "CuttingVasDeferens": 0.0775,
+    "PullingBladderNeck": 0.1304,
+    "PullingProstate": 0.0724,
+    "PullingSeminalVesicle": 0.0484,
+    "PullingTissue": 0.261,
+    "PullingVasDeferens": 0.1855,
+    "SuckingBlood": 0.0711,
+    "SuckingSmoke": 0.2232,
+    "UrethraDissection": 0.0609
+  },
+  "tools": [
+    "clip_applier",
+    "grasper",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "smoke_plume"
+  ],
+  "events": [
+    "smoke_present"
+  ],
+  "phase": null,
+  "phase_ambiguous": false,
+  "phase_candidates": []
+}

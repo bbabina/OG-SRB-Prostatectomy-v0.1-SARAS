@@ -6,32 +6,34 @@
   "frame_end": 2866,
   "model": "clip-linear-probe+decoder",
   "actions": [
+    "CuttingProstate",
     "CuttingTissue",
+    "PullingProstate",
     "PullingTissue",
     "SuckingSmoke"
   ],
   "action_probs": {
-    "BaggingProstate": 0.038,
-    "BladderAnastomosis": 0.0735,
-    "BladderNeckDissection": 0.3042,
-    "ClippingBladderNeck": 0.1036,
-    "ClippingSeminalVesicle": 0.1788,
-    "ClippingTissue": 0.3348,
-    "ClippingVasDeferens": 0.2367,
-    "CuttingMesocolon": 0.0901,
-    "CuttingProstate": 0.6306,
-    "CuttingSeminalVesicle": 0.3392,
-    "CuttingThread": 0.0559,
-    "CuttingTissue": 0.7283,
-    "CuttingVasDeferens": 0.1594,
-    "PullingBladderNeck": 0.2858,
-    "PullingProstate": 0.719,
-    "PullingSeminalVesicle": 0.3135,
-    "PullingTissue": 0.5682,
-    "PullingVasDeferens": 0.3521,
-    "SuckingBlood": 0.2829,
-    "SuckingSmoke": 0.5832,
-    "UrethraDissection": 0.5752
+    "BaggingProstate": 0.0304,
+    "BladderAnastomosis": 0.0722,
+    "BladderNeckDissection": 0.2422,
+    "ClippingBladderNeck": 0.089,
+    "ClippingSeminalVesicle": 0.2261,
+    "ClippingTissue": 0.3865,
+    "ClippingVasDeferens": 0.2074,
+    "CuttingMesocolon": 0.0954,
+    "CuttingProstate": 0.6239,
+    "CuttingSeminalVesicle": 0.358,
+    "CuttingThread": 0.0569,
+    "CuttingTissue": 0.7481,
+    "CuttingVasDeferens": 0.1984,
+    "PullingBladderNeck": 0.2731,
+    "PullingProstate": 0.7158,
+    "PullingSeminalVesicle": 0.3057,
+    "PullingTissue": 0.5574,
+    "PullingVasDeferens": 0.3708,
+    "SuckingBlood": 0.2801,
+    "SuckingSmoke": 0.5984,
+    "UrethraDissection": 0.5562
   },
   "tools": [
     "grasper",
@@ -40,14 +42,15 @@
   ],
   "tissues": [
     "generic_tissue",
+    "prostate",
     "smoke_plume"
   ],
   "events": [
-    "smoke"
+    "smoke_present"
   ],
-  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase": "prostate_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "vas_deferens_seminal_vesicle_dissection"
+    "prostate_dissection"
   ]
 }

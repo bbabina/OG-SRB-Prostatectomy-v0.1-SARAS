@@ -6,43 +6,45 @@
   "frame_end": 7112,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "PullingBladderNeck",
-    "ClippingBladderNeck"
+    "BladderAnastomosis",
+    "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0134,
-    "BladderAnastomosis": 0.0355,
-    "BladderNeckDissection": 0.1443,
-    "ClippingBladderNeck": 0.1596,
-    "ClippingSeminalVesicle": 0.0236,
-    "ClippingTissue": 0.0224,
-    "ClippingVasDeferens": 0.0139,
-    "CuttingMesocolon": 0.0493,
-    "CuttingProstate": 0.0084,
-    "CuttingSeminalVesicle": 0.0111,
-    "CuttingThread": 0.0474,
-    "CuttingTissue": 0.0195,
-    "CuttingVasDeferens": 0.0204,
-    "PullingBladderNeck": 0.2674,
-    "PullingProstate": 0.0136,
-    "PullingSeminalVesicle": 0.0112,
-    "PullingTissue": 0.0312,
-    "PullingVasDeferens": 0.0188,
-    "SuckingBlood": 0.0545,
-    "SuckingSmoke": 0.0226,
-    "UrethraDissection": 0.0119
+    "BaggingProstate": 0.0084,
+    "BladderAnastomosis": 0.2367,
+    "BladderNeckDissection": 0.0944,
+    "ClippingBladderNeck": 0.129,
+    "ClippingSeminalVesicle": 0.0224,
+    "ClippingTissue": 0.0217,
+    "ClippingVasDeferens": 0.0153,
+    "CuttingMesocolon": 0.0382,
+    "CuttingProstate": 0.0077,
+    "CuttingSeminalVesicle": 0.0093,
+    "CuttingThread": 0.0401,
+    "CuttingTissue": 0.0161,
+    "CuttingVasDeferens": 0.0193,
+    "PullingBladderNeck": 0.1911,
+    "PullingProstate": 0.0125,
+    "PullingSeminalVesicle": 0.0096,
+    "PullingTissue": 0.0259,
+    "PullingVasDeferens": 0.0177,
+    "SuckingBlood": 0.0531,
+    "SuckingSmoke": 0.0205,
+    "UrethraDissection": 0.011
   },
   "tools": [
-    "clip_applier",
-    "grasper"
+    "grasper",
+    "needle_driver"
   ],
   "tissues": [
-    "bladder_neck"
+    "bladder_neck",
+    "urethra"
   ],
   "events": [],
-  "phase": "bladder_neck_dissection",
-  "phase_ambiguous": false,
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

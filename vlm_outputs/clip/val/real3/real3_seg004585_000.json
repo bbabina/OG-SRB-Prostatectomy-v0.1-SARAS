@@ -6,43 +6,45 @@
   "frame_end": 4586,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "PullingBladderNeck",
-    "ClippingBladderNeck"
+    "BladderAnastomosis",
+    "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0114,
-    "BladderAnastomosis": 0.0461,
-    "BladderNeckDissection": 0.1203,
-    "ClippingBladderNeck": 0.205,
-    "ClippingSeminalVesicle": 0.0164,
-    "ClippingTissue": 0.0231,
-    "ClippingVasDeferens": 0.017,
-    "CuttingMesocolon": 0.0389,
-    "CuttingProstate": 0.0088,
-    "CuttingSeminalVesicle": 0.0069,
-    "CuttingThread": 0.0525,
-    "CuttingTissue": 0.0194,
-    "CuttingVasDeferens": 0.0283,
-    "PullingBladderNeck": 0.2877,
-    "PullingProstate": 0.0119,
-    "PullingSeminalVesicle": 0.0068,
-    "PullingTissue": 0.0279,
-    "PullingVasDeferens": 0.0216,
-    "SuckingBlood": 0.0224,
-    "SuckingSmoke": 0.0157,
-    "UrethraDissection": 0.0119
+    "BaggingProstate": 0.0085,
+    "BladderAnastomosis": 0.3423,
+    "BladderNeckDissection": 0.0978,
+    "ClippingBladderNeck": 0.129,
+    "ClippingSeminalVesicle": 0.0116,
+    "ClippingTissue": 0.0151,
+    "ClippingVasDeferens": 0.0098,
+    "CuttingMesocolon": 0.0328,
+    "CuttingProstate": 0.0075,
+    "CuttingSeminalVesicle": 0.0054,
+    "CuttingThread": 0.0378,
+    "CuttingTissue": 0.0142,
+    "CuttingVasDeferens": 0.0179,
+    "PullingBladderNeck": 0.1874,
+    "PullingProstate": 0.0088,
+    "PullingSeminalVesicle": 0.005,
+    "PullingTissue": 0.0185,
+    "PullingVasDeferens": 0.0136,
+    "SuckingBlood": 0.0155,
+    "SuckingSmoke": 0.0093,
+    "UrethraDissection": 0.0121
   },
   "tools": [
-    "clip_applier",
-    "grasper"
+    "grasper",
+    "needle_driver"
   ],
   "tissues": [
-    "bladder_neck"
+    "bladder_neck",
+    "urethra"
   ],
   "events": [],
-  "phase": "bladder_neck_dissection",
-  "phase_ambiguous": false,
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

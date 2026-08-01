@@ -6,48 +6,42 @@
   "frame_end": 28137,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "ClippingBladderNeck",
-    "PullingBladderNeck",
-    "SuckingBlood"
+    "BladderAnastomosis"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0076,
-    "BladderAnastomosis": 0.0489,
-    "BladderNeckDissection": 0.0638,
-    "ClippingBladderNeck": 0.2252,
-    "ClippingSeminalVesicle": 0.0312,
-    "ClippingTissue": 0.0302,
-    "ClippingVasDeferens": 0.0343,
-    "CuttingMesocolon": 0.0314,
-    "CuttingProstate": 0.0085,
-    "CuttingSeminalVesicle": 0.0105,
-    "CuttingThread": 0.0391,
-    "CuttingTissue": 0.0183,
-    "CuttingVasDeferens": 0.0309,
-    "PullingBladderNeck": 0.1683,
-    "PullingProstate": 0.0059,
-    "PullingSeminalVesicle": 0.0085,
-    "PullingTissue": 0.0171,
-    "PullingVasDeferens": 0.0191,
-    "SuckingBlood": 0.1531,
-    "SuckingSmoke": 0.0423,
-    "UrethraDissection": 0.0058
+    "BaggingProstate": 0.005,
+    "BladderAnastomosis": 0.5099,
+    "BladderNeckDissection": 0.064,
+    "ClippingBladderNeck": 0.1367,
+    "ClippingSeminalVesicle": 0.0093,
+    "ClippingTissue": 0.0096,
+    "ClippingVasDeferens": 0.0102,
+    "CuttingMesocolon": 0.0161,
+    "CuttingProstate": 0.0036,
+    "CuttingSeminalVesicle": 0.0033,
+    "CuttingThread": 0.0187,
+    "CuttingTissue": 0.0068,
+    "CuttingVasDeferens": 0.0118,
+    "PullingBladderNeck": 0.1325,
+    "PullingProstate": 0.0029,
+    "PullingSeminalVesicle": 0.0027,
+    "PullingTissue": 0.0069,
+    "PullingVasDeferens": 0.0074,
+    "SuckingBlood": 0.0288,
+    "SuckingSmoke": 0.0104,
+    "UrethraDissection": 0.0032
   },
   "tools": [
-    "clip_applier",
-    "grasper",
-    "suction_irrigator"
+    "needle_driver"
   ],
   "tissues": [
     "bladder_neck",
-    "blood"
+    "urethra"
   ],
-  "events": [
-    "bleeding"
-  ],
-  "phase": "bladder_neck_dissection",
+  "events": [],
+  "phase": "bladder_anastomosis",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "bladder_neck_dissection"
+    "bladder_anastomosis"
   ]
 }

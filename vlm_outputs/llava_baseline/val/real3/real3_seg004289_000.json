@@ -1,0 +1,56 @@
+{
+  "segment_id": "real3_seg004289_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 4289,
+  "frame_end": 4289,
+  "model": "llava:7b",
+  "actions": [
+    "BaggingProstate",
+    "ClippingBladderNeck",
+    "CuttingMesocolon"
+  ],
+  "action_probs": {
+    "BaggingProstate": 1.0,
+    "BladderAnastomosis": 0.0,
+    "BladderNeckDissection": 0.0,
+    "ClippingBladderNeck": 0.85,
+    "ClippingSeminalVesicle": 0.0,
+    "ClippingTissue": 0.0,
+    "ClippingVasDeferens": 0.0,
+    "CuttingMesocolon": 0.7,
+    "CuttingProstate": 0.0,
+    "CuttingSeminalVesicle": 0.0,
+    "CuttingThread": 0.0,
+    "CuttingTissue": 0.0,
+    "CuttingVasDeferens": 0.0,
+    "PullingBladderNeck": 0.0,
+    "PullingProstate": 0.0,
+    "PullingSeminalVesicle": 0.0,
+    "PullingTissue": 0.0,
+    "PullingVasDeferens": 0.0,
+    "SuckingBlood": 0.0,
+    "SuckingSmoke": 0.0,
+    "UrethraDissection": 0.0
+  },
+  "tools": [
+    "clip_applier",
+    "monopolar_scissors",
+    "specimen_bag"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "mesocolon",
+    "prostate"
+  ],
+  "events": [],
+  "phase": "specimen_bagging",
+  "phase_ambiguous": true,
+  "phase_candidates": [
+    "bladder_neck_dissection",
+    "mesocolon_mobilization",
+    "specimen_bagging"
+  ],
+  "raw_response": " BaggingProstate, ClippingBladderNeck, CuttingMesocolon ",
+  "hallucinated_tokens": []
+}

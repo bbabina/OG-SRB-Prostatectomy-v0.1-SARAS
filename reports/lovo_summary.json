@@ -1,0 +1,174 @@
+{
+  "folds": [
+    {
+      "held_out_video": "real1",
+      "n_train_segments": 5930,
+      "n_val_segments": 2469,
+      "raw": {
+        "n_segments_evaluated": 2469,
+        "ontology_factuality_pct": 100.0,
+        "step_ordering_consistency_pct": 81.05,
+        "temporal_coherence": 0.4347,
+        "requirement_satisfaction_pct": 100.0,
+        "acts_on_consistency_pct": 100.0,
+        "contradiction_rate_pct": null,
+        "n_evaluable_contradiction_rules": 0,
+        "contradiction_rate_note": "0 evaluable contradiction rules under v0.2 -- not checked, not 0%.",
+        "macro_f1": 0.3176,
+        "top1_accuracy": 0.5411
+      },
+      "decoded": {
+        "n_segments_evaluated": 2469,
+        "ontology_factuality_pct": 100.0,
+        "step_ordering_consistency_pct": 100.0,
+        "temporal_coherence": 0.3026,
+        "requirement_satisfaction_pct": 100.0,
+        "acts_on_consistency_pct": 100.0,
+        "contradiction_rate_pct": null,
+        "n_evaluable_contradiction_rules": 0,
+        "contradiction_rate_note": "0 evaluable contradiction rules under v0.2 -- not checked, not 0%.",
+        "macro_f1": 0.3277,
+        "top1_accuracy": 0.5411
+      }
+    },
+    {
+      "held_out_video": "real2",
+      "n_train_segments": 5856,
+      "n_val_segments": 2543,
+      "raw": {
+        "n_segments_evaluated": 2543,
+        "ontology_factuality_pct": 100.0,
+        "step_ordering_consistency_pct": 79.53,
+        "temporal_coherence": 0.3211,
+        "requirement_satisfaction_pct": 100.0,
+        "acts_on_consistency_pct": 100.0,
+        "contradiction_rate_pct": null,
+        "n_evaluable_contradiction_rules": 0,
+        "contradiction_rate_note": "0 evaluable contradiction rules under v0.2 -- not checked, not 0%.",
+        "macro_f1": 0.2701,
+        "top1_accuracy": 0.5596
+      },
+      "decoded": {
+        "n_segments_evaluated": 2543,
+        "ontology_factuality_pct": 100.0,
+        "step_ordering_consistency_pct": 100.0,
+        "temporal_coherence": 0.2618,
+        "requirement_satisfaction_pct": 100.0,
+        "acts_on_consistency_pct": 100.0,
+        "contradiction_rate_pct": null,
+        "n_evaluable_contradiction_rules": 0,
+        "contradiction_rate_note": "0 evaluable contradiction rules under v0.2 -- not checked, not 0%.",
+        "macro_f1": 0.2638,
+        "top1_accuracy": 0.5596
+      }
+    },
+    {
+      "held_out_video": "real3",
+      "n_train_segments": 6861,
+      "n_val_segments": 1538,
+      "raw": {
+        "n_segments_evaluated": 1538,
+        "ontology_factuality_pct": 100.0,
+        "step_ordering_consistency_pct": 71.4,
+        "temporal_coherence": 0.5212,
+        "requirement_satisfaction_pct": 100.0,
+        "acts_on_consistency_pct": 100.0,
+        "contradiction_rate_pct": null,
+        "n_evaluable_contradiction_rules": 0,
+        "contradiction_rate_note": "0 evaluable contradiction rules under v0.2 -- not checked, not 0%.",
+        "macro_f1": 0.2706,
+        "top1_accuracy": 0.5052
+      },
+      "decoded": {
+        "n_segments_evaluated": 1538,
+        "ontology_factuality_pct": 100.0,
+        "step_ordering_consistency_pct": 100.0,
+        "temporal_coherence": 0.5664,
+        "requirement_satisfaction_pct": 100.0,
+        "acts_on_consistency_pct": 100.0,
+        "contradiction_rate_pct": null,
+        "n_evaluable_contradiction_rules": 0,
+        "contradiction_rate_note": "0 evaluable contradiction rules under v0.2 -- not checked, not 0%.",
+        "macro_f1": 0.3098,
+        "top1_accuracy": 0.5052
+      }
+    },
+    {
+      "held_out_video": "real4",
+      "n_train_segments": 6550,
+      "n_val_segments": 1849,
+      "raw": {
+        "n_segments_evaluated": 1849,
+        "ontology_factuality_pct": 100.0,
+        "step_ordering_consistency_pct": 90.41,
+        "temporal_coherence": 0.725,
+        "requirement_satisfaction_pct": 100.0,
+        "acts_on_consistency_pct": 100.0,
+        "contradiction_rate_pct": null,
+        "n_evaluable_contradiction_rules": 0,
+        "contradiction_rate_note": "0 evaluable contradiction rules under v0.2 -- not checked, not 0%.",
+        "macro_f1": 0.3061,
+        "top1_accuracy": 0.5414
+      },
+      "decoded": {
+        "n_segments_evaluated": 1849,
+        "ontology_factuality_pct": 100.0,
+        "step_ordering_consistency_pct": 100.0,
+        "temporal_coherence": 0.7154,
+        "requirement_satisfaction_pct": 100.0,
+        "acts_on_consistency_pct": 100.0,
+        "contradiction_rate_pct": null,
+        "n_evaluable_contradiction_rules": 0,
+        "contradiction_rate_note": "0 evaluable contradiction rules under v0.2 -- not checked, not 0%.",
+        "macro_f1": 0.3403,
+        "top1_accuracy": 0.5414
+      }
+    }
+  ],
+  "aggregate": {
+    "raw": {
+      "macro_f1": {
+        "mean": 0.2911,
+        "min": 0.2701,
+        "max": 0.3176
+      },
+      "top1_accuracy": {
+        "mean": 0.5368,
+        "min": 0.5052,
+        "max": 0.5596
+      },
+      "step_ordering_consistency_pct": {
+        "mean": 80.5975,
+        "min": 71.4,
+        "max": 90.41
+      },
+      "temporal_coherence": {
+        "mean": 0.5005,
+        "min": 0.3211,
+        "max": 0.725
+      }
+    },
+    "decoded": {
+      "macro_f1": {
+        "mean": 0.3104,
+        "min": 0.2638,
+        "max": 0.3403
+      },
+      "top1_accuracy": {
+        "mean": 0.5368,
+        "min": 0.5052,
+        "max": 0.5596
+      },
+      "step_ordering_consistency_pct": {
+        "mean": 100.0,
+        "min": 100.0,
+        "max": 100.0
+      },
+      "temporal_coherence": {
+        "mean": 0.4616,
+        "min": 0.2618,
+        "max": 0.7154
+      }
+    }
+  }
+}

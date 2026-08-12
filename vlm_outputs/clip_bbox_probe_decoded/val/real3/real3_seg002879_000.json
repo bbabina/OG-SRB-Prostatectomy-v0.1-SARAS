@@ -6,7 +6,8 @@
   "frame_end": 2879,
   "model": "clip-bbox-probe+decoder",
   "actions": [
-    "PullingProstate"
+    "CuttingSeminalVesicle",
+    "PullingSeminalVesicle"
   ],
   "action_probs": {
     "BaggingProstate": 0.0011,
@@ -32,15 +33,16 @@
     "UrethraDissection": 0.1198
   },
   "tools": [
-    "grasper"
+    "grasper",
+    "monopolar_scissors"
   ],
   "tissues": [
-    "prostate"
+    "seminal_vesicle"
   ],
   "events": [],
-  "phase": "prostate_dissection",
+  "phase": "vas_deferens_seminal_vesicle_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "vas_deferens_seminal_vesicle_dissection"
   ]
 }

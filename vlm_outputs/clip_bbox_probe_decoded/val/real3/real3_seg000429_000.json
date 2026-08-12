@@ -7,8 +7,7 @@
   "model": "clip-bbox-probe+decoder",
   "actions": [
     "CuttingTissue",
-    "SuckingBlood",
-    "ClippingSeminalVesicle"
+    "SuckingBlood"
   ],
   "action_probs": {
     "BaggingProstate": 0.0091,
@@ -34,21 +33,19 @@
     "UrethraDissection": 0.145
   },
   "tools": [
-    "clip_applier",
     "monopolar_scissors",
     "suction_irrigator"
   ],
   "tissues": [
     "blood",
-    "generic_tissue",
-    "seminal_vesicle"
+    "generic_tissue"
   ],
   "events": [
     "blood_present"
   ],
-  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase": "mesocolon_mobilization",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "vas_deferens_seminal_vesicle_dissection"
+    "mesocolon_mobilization"
   ]
 }

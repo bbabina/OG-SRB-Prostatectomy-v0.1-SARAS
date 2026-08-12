@@ -7,8 +7,7 @@
   "model": "clip-bbox-padded-probe+decoder",
   "actions": [
     "SuckingSmoke",
-    "SuckingBlood",
-    "PullingProstate"
+    "SuckingBlood"
   ],
   "action_probs": {
     "BaggingProstate": 0.0014,
@@ -34,21 +33,19 @@
     "UrethraDissection": 0.1379
   },
   "tools": [
-    "grasper",
     "suction_irrigator"
   ],
   "tissues": [
     "blood",
-    "prostate",
     "smoke_plume"
   ],
   "events": [
     "blood_present",
     "smoke_present"
   ],
-  "phase": "prostate_dissection",
+  "phase": "vas_deferens_seminal_vesicle_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "vas_deferens_seminal_vesicle_dissection"
   ]
 }

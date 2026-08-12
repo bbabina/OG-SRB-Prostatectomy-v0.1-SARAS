@@ -7,8 +7,7 @@
   "model": "clip-bbox-padded-probe+decoder",
   "actions": [
     "CuttingTissue",
-    "ClippingTissue",
-    "PullingProstate"
+    "ClippingTissue"
   ],
   "action_probs": {
     "BaggingProstate": 0.002,
@@ -35,17 +34,15 @@
   },
   "tools": [
     "clip_applier",
-    "grasper",
     "monopolar_scissors"
   ],
   "tissues": [
-    "generic_tissue",
-    "prostate"
+    "generic_tissue"
   ],
   "events": [],
-  "phase": "prostate_dissection",
+  "phase": "vas_deferens_seminal_vesicle_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "vas_deferens_seminal_vesicle_dissection"
   ]
 }

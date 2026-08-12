@@ -2,36 +2,38 @@
   "segment_id": "real4_seg006254_006",
   "split": "train",
   "video": "real4",
-  "frame_start": 6344,
-  "frame_end": 6358,
+  "frame_start": 6302,
+  "frame_end": 6309,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "BladderAnastomosis"
+    "BladderAnastomosis",
+    "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0123,
-    "BladderAnastomosis": 0.3065,
-    "BladderNeckDissection": 0.0848,
-    "ClippingBladderNeck": 0.0894,
-    "ClippingSeminalVesicle": 0.0182,
-    "ClippingTissue": 0.0186,
-    "ClippingVasDeferens": 0.0164,
-    "CuttingMesocolon": 0.0491,
-    "CuttingProstate": 0.0149,
-    "CuttingSeminalVesicle": 0.0099,
-    "CuttingThread": 0.0507,
-    "CuttingTissue": 0.0221,
-    "CuttingVasDeferens": 0.0328,
-    "PullingBladderNeck": 0.1478,
-    "PullingProstate": 0.0123,
-    "PullingSeminalVesicle": 0.0081,
-    "PullingTissue": 0.0222,
-    "PullingVasDeferens": 0.0216,
-    "SuckingBlood": 0.0303,
-    "SuckingSmoke": 0.0132,
-    "UrethraDissection": 0.019
+    "BaggingProstate": 0.0152,
+    "BladderAnastomosis": 0.2681,
+    "BladderNeckDissection": 0.1179,
+    "ClippingBladderNeck": 0.1196,
+    "ClippingSeminalVesicle": 0.0146,
+    "ClippingTissue": 0.0189,
+    "ClippingVasDeferens": 0.0133,
+    "CuttingMesocolon": 0.0326,
+    "CuttingProstate": 0.009,
+    "CuttingSeminalVesicle": 0.0063,
+    "CuttingThread": 0.0499,
+    "CuttingTissue": 0.0149,
+    "CuttingVasDeferens": 0.0205,
+    "PullingBladderNeck": 0.194,
+    "PullingProstate": 0.0127,
+    "PullingSeminalVesicle": 0.0067,
+    "PullingTissue": 0.0225,
+    "PullingVasDeferens": 0.0178,
+    "SuckingBlood": 0.0221,
+    "SuckingSmoke": 0.0094,
+    "UrethraDissection": 0.0141
   },
   "tools": [
+    "grasper",
     "needle_driver"
   ],
   "tissues": [
@@ -40,8 +42,9 @@
   ],
   "events": [],
   "phase": "bladder_anastomosis",
-  "phase_ambiguous": false,
+  "phase_ambiguous": true,
   "phase_candidates": [
-    "bladder_anastomosis"
+    "bladder_anastomosis",
+    "bladder_neck_dissection"
   ]
 }

@@ -7,47 +7,49 @@
   "model": "clip-linear-probe+decoder",
   "actions": [
     "ClippingTissue",
-    "CuttingTissue",
+    "ClippingVasDeferens",
     "PullingTissue",
     "SuckingSmoke"
   ],
   "action_probs": {
-    "BaggingProstate": 0.1986,
-    "BladderAnastomosis": 0.1257,
-    "BladderNeckDissection": 0.063,
-    "ClippingBladderNeck": 0.1555,
-    "ClippingSeminalVesicle": 0.3098,
-    "ClippingTissue": 0.6911,
-    "ClippingVasDeferens": 0.3751,
-    "CuttingMesocolon": 0.0548,
-    "CuttingProstate": 0.3916,
-    "CuttingSeminalVesicle": 0.375,
-    "CuttingThread": 0.3127,
-    "CuttingTissue": 0.5121,
-    "CuttingVasDeferens": 0.2761,
-    "PullingBladderNeck": 0.2071,
-    "PullingProstate": 0.4064,
-    "PullingSeminalVesicle": 0.3734,
-    "PullingTissue": 0.7212,
-    "PullingVasDeferens": 0.3438,
-    "SuckingBlood": 0.4635,
-    "SuckingSmoke": 0.5584,
-    "UrethraDissection": 0.3115
+    "BaggingProstate": 0.157,
+    "BladderAnastomosis": 0.0821,
+    "BladderNeckDissection": 0.0302,
+    "ClippingBladderNeck": 0.1049,
+    "ClippingSeminalVesicle": 0.2597,
+    "ClippingTissue": 0.8425,
+    "ClippingVasDeferens": 0.5684,
+    "CuttingMesocolon": 0.0207,
+    "CuttingProstate": 0.2674,
+    "CuttingSeminalVesicle": 0.3138,
+    "CuttingThread": 0.226,
+    "CuttingTissue": 0.4628,
+    "CuttingVasDeferens": 0.1792,
+    "PullingBladderNeck": 0.2133,
+    "PullingProstate": 0.2711,
+    "PullingSeminalVesicle": 0.3148,
+    "PullingTissue": 0.7377,
+    "PullingVasDeferens": 0.4282,
+    "SuckingBlood": 0.3573,
+    "SuckingSmoke": 0.6456,
+    "UrethraDissection": 0.2078
   },
   "tools": [
     "clip_applier",
     "grasper",
-    "monopolar_scissors",
     "suction_irrigator"
   ],
   "tissues": [
     "generic_tissue",
-    "smoke_plume"
+    "smoke_plume",
+    "vas_deferens"
   ],
   "events": [
     "smoke_present"
   ],
-  "phase": null,
+  "phase": "vas_deferens_seminal_vesicle_dissection",
   "phase_ambiguous": false,
-  "phase_candidates": []
+  "phase_candidates": [
+    "vas_deferens_seminal_vesicle_dissection"
+  ]
 }

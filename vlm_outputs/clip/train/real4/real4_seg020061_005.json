@@ -2,36 +2,40 @@
   "segment_id": "real4_seg020061_005",
   "split": "train",
   "video": "real4",
-  "frame_start": 20136,
-  "frame_end": 20150,
+  "frame_start": 20101,
+  "frame_end": 20108,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "BladderAnastomosis"
+    "BladderAnastomosis",
+    "ClippingBladderNeck",
+    "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.016,
-    "BladderAnastomosis": 0.2919,
-    "BladderNeckDissection": 0.0838,
-    "ClippingBladderNeck": 0.1085,
-    "ClippingSeminalVesicle": 0.0228,
-    "ClippingTissue": 0.0252,
-    "ClippingVasDeferens": 0.0209,
-    "CuttingMesocolon": 0.0287,
-    "CuttingProstate": 0.0121,
-    "CuttingSeminalVesicle": 0.0101,
-    "CuttingThread": 0.0554,
-    "CuttingTissue": 0.0247,
-    "CuttingVasDeferens": 0.03,
-    "PullingBladderNeck": 0.143,
-    "PullingProstate": 0.0116,
-    "PullingSeminalVesicle": 0.0085,
-    "PullingTissue": 0.0284,
-    "PullingVasDeferens": 0.0212,
-    "SuckingBlood": 0.0307,
-    "SuckingSmoke": 0.0141,
-    "UrethraDissection": 0.0123
+    "BaggingProstate": 0.0104,
+    "BladderAnastomosis": 0.1799,
+    "BladderNeckDissection": 0.112,
+    "ClippingBladderNeck": 0.1766,
+    "ClippingSeminalVesicle": 0.0273,
+    "ClippingTissue": 0.0315,
+    "ClippingVasDeferens": 0.0291,
+    "CuttingMesocolon": 0.0291,
+    "CuttingProstate": 0.0072,
+    "CuttingSeminalVesicle": 0.0088,
+    "CuttingThread": 0.0405,
+    "CuttingTissue": 0.0196,
+    "CuttingVasDeferens": 0.0313,
+    "PullingBladderNeck": 0.1675,
+    "PullingProstate": 0.0108,
+    "PullingSeminalVesicle": 0.0095,
+    "PullingTissue": 0.0319,
+    "PullingVasDeferens": 0.0261,
+    "SuckingBlood": 0.0223,
+    "SuckingSmoke": 0.0157,
+    "UrethraDissection": 0.013
   },
   "tools": [
+    "clip_applier",
+    "grasper",
     "needle_driver"
   ],
   "tissues": [
@@ -39,9 +43,10 @@
     "urethra"
   ],
   "events": [],
-  "phase": "bladder_anastomosis",
-  "phase_ambiguous": false,
+  "phase": "bladder_neck_dissection",
+  "phase_ambiguous": true,
   "phase_candidates": [
-    "bladder_anastomosis"
+    "bladder_anastomosis",
+    "bladder_neck_dissection"
   ]
 }

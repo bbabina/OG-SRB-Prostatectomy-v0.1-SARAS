@@ -7,7 +7,6 @@
   "model": "clip-bbox-probe+decoder",
   "actions": [
     "SuckingBlood",
-    "CuttingProstate",
     "SuckingSmoke"
   ],
   "action_probs": {
@@ -34,21 +33,19 @@
     "UrethraDissection": 0.0433
   },
   "tools": [
-    "monopolar_scissors",
     "suction_irrigator"
   ],
   "tissues": [
     "blood",
-    "prostate",
     "smoke_plume"
   ],
   "events": [
     "blood_present",
     "smoke_present"
   ],
-  "phase": "prostate_dissection",
+  "phase": "urethra_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "urethra_dissection"
   ]
 }

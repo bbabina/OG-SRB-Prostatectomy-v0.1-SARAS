@@ -3,48 +3,44 @@
   "split": "train",
   "video": "real1",
   "frame_start": 5344,
-  "frame_end": 5350,
+  "frame_end": 5345,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "BladderAnastomosis",
     "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0272,
-    "BladderAnastomosis": 0.1666,
-    "BladderNeckDissection": 0.0798,
-    "ClippingBladderNeck": 0.0697,
-    "ClippingSeminalVesicle": 0.0237,
-    "ClippingTissue": 0.0273,
-    "ClippingVasDeferens": 0.018,
-    "CuttingMesocolon": 0.0601,
-    "CuttingProstate": 0.0211,
-    "CuttingSeminalVesicle": 0.011,
-    "CuttingThread": 0.0697,
-    "CuttingTissue": 0.0286,
-    "CuttingVasDeferens": 0.032,
-    "PullingBladderNeck": 0.1578,
-    "PullingProstate": 0.0267,
-    "PullingSeminalVesicle": 0.0108,
-    "PullingTissue": 0.0414,
-    "PullingVasDeferens": 0.0283,
-    "SuckingBlood": 0.0496,
-    "SuckingSmoke": 0.0256,
-    "UrethraDissection": 0.025
+    "BaggingProstate": 0.0313,
+    "BladderAnastomosis": 0.0818,
+    "BladderNeckDissection": 0.0424,
+    "ClippingBladderNeck": 0.0642,
+    "ClippingSeminalVesicle": 0.041,
+    "ClippingTissue": 0.036,
+    "ClippingVasDeferens": 0.0263,
+    "CuttingMesocolon": 0.0556,
+    "CuttingProstate": 0.0188,
+    "CuttingSeminalVesicle": 0.0164,
+    "CuttingThread": 0.0614,
+    "CuttingTissue": 0.0281,
+    "CuttingVasDeferens": 0.0351,
+    "PullingBladderNeck": 0.1601,
+    "PullingProstate": 0.0424,
+    "PullingSeminalVesicle": 0.0214,
+    "PullingTissue": 0.0667,
+    "PullingVasDeferens": 0.0476,
+    "SuckingBlood": 0.0622,
+    "SuckingSmoke": 0.0392,
+    "UrethraDissection": 0.0219
   },
   "tools": [
-    "grasper",
-    "needle_driver"
+    "grasper"
   ],
   "tissues": [
-    "bladder_neck",
-    "urethra"
+    "bladder_neck"
   ],
   "events": [],
-  "phase": "bladder_anastomosis",
-  "phase_ambiguous": true,
+  "phase": "bladder_neck_dissection",
+  "phase_ambiguous": false,
   "phase_candidates": [
-    "bladder_anastomosis",
     "bladder_neck_dissection"
   ]
 }

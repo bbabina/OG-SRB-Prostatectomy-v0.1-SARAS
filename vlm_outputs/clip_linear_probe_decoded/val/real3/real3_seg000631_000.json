@@ -3,37 +3,35 @@
   "split": "val",
   "video": "real3",
   "frame_start": 631,
-  "frame_end": 633,
+  "frame_end": 632,
   "model": "clip-linear-probe+decoder",
   "actions": [
-    "CuttingSeminalVesicle",
     "CuttingTissue",
-    "PullingSeminalVesicle",
-    "PullingVasDeferens",
+    "PullingTissue",
     "SuckingSmoke"
   ],
   "action_probs": {
-    "BaggingProstate": 0.1305,
-    "BladderAnastomosis": 0.0531,
-    "BladderNeckDissection": 0.3073,
-    "ClippingBladderNeck": 0.0885,
-    "ClippingSeminalVesicle": 0.2385,
-    "ClippingTissue": 0.1801,
-    "ClippingVasDeferens": 0.2746,
-    "CuttingMesocolon": 0.2365,
-    "CuttingProstate": 0.1359,
-    "CuttingSeminalVesicle": 0.5477,
-    "CuttingThread": 0.0245,
-    "CuttingTissue": 0.6211,
-    "CuttingVasDeferens": 0.1725,
-    "PullingBladderNeck": 0.1533,
-    "PullingProstate": 0.1757,
-    "PullingSeminalVesicle": 0.6234,
-    "PullingTissue": 0.4804,
-    "PullingVasDeferens": 0.5132,
-    "SuckingBlood": 0.2412,
-    "SuckingSmoke": 0.6478,
-    "UrethraDissection": 0.1097
+    "BaggingProstate": 0.0548,
+    "BladderAnastomosis": 0.0169,
+    "BladderNeckDissection": 0.1703,
+    "ClippingBladderNeck": 0.0422,
+    "ClippingSeminalVesicle": 0.064,
+    "ClippingTissue": 0.0572,
+    "ClippingVasDeferens": 0.2363,
+    "CuttingMesocolon": 0.3057,
+    "CuttingProstate": 0.0708,
+    "CuttingSeminalVesicle": 0.4384,
+    "CuttingThread": 0.0067,
+    "CuttingTissue": 0.6123,
+    "CuttingVasDeferens": 0.0667,
+    "PullingBladderNeck": 0.081,
+    "PullingProstate": 0.0744,
+    "PullingSeminalVesicle": 0.4719,
+    "PullingTissue": 0.5603,
+    "PullingVasDeferens": 0.4495,
+    "SuckingBlood": 0.1752,
+    "SuckingSmoke": 0.7044,
+    "UrethraDissection": 0.0354
   },
   "tools": [
     "grasper",
@@ -42,16 +40,12 @@
   ],
   "tissues": [
     "generic_tissue",
-    "seminal_vesicle",
-    "smoke_plume",
-    "vas_deferens"
+    "smoke_plume"
   ],
   "events": [
     "smoke_present"
   ],
-  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase": null,
   "phase_ambiguous": false,
-  "phase_candidates": [
-    "vas_deferens_seminal_vesicle_dissection"
-  ]
+  "phase_candidates": []
 }

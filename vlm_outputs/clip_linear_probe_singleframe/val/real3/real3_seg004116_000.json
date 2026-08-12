@@ -1,0 +1,63 @@
+{
+  "segment_id": "real3_seg004116_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 4116,
+  "frame_end": 4116,
+  "model": "clip-linear-probe",
+  "actions": [
+    "BladderNeckDissection",
+    "CuttingProstate",
+    "PullingBladderNeck",
+    "UrethraDissection"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.3025,
+    "BladderAnastomosis": 0.3238,
+    "BladderNeckDissection": 0.6507,
+    "ClippingBladderNeck": 0.2434,
+    "ClippingSeminalVesicle": 0.0028,
+    "ClippingTissue": 0.0081,
+    "ClippingVasDeferens": 0.011,
+    "CuttingMesocolon": 0.0824,
+    "CuttingProstate": 0.5464,
+    "CuttingSeminalVesicle": 0.0596,
+    "CuttingThread": 0.0525,
+    "CuttingTissue": 0.2913,
+    "CuttingVasDeferens": 0.0064,
+    "PullingBladderNeck": 0.624,
+    "PullingProstate": 0.4228,
+    "PullingSeminalVesicle": 0.2143,
+    "PullingTissue": 0.2655,
+    "PullingVasDeferens": 0.0487,
+    "SuckingBlood": 0.4197,
+    "SuckingSmoke": 0.3508,
+    "UrethraDissection": 0.5898
+  },
+  "tools": [
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "prostate",
+    "urethra"
+  ],
+  "events": [],
+  "phase": "bladder_neck_dissection",
+  "phase_ambiguous": true,
+  "phase_candidates": [
+    "bladder_neck_dissection",
+    "prostate_dissection",
+    "urethra_dissection"
+  ],
+  "phase_probs": {
+    "bladder_anastomosis": 0.1117,
+    "bladder_neck_dissection": 0.2446,
+    "mesocolon_mobilization": 0.0472,
+    "prostate_dissection": 0.1594,
+    "specimen_bagging": 0.1585,
+    "urethra_dissection": 0.2501,
+    "vas_deferens_seminal_vesicle_dissection": 0.0286
+  }
+}

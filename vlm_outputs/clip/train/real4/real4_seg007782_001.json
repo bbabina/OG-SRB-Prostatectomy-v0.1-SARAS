@@ -2,36 +2,38 @@
   "segment_id": "real4_seg007782_001",
   "split": "train",
   "video": "real4",
-  "frame_start": 7797,
-  "frame_end": 7811,
+  "frame_start": 7790,
+  "frame_end": 7797,
   "model": "clip-ViT-L-14-quickgelu-openai",
   "actions": [
-    "BladderAnastomosis"
+    "BladderAnastomosis",
+    "PullingBladderNeck"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0112,
-    "BladderAnastomosis": 0.2553,
-    "BladderNeckDissection": 0.1107,
-    "ClippingBladderNeck": 0.0849,
-    "ClippingSeminalVesicle": 0.018,
-    "ClippingTissue": 0.0228,
-    "ClippingVasDeferens": 0.0201,
-    "CuttingMesocolon": 0.0292,
-    "CuttingProstate": 0.0138,
-    "CuttingSeminalVesicle": 0.0114,
-    "CuttingThread": 0.0721,
+    "BaggingProstate": 0.0083,
+    "BladderAnastomosis": 0.2773,
+    "BladderNeckDissection": 0.1399,
+    "ClippingBladderNeck": 0.0568,
+    "ClippingSeminalVesicle": 0.0131,
+    "ClippingTissue": 0.0148,
+    "ClippingVasDeferens": 0.0126,
+    "CuttingMesocolon": 0.0304,
+    "CuttingProstate": 0.014,
+    "CuttingSeminalVesicle": 0.0123,
+    "CuttingThread": 0.0629,
     "CuttingTissue": 0.0287,
-    "CuttingVasDeferens": 0.0456,
-    "PullingBladderNeck": 0.1474,
-    "PullingProstate": 0.0129,
-    "PullingSeminalVesicle": 0.0092,
-    "PullingTissue": 0.0296,
-    "PullingVasDeferens": 0.0319,
-    "SuckingBlood": 0.017,
-    "SuckingSmoke": 0.0091,
-    "UrethraDissection": 0.0192
+    "CuttingVasDeferens": 0.0427,
+    "PullingBladderNeck": 0.1572,
+    "PullingProstate": 0.012,
+    "PullingSeminalVesicle": 0.0106,
+    "PullingTissue": 0.0291,
+    "PullingVasDeferens": 0.0292,
+    "SuckingBlood": 0.0202,
+    "SuckingSmoke": 0.0065,
+    "UrethraDissection": 0.0215
   },
   "tools": [
+    "grasper",
     "needle_driver"
   ],
   "tissues": [
@@ -40,8 +42,9 @@
   ],
   "events": [],
   "phase": "bladder_anastomosis",
-  "phase_ambiguous": false,
+  "phase_ambiguous": true,
   "phase_candidates": [
-    "bladder_anastomosis"
+    "bladder_anastomosis",
+    "bladder_neck_dissection"
   ]
 }

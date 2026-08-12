@@ -1,0 +1,62 @@
+{
+  "segment_id": "real3_seg000073_002",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 77,
+  "frame_end": 77,
+  "model": "clip-linear-probe",
+  "actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "CuttingVasDeferens",
+    "PullingTissue"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0074,
+    "BladderAnastomosis": 0.0055,
+    "BladderNeckDissection": 0.0329,
+    "ClippingBladderNeck": 0.0165,
+    "ClippingSeminalVesicle": 0.0253,
+    "ClippingTissue": 0.0867,
+    "ClippingVasDeferens": 0.3723,
+    "CuttingMesocolon": 0.7999,
+    "CuttingProstate": 0.2062,
+    "CuttingSeminalVesicle": 0.1385,
+    "CuttingThread": 0.0022,
+    "CuttingTissue": 0.7949,
+    "CuttingVasDeferens": 0.6648,
+    "PullingBladderNeck": 0.0258,
+    "PullingProstate": 0.1481,
+    "PullingSeminalVesicle": 0.133,
+    "PullingTissue": 0.8444,
+    "PullingVasDeferens": 0.4539,
+    "SuckingBlood": 0.17,
+    "SuckingSmoke": 0.1868,
+    "UrethraDissection": 0.0777
+  },
+  "tools": [
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "mesocolon",
+    "vas_deferens"
+  ],
+  "events": [],
+  "phase": "mesocolon_mobilization",
+  "phase_ambiguous": true,
+  "phase_candidates": [
+    "mesocolon_mobilization",
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "phase_probs": {
+    "bladder_anastomosis": 0.0067,
+    "bladder_neck_dissection": 0.0223,
+    "mesocolon_mobilization": 0.7553,
+    "prostate_dissection": 0.062,
+    "specimen_bagging": 0.007,
+    "urethra_dissection": 0.0252,
+    "vas_deferens_seminal_vesicle_dissection": 0.1216
+  }
+}

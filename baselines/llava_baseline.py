@@ -1,34 +1,4 @@
-"""Step 7 (VLM comparison): LLaVA baseline, per supervisor's request to
-compare a free-text vision-language model against the CLIP-based pipeline,
-using the same label vocabulary and a structured-output format.
 
-Unlike every other baseline in this project, LLaVA is *generative* — it has
-no fixed 21-way classification head, so it can in principle say anything,
-including something outside the ontology entirely. That's exactly what
-Ontology Factuality (see eval/metrics.py) exists to catch, and this is the
-first baseline where that metric can actually discriminate (every CLIP-based
-baseline was restricted to the 21 known actions by construction, so OF was
-trivially 100% for all of them).
-
-Runs locally via Ollama (llava:7b, ~4.7GB)
-
-Prompt design: ask for a comma-separated list drawn only from the 21 known
-action names, rather than requiring strict JSON -- LLaVA-7B is small enough
-that strict JSON formatting is unreliable, and a constrained vocabulary list
-is still "structured output" in the sense that matters here (parseable,
-constrained, comparable across models) without fighting the model's
-formatting quirks. Each response is checked token-by-token against the
-ontology's real action ids; anything else is logged as a hallucination
-rather than silently dropped.
-
-Inference is slow (~10-15s/image on a 16GB M4 laptop) -- ~5.5 hours for the
-full 1,538-segment val set. This defaults to a stratified sample (every
-action class represented at least once, filled out with the rest random)
-rather than the full set, for a first read on whether the approach is
-worth scaling up. Re-run with --n-samples to cover more.
-
-Output: vlm_outputs/llava_baseline/val/<video>/<segment_id>.json
-"""
 from __future__ import annotations
 
 import argparse

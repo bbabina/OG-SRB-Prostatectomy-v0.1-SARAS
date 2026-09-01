@@ -1,0 +1,75 @@
+{
+  "segment_id": "real3_seg004217_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 4217,
+  "frame_end": 4217,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "ClippingBladderNeck",
+    "PullingBladderNeck",
+    "SuckingBlood"
+  ],
+  "raw_actions": [
+    "ClippingBladderNeck",
+    "PullingBladderNeck",
+    "SuckingBlood"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.1161,
+    "BladderAnastomosis": 0.2636,
+    "BladderNeckDissection": 0.3475,
+    "ClippingBladderNeck": 0.652,
+    "ClippingSeminalVesicle": 0.1554,
+    "ClippingTissue": 0.2923,
+    "ClippingVasDeferens": 0.0899,
+    "CuttingMesocolon": 0.0393,
+    "CuttingProstate": 0.3128,
+    "CuttingSeminalVesicle": 0.2262,
+    "CuttingThread": 0.1482,
+    "CuttingTissue": 0.2066,
+    "CuttingVasDeferens": 0.0667,
+    "PullingBladderNeck": 0.5769,
+    "PullingProstate": 0.239,
+    "PullingSeminalVesicle": 0.3447,
+    "PullingTissue": 0.3414,
+    "PullingVasDeferens": 0.2765,
+    "SuckingBlood": 0.5179,
+    "SuckingSmoke": 0.4395,
+    "UrethraDissection": 0.2599
+  },
+  "raw_top1_prediction": "ClippingBladderNeck",
+  "top1_prediction": "ClippingBladderNeck",
+  "tools": [
+    "clip_applier",
+    "grasper",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "blood"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "bladder_neck_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "bladder_neck_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

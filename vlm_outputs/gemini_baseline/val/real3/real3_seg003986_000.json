@@ -6,7 +6,8 @@
   "frame_end": 3986,
   "model": "gemini-3.5-flash-lite",
   "actions": [
-    "SuckingBlood"
+    "SuckingBlood",
+    "CuttingTissue"
   ],
   "action_probs": {
     "BaggingProstate": 0.0,
@@ -20,7 +21,7 @@
     "CuttingProstate": 0.0,
     "CuttingSeminalVesicle": 0.0,
     "CuttingThread": 0.0,
-    "CuttingTissue": 0.0,
+    "CuttingTissue": 0.85,
     "CuttingVasDeferens": 0.0,
     "PullingBladderNeck": 0.0,
     "PullingProstate": 0.0,
@@ -31,11 +32,14 @@
     "SuckingSmoke": 0.0,
     "UrethraDissection": 0.0
   },
+  "top1_prediction": "SuckingBlood",
   "tools": [
+    "monopolar_scissors",
     "suction_irrigator"
   ],
   "tissues": [
-    "blood"
+    "blood",
+    "generic_tissue"
   ],
   "events": [
     "blood_present"
@@ -43,6 +47,8 @@
   "phase": null,
   "phase_ambiguous": false,
   "phase_candidates": [],
-  "raw_response": "SuckingBlood",
-  "hallucinated_tokens": []
+  "raw_response": "SuckingBlood, CuttingTissue",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json"
 }

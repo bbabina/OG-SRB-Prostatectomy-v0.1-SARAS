@@ -1,0 +1,72 @@
+{
+  "segment_id": "real3_seg000962_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 962,
+  "frame_end": 962,
+  "model": "clip-bbox-padded-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "PullingVasDeferens",
+    "CuttingTissue",
+    "CuttingVasDeferens"
+  ],
+  "raw_actions": [
+    "PullingVasDeferens",
+    "CuttingTissue",
+    "CuttingVasDeferens"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0004,
+    "BladderAnastomosis": 0.0009,
+    "BladderNeckDissection": 0.0062,
+    "ClippingBladderNeck": 0.0073,
+    "ClippingSeminalVesicle": 0.0471,
+    "ClippingTissue": 0.1212,
+    "ClippingVasDeferens": 0.0678,
+    "CuttingMesocolon": 0.0893,
+    "CuttingProstate": 0.0122,
+    "CuttingSeminalVesicle": 0.1003,
+    "CuttingThread": 0.0004,
+    "CuttingTissue": 0.2367,
+    "CuttingVasDeferens": 0.2357,
+    "PullingBladderNeck": 0.015,
+    "PullingProstate": 0.0213,
+    "PullingSeminalVesicle": 0.1102,
+    "PullingTissue": 0.0504,
+    "PullingVasDeferens": 0.3495,
+    "SuckingBlood": 0.0124,
+    "SuckingSmoke": 0.022,
+    "UrethraDissection": 0.0675
+  },
+  "raw_top1_prediction": "PullingVasDeferens",
+  "top1_prediction": "PullingVasDeferens",
+  "tools": [
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "vas_deferens"
+  ],
+  "events": [],
+  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

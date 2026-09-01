@@ -1,0 +1,75 @@
+{
+  "segment_id": "real3_seg006545_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 6545,
+  "frame_end": 6546,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "BladderAnastomosis",
+    "SuckingBlood"
+  ],
+  "raw_actions": [
+    "BladderAnastomosis",
+    "ClippingBladderNeck",
+    "PullingBladderNeck",
+    "SuckingBlood"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.1036,
+    "BladderAnastomosis": 0.7828,
+    "BladderNeckDissection": 0.1273,
+    "ClippingBladderNeck": 0.5079,
+    "ClippingSeminalVesicle": 0.0801,
+    "ClippingTissue": 0.1705,
+    "ClippingVasDeferens": 0.0401,
+    "CuttingMesocolon": 0.0097,
+    "CuttingProstate": 0.2647,
+    "CuttingSeminalVesicle": 0.0925,
+    "CuttingThread": 0.3049,
+    "CuttingTissue": 0.1082,
+    "CuttingVasDeferens": 0.0193,
+    "PullingBladderNeck": 0.6227,
+    "PullingProstate": 0.1801,
+    "PullingSeminalVesicle": 0.1819,
+    "PullingTissue": 0.149,
+    "PullingVasDeferens": 0.0474,
+    "SuckingBlood": 0.7553,
+    "SuckingSmoke": 0.1713,
+    "UrethraDissection": 0.4366
+  },
+  "raw_top1_prediction": "BladderAnastomosis",
+  "top1_prediction": "BladderAnastomosis",
+  "tools": [
+    "needle_driver",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "blood",
+    "urethra"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "bladder_anastomosis"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

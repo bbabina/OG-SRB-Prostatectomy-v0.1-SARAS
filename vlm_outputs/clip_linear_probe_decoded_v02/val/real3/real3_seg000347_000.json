@@ -1,0 +1,80 @@
+{
+  "segment_id": "real3_seg000347_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 347,
+  "frame_end": 348,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "PullingTissue",
+    "SuckingSmoke"
+  ],
+  "raw_actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "CuttingVasDeferens",
+    "PullingTissue",
+    "PullingVasDeferens",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0184,
+    "BladderAnastomosis": 0.0239,
+    "BladderNeckDissection": 0.0191,
+    "ClippingBladderNeck": 0.0249,
+    "ClippingSeminalVesicle": 0.0676,
+    "ClippingTissue": 0.1859,
+    "ClippingVasDeferens": 0.4687,
+    "CuttingMesocolon": 0.9227,
+    "CuttingProstate": 0.135,
+    "CuttingSeminalVesicle": 0.0792,
+    "CuttingThread": 0.0373,
+    "CuttingTissue": 0.7633,
+    "CuttingVasDeferens": 0.5652,
+    "PullingBladderNeck": 0.0169,
+    "PullingProstate": 0.1323,
+    "PullingSeminalVesicle": 0.1307,
+    "PullingTissue": 0.7919,
+    "PullingVasDeferens": 0.543,
+    "SuckingBlood": 0.057,
+    "SuckingSmoke": 0.5358,
+    "UrethraDissection": 0.1814
+  },
+  "raw_top1_prediction": "CuttingMesocolon",
+  "top1_prediction": "CuttingMesocolon",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "mesocolon",
+    "smoke_plume"
+  ],
+  "events": [
+    "smoke_present"
+  ],
+  "phase": "mesocolon_mobilization",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "mesocolon_mobilization"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

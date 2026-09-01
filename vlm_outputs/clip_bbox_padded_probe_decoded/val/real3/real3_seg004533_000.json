@@ -7,7 +7,8 @@
   "model": "clip-bbox-padded-probe+decoder",
   "actions": [
     "SuckingSmoke",
-    "SuckingBlood"
+    "SuckingBlood",
+    "ClippingBladderNeck"
   ],
   "action_probs": {
     "BaggingProstate": 0.0089,
@@ -33,9 +34,11 @@
     "UrethraDissection": 0.0675
   },
   "tools": [
+    "clip_applier",
     "suction_irrigator"
   ],
   "tissues": [
+    "bladder_neck",
     "blood",
     "smoke_plume"
   ],
@@ -43,9 +46,9 @@
     "blood_present",
     "smoke_present"
   ],
-  "phase": "prostate_dissection",
+  "phase": "bladder_neck_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "bladder_neck_dissection"
   ]
 }

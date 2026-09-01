@@ -6,8 +6,8 @@
   "frame_end": 7674,
   "model": "clip-bbox-padded-probe+decoder",
   "actions": [
-    "SuckingBlood",
-    "BladderAnastomosis"
+    "BaggingProstate",
+    "SuckingBlood"
   ],
   "action_probs": {
     "BaggingProstate": 0.3681,
@@ -33,20 +33,19 @@
     "UrethraDissection": 0.0468
   },
   "tools": [
-    "needle_driver",
+    "specimen_bag",
     "suction_irrigator"
   ],
   "tissues": [
-    "bladder_neck",
     "blood",
-    "urethra"
+    "prostate"
   ],
   "events": [
     "blood_present"
   ],
-  "phase": "bladder_anastomosis",
+  "phase": "specimen_bagging",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "bladder_anastomosis"
+    "specimen_bagging"
   ]
 }

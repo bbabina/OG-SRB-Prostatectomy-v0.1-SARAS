@@ -1,0 +1,63 @@
+{
+  "segment_id": "real3_seg005724_001",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 5726,
+  "frame_end": 5726,
+  "model": "gpt-4o",
+  "actions": [
+    "CuttingTissue",
+    "PullingTissue",
+    "SuckingBlood"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0,
+    "BladderAnastomosis": 0.0,
+    "BladderNeckDissection": 0.0,
+    "ClippingBladderNeck": 0.0,
+    "ClippingSeminalVesicle": 0.0,
+    "ClippingTissue": 0.0,
+    "ClippingVasDeferens": 0.0,
+    "CuttingMesocolon": 0.0,
+    "CuttingProstate": 0.0,
+    "CuttingSeminalVesicle": 0.0,
+    "CuttingThread": 0.0,
+    "CuttingTissue": 1.0,
+    "CuttingVasDeferens": 0.0,
+    "PullingBladderNeck": 0.0,
+    "PullingProstate": 0.0,
+    "PullingSeminalVesicle": 0.0,
+    "PullingTissue": 0.85,
+    "PullingVasDeferens": 0.0,
+    "SuckingBlood": 0.7,
+    "SuckingSmoke": 0.0,
+    "UrethraDissection": 0.0
+  },
+  "top1_prediction": "CuttingTissue",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "blood",
+    "generic_tissue"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": null,
+  "phase_ambiguous": false,
+  "phase_candidates": [],
+  "raw_response": "CuttingTissue, PullingTissue, SuckingBlood",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json",
+  "image_detail": "high",
+  "prompt_variant": "baseline",
+  "n_frames": 2,
+  "frame_numbers": [
+    5726
+  ],
+  "probability_status": "rank_pseudo_scores_not_calibrated"
+}

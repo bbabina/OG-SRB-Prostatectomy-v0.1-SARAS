@@ -1,0 +1,77 @@
+{
+  "segment_id": "real3_seg003914_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 3914,
+  "frame_end": 3915,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "BladderNeckDissection",
+    "PullingBladderNeck",
+    "SuckingBlood"
+  ],
+  "raw_actions": [
+    "BladderNeckDissection",
+    "PullingBladderNeck",
+    "PullingProstate",
+    "PullingSeminalVesicle",
+    "SuckingBlood"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.2364,
+    "BladderAnastomosis": 0.4485,
+    "BladderNeckDissection": 0.9021,
+    "ClippingBladderNeck": 0.3369,
+    "ClippingSeminalVesicle": 0.0119,
+    "ClippingTissue": 0.0681,
+    "ClippingVasDeferens": 0.0075,
+    "CuttingMesocolon": 0.0008,
+    "CuttingProstate": 0.3543,
+    "CuttingSeminalVesicle": 0.1456,
+    "CuttingThread": 0.1509,
+    "CuttingTissue": 0.1231,
+    "CuttingVasDeferens": 0.0059,
+    "PullingBladderNeck": 0.8236,
+    "PullingProstate": 0.5181,
+    "PullingSeminalVesicle": 0.6512,
+    "PullingTissue": 0.15,
+    "PullingVasDeferens": 0.0367,
+    "SuckingBlood": 0.6359,
+    "SuckingSmoke": 0.3751,
+    "UrethraDissection": 0.451
+  },
+  "raw_top1_prediction": "BladderNeckDissection",
+  "top1_prediction": "BladderNeckDissection",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "blood"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "bladder_neck_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "bladder_neck_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

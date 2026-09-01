@@ -6,6 +6,8 @@
   "frame_end": 3880,
   "model": "clip-bbox-padded-probe+decoder",
   "actions": [
+    "ClippingBladderNeck",
+    "PullingBladderNeck",
     "PullingTissue"
   ],
   "action_probs": {
@@ -32,15 +34,17 @@
     "UrethraDissection": 0.0861
   },
   "tools": [
+    "clip_applier",
     "grasper"
   ],
   "tissues": [
+    "bladder_neck",
     "generic_tissue"
   ],
   "events": [],
-  "phase": "prostate_dissection",
+  "phase": "bladder_neck_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "bladder_neck_dissection"
   ]
 }

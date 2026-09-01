@@ -6,6 +6,8 @@
   "frame_end": 4200,
   "model": "clip-linear-probe+decoder",
   "actions": [
+    "ClippingBladderNeck",
+    "PullingBladderNeck",
     "SuckingBlood",
     "SuckingSmoke"
   ],
@@ -33,9 +35,12 @@
     "UrethraDissection": 0.3194
   },
   "tools": [
+    "clip_applier",
+    "grasper",
     "suction_irrigator"
   ],
   "tissues": [
+    "bladder_neck",
     "blood",
     "smoke_plume"
   ],
@@ -43,9 +48,9 @@
     "blood_present",
     "smoke_present"
   ],
-  "phase": "prostate_dissection",
+  "phase": "bladder_neck_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "bladder_neck_dissection"
   ]
 }

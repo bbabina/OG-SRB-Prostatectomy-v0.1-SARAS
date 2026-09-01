@@ -6,22 +6,22 @@
   "frame_end": 5290,
   "model": "llava:7b",
   "actions": [
-    "CuttingProstate",
-    "CuttingSeminalVesicle",
-    "CuttingThread"
+    "SuckingBlood",
+    "ClippingBladderNeck",
+    "CuttingProstate"
   ],
   "action_probs": {
     "BaggingProstate": 0.0,
     "BladderAnastomosis": 0.0,
     "BladderNeckDissection": 0.0,
-    "ClippingBladderNeck": 0.0,
+    "ClippingBladderNeck": 0.85,
     "ClippingSeminalVesicle": 0.0,
     "ClippingTissue": 0.0,
     "ClippingVasDeferens": 0.0,
     "CuttingMesocolon": 0.0,
-    "CuttingProstate": 1.0,
-    "CuttingSeminalVesicle": 0.85,
-    "CuttingThread": 0.7,
+    "CuttingProstate": 0.7,
+    "CuttingSeminalVesicle": 0.0,
+    "CuttingThread": 0.0,
     "CuttingTissue": 0.0,
     "CuttingVasDeferens": 0.0,
     "PullingBladderNeck": 0.0,
@@ -29,26 +29,32 @@
     "PullingSeminalVesicle": 0.0,
     "PullingTissue": 0.0,
     "PullingVasDeferens": 0.0,
-    "SuckingBlood": 0.0,
+    "SuckingBlood": 1.0,
     "SuckingSmoke": 0.0,
     "UrethraDissection": 0.0
   },
+  "top1_prediction": "SuckingBlood",
   "tools": [
-    "monopolar_scissors"
+    "clip_applier",
+    "monopolar_scissors",
+    "suction_irrigator"
   ],
   "tissues": [
-    "prostate",
-    "seminal_vesicle",
-    "suture_thread"
+    "bladder_neck",
+    "blood",
+    "prostate"
   ],
-  "events": [],
-  "phase": "prostate_dissection",
+  "events": [
+    "blood_present"
+  ],
+  "phase": "bladder_neck_dissection",
   "phase_ambiguous": true,
   "phase_candidates": [
-    "bladder_anastomosis",
-    "prostate_dissection",
-    "vas_deferens_seminal_vesicle_dissection"
+    "bladder_neck_dissection",
+    "prostate_dissection"
   ],
-  "raw_response": " CuttingProstate, CuttingSeminalVesicle, CuttingThread ",
-  "hallucinated_tokens": []
+  "raw_response": " SuckingBlood, ClippingBladderNeck, CuttingProstate ",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json"
 }

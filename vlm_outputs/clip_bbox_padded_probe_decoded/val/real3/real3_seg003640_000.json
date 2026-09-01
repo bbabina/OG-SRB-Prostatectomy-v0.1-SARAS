@@ -6,8 +6,7 @@
   "frame_end": 3640,
   "model": "clip-bbox-padded-probe+decoder",
   "actions": [
-    "SuckingBlood",
-    "CuttingProstate"
+    "SuckingBlood"
   ],
   "action_probs": {
     "BaggingProstate": 0.0159,
@@ -33,19 +32,17 @@
     "UrethraDissection": 0.0814
   },
   "tools": [
-    "monopolar_scissors",
     "suction_irrigator"
   ],
   "tissues": [
-    "blood",
-    "prostate"
+    "blood"
   ],
   "events": [
     "blood_present"
   ],
-  "phase": "prostate_dissection",
+  "phase": "urethra_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "urethra_dissection"
   ]
 }

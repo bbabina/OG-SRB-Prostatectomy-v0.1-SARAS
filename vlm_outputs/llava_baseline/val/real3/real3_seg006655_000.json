@@ -7,14 +7,13 @@
   "model": "llava:7b",
   "actions": [
     "CuttingProstate",
-    "BladderNeckDissection",
-    "ClippingBladderNeck"
+    "PullingBladderNeck"
   ],
   "action_probs": {
     "BaggingProstate": 0.0,
     "BladderAnastomosis": 0.0,
-    "BladderNeckDissection": 0.85,
-    "ClippingBladderNeck": 0.7,
+    "BladderNeckDissection": 0.0,
+    "ClippingBladderNeck": 0.0,
     "ClippingSeminalVesicle": 0.0,
     "ClippingTissue": 0.0,
     "ClippingVasDeferens": 0.0,
@@ -24,7 +23,7 @@
     "CuttingThread": 0.0,
     "CuttingTissue": 0.0,
     "CuttingVasDeferens": 0.0,
-    "PullingBladderNeck": 0.0,
+    "PullingBladderNeck": 0.85,
     "PullingProstate": 0.0,
     "PullingSeminalVesicle": 0.0,
     "PullingTissue": 0.0,
@@ -33,8 +32,9 @@
     "SuckingSmoke": 0.0,
     "UrethraDissection": 0.0
   },
+  "top1_prediction": "CuttingProstate",
   "tools": [
-    "clip_applier",
+    "grasper",
     "monopolar_scissors"
   ],
   "tissues": [
@@ -42,12 +42,16 @@
     "prostate"
   ],
   "events": [],
-  "phase": "bladder_neck_dissection",
+  "phase": "prostate_dissection",
   "phase_ambiguous": true,
   "phase_candidates": [
     "bladder_neck_dissection",
     "prostate_dissection"
   ],
-  "raw_response": " CuttingProstate, BladderNeckDissection, ClippingBladderNeck ",
-  "hallucinated_tokens": []
+  "raw_response": " ClippingProstate, CuttingProstate, PullingBladderNeck ",
+  "hallucinated_tokens": [
+    "ClippingProstate"
+  ],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json"
 }

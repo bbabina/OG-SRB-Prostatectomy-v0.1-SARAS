@@ -8,11 +8,11 @@
   "actions": [
     "CuttingProstate",
     "ClippingBladderNeck",
-    "BladderAnastomosis"
+    "CuttingSeminalVesicle"
   ],
   "action_probs": {
     "BaggingProstate": 0.0,
-    "BladderAnastomosis": 0.7,
+    "BladderAnastomosis": 0.0,
     "BladderNeckDissection": 0.0,
     "ClippingBladderNeck": 0.85,
     "ClippingSeminalVesicle": 0.0,
@@ -20,7 +20,7 @@
     "ClippingVasDeferens": 0.0,
     "CuttingMesocolon": 0.0,
     "CuttingProstate": 1.0,
-    "CuttingSeminalVesicle": 0.0,
+    "CuttingSeminalVesicle": 0.7,
     "CuttingThread": 0.0,
     "CuttingTissue": 0.0,
     "CuttingVasDeferens": 0.0,
@@ -33,23 +33,26 @@
     "SuckingSmoke": 0.0,
     "UrethraDissection": 0.0
   },
+  "top1_prediction": "CuttingProstate",
   "tools": [
     "clip_applier",
-    "monopolar_scissors",
-    "needle_driver"
+    "monopolar_scissors"
   ],
   "tissues": [
     "bladder_neck",
-    "prostate"
+    "prostate",
+    "seminal_vesicle"
   ],
   "events": [],
   "phase": "prostate_dissection",
   "phase_ambiguous": true,
   "phase_candidates": [
-    "bladder_anastomosis",
     "bladder_neck_dissection",
-    "prostate_dissection"
+    "prostate_dissection",
+    "vas_deferens_seminal_vesicle_dissection"
   ],
-  "raw_response": " CuttingProstate, ClippingBladderNeck, BladderAnastomosis ",
-  "hallucinated_tokens": []
+  "raw_response": " CuttingProstate, ClippingBladderNeck, CuttingSeminalVesicle ",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json"
 }

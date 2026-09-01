@@ -1,0 +1,53 @@
+{
+  "segment_id": "real3_seg003792_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 3792,
+  "frame_end": 3792,
+  "model": "gpt-4o",
+  "actions": [
+    "CuttingTissue",
+    "CuttingProstate",
+    "CuttingSeminalVesicle"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0,
+    "BladderAnastomosis": 0.0,
+    "BladderNeckDissection": 0.0,
+    "ClippingBladderNeck": 0.0,
+    "ClippingSeminalVesicle": 0.0,
+    "ClippingTissue": 0.0,
+    "ClippingVasDeferens": 0.0,
+    "CuttingMesocolon": 0.0,
+    "CuttingProstate": 0.85,
+    "CuttingSeminalVesicle": 0.7,
+    "CuttingThread": 0.0,
+    "CuttingTissue": 1.0,
+    "CuttingVasDeferens": 0.0,
+    "PullingBladderNeck": 0.0,
+    "PullingProstate": 0.0,
+    "PullingSeminalVesicle": 0.0,
+    "PullingTissue": 0.0,
+    "PullingVasDeferens": 0.0,
+    "SuckingBlood": 0.0,
+    "SuckingSmoke": 0.0,
+    "UrethraDissection": 0.0
+  },
+  "tools": [
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "prostate",
+    "seminal_vesicle"
+  ],
+  "events": [],
+  "phase": "prostate_dissection",
+  "phase_ambiguous": true,
+  "phase_candidates": [
+    "prostate_dissection",
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "raw_response": "CuttingTissue, CuttingProstate, CuttingSeminalVesicle",
+  "hallucinated_tokens": []
+}

@@ -6,8 +6,7 @@
   "frame_end": 5875,
   "model": "llava:7b+decoder",
   "actions": [
-    "ClippingVasDeferens",
-    "CuttingSeminalVesicle"
+    "CuttingProstate"
   ],
   "action_probs": {
     "BaggingProstate": 0.0,
@@ -33,17 +32,15 @@
     "UrethraDissection": 0.0
   },
   "tools": [
-    "clip_applier",
     "monopolar_scissors"
   ],
   "tissues": [
-    "seminal_vesicle",
-    "vas_deferens"
+    "prostate"
   ],
   "events": [],
-  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase": "prostate_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "vas_deferens_seminal_vesicle_dissection"
+    "prostate_dissection"
   ]
 }

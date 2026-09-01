@@ -1,0 +1,59 @@
+{
+  "segment_id": "real3_seg000704_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 704,
+  "frame_end": 705,
+  "model": "gpt-4o",
+  "actions": [
+    "CuttingTissue",
+    "CuttingMesocolon",
+    "CuttingVasDeferens"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0,
+    "BladderAnastomosis": 0.0,
+    "BladderNeckDissection": 0.0,
+    "ClippingBladderNeck": 0.0,
+    "ClippingSeminalVesicle": 0.0,
+    "ClippingTissue": 0.0,
+    "ClippingVasDeferens": 0.0,
+    "CuttingMesocolon": 0.85,
+    "CuttingProstate": 0.0,
+    "CuttingSeminalVesicle": 0.0,
+    "CuttingThread": 0.0,
+    "CuttingTissue": 1.0,
+    "CuttingVasDeferens": 0.7,
+    "PullingBladderNeck": 0.0,
+    "PullingProstate": 0.0,
+    "PullingSeminalVesicle": 0.0,
+    "PullingTissue": 0.0,
+    "PullingVasDeferens": 0.0,
+    "SuckingBlood": 0.0,
+    "SuckingSmoke": 0.0,
+    "UrethraDissection": 0.0
+  },
+  "top1_prediction": "CuttingTissue",
+  "tools": [
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "mesocolon",
+    "vas_deferens"
+  ],
+  "events": [],
+  "phase": "mesocolon_mobilization",
+  "phase_ambiguous": true,
+  "phase_candidates": [
+    "mesocolon_mobilization",
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "raw_response": "CuttingTissue, CuttingMesocolon, CuttingVasDeferens",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json",
+  "image_detail": "high",
+  "prompt_variant": "ontology_grounded",
+  "probability_status": "rank_pseudo_scores_not_calibrated"
+}

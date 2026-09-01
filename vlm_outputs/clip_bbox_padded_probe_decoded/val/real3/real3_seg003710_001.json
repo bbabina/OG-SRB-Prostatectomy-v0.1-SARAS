@@ -6,7 +6,9 @@
   "frame_end": 3712,
   "model": "clip-bbox-padded-probe+decoder",
   "actions": [
-    "CuttingTissue"
+    "CuttingTissue",
+    "BladderNeckDissection",
+    "PullingBladderNeck"
   ],
   "action_probs": {
     "BaggingProstate": 0.0061,
@@ -32,15 +34,17 @@
     "UrethraDissection": 0.082
   },
   "tools": [
+    "grasper",
     "monopolar_scissors"
   ],
   "tissues": [
+    "bladder_neck",
     "generic_tissue"
   ],
   "events": [],
-  "phase": "prostate_dissection",
+  "phase": "bladder_neck_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "bladder_neck_dissection"
   ]
 }

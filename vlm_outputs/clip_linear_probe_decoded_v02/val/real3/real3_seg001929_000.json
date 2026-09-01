@@ -1,0 +1,75 @@
+{
+  "segment_id": "real3_seg001929_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 1929,
+  "frame_end": 1930,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "CuttingSeminalVesicle",
+    "PullingSeminalVesicle",
+    "SuckingSmoke"
+  ],
+  "raw_actions": [
+    "CuttingSeminalVesicle",
+    "PullingSeminalVesicle",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.1203,
+    "BladderAnastomosis": 0.1855,
+    "BladderNeckDissection": 0.2653,
+    "ClippingBladderNeck": 0.2718,
+    "ClippingSeminalVesicle": 0.3688,
+    "ClippingTissue": 0.243,
+    "ClippingVasDeferens": 0.1307,
+    "CuttingMesocolon": 0.021,
+    "CuttingProstate": 0.2476,
+    "CuttingSeminalVesicle": 0.587,
+    "CuttingThread": 0.0247,
+    "CuttingTissue": 0.1886,
+    "CuttingVasDeferens": 0.0205,
+    "PullingBladderNeck": 0.3953,
+    "PullingProstate": 0.2728,
+    "PullingSeminalVesicle": 0.6921,
+    "PullingTissue": 0.199,
+    "PullingVasDeferens": 0.4055,
+    "SuckingBlood": 0.4117,
+    "SuckingSmoke": 0.5329,
+    "UrethraDissection": 0.1025
+  },
+  "raw_top1_prediction": "PullingSeminalVesicle",
+  "top1_prediction": "PullingSeminalVesicle",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "seminal_vesicle",
+    "smoke_plume"
+  ],
+  "events": [
+    "smoke_present"
+  ],
+  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

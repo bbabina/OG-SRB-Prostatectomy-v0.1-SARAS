@@ -1,0 +1,69 @@
+{
+  "segment_id": "real3_seg000591_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 591,
+  "frame_end": 591,
+  "model": "clip-bbox-padded-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "PullingTissue",
+    "PullingSeminalVesicle"
+  ],
+  "raw_actions": [
+    "PullingTissue",
+    "PullingSeminalVesicle"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0009,
+    "BladderAnastomosis": 0.0005,
+    "BladderNeckDissection": 0.0103,
+    "ClippingBladderNeck": 0.0007,
+    "ClippingSeminalVesicle": 0.0012,
+    "ClippingTissue": 0.0725,
+    "ClippingVasDeferens": 0.0151,
+    "CuttingMesocolon": 0.0045,
+    "CuttingProstate": 0.0021,
+    "CuttingSeminalVesicle": 0.1496,
+    "CuttingThread": 0.0013,
+    "CuttingTissue": 0.0678,
+    "CuttingVasDeferens": 0.0115,
+    "PullingBladderNeck": 0.0168,
+    "PullingProstate": 0.0121,
+    "PullingSeminalVesicle": 0.1847,
+    "PullingTissue": 0.2555,
+    "PullingVasDeferens": 0.0476,
+    "SuckingBlood": 0.062,
+    "SuckingSmoke": 0.0793,
+    "UrethraDissection": 0.0039
+  },
+  "raw_top1_prediction": "PullingTissue",
+  "top1_prediction": "PullingTissue",
+  "tools": [
+    "grasper"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "seminal_vesicle"
+  ],
+  "events": [],
+  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

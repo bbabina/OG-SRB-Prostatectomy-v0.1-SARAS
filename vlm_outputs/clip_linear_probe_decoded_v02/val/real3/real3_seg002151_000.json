@@ -1,0 +1,78 @@
+{
+  "segment_id": "real3_seg002151_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 2151,
+  "frame_end": 2152,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "PullingTissue",
+    "SuckingSmoke"
+  ],
+  "raw_actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "PullingTissue",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0511,
+    "BladderAnastomosis": 0.005,
+    "BladderNeckDissection": 0.0342,
+    "ClippingBladderNeck": 0.0363,
+    "ClippingSeminalVesicle": 0.0609,
+    "ClippingTissue": 0.1773,
+    "ClippingVasDeferens": 0.311,
+    "CuttingMesocolon": 0.5234,
+    "CuttingProstate": 0.1255,
+    "CuttingSeminalVesicle": 0.2097,
+    "CuttingThread": 0.0232,
+    "CuttingTissue": 0.7796,
+    "CuttingVasDeferens": 0.1447,
+    "PullingBladderNeck": 0.0282,
+    "PullingProstate": 0.1036,
+    "PullingSeminalVesicle": 0.2112,
+    "PullingTissue": 0.8877,
+    "PullingVasDeferens": 0.2429,
+    "SuckingBlood": 0.1513,
+    "SuckingSmoke": 0.7137,
+    "UrethraDissection": 0.1557
+  },
+  "raw_top1_prediction": "PullingTissue",
+  "top1_prediction": "PullingTissue",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "mesocolon",
+    "smoke_plume"
+  ],
+  "events": [
+    "smoke_present"
+  ],
+  "phase": "mesocolon_mobilization",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "mesocolon_mobilization"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

@@ -7,18 +7,18 @@
   "model": "llava:7b",
   "actions": [
     "BaggingProstate",
-    "BladderAnastomosis",
-    "BladderNeckDissection"
+    "ClippingBladderNeck",
+    "CuttingMesocolon"
   ],
   "action_probs": {
     "BaggingProstate": 1.0,
-    "BladderAnastomosis": 0.85,
-    "BladderNeckDissection": 0.7,
-    "ClippingBladderNeck": 0.0,
+    "BladderAnastomosis": 0.0,
+    "BladderNeckDissection": 0.0,
+    "ClippingBladderNeck": 0.85,
     "ClippingSeminalVesicle": 0.0,
     "ClippingTissue": 0.0,
     "ClippingVasDeferens": 0.0,
-    "CuttingMesocolon": 0.0,
+    "CuttingMesocolon": 0.7,
     "CuttingProstate": 0.0,
     "CuttingSeminalVesicle": 0.0,
     "CuttingThread": 0.0,
@@ -33,23 +33,27 @@
     "SuckingSmoke": 0.0,
     "UrethraDissection": 0.0
   },
+  "top1_prediction": "BaggingProstate",
   "tools": [
+    "clip_applier",
     "monopolar_scissors",
-    "needle_driver",
     "specimen_bag"
   ],
   "tissues": [
     "bladder_neck",
+    "mesocolon",
     "prostate"
   ],
   "events": [],
   "phase": "specimen_bagging",
   "phase_ambiguous": true,
   "phase_candidates": [
-    "bladder_anastomosis",
     "bladder_neck_dissection",
+    "mesocolon_mobilization",
     "specimen_bagging"
   ],
-  "raw_response": " BaggingProstate, BladderAnastomosis, BladderNeckDissection ",
-  "hallucinated_tokens": []
+  "raw_response": " BaggingProstate, ClippingBladderNeck, CuttingMesocolon ",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json"
 }

@@ -6,7 +6,8 @@
   "frame_end": 2610,
   "model": "gemini-3.5-flash-lite",
   "actions": [
-    "ClippingTissue"
+    "ClippingTissue",
+    "PullingTissue"
   ],
   "action_probs": {
     "BaggingProstate": 0.0,
@@ -25,14 +26,16 @@
     "PullingBladderNeck": 0.0,
     "PullingProstate": 0.0,
     "PullingSeminalVesicle": 0.0,
-    "PullingTissue": 0.0,
+    "PullingTissue": 0.85,
     "PullingVasDeferens": 0.0,
     "SuckingBlood": 0.0,
     "SuckingSmoke": 0.0,
     "UrethraDissection": 0.0
   },
+  "top1_prediction": "ClippingTissue",
   "tools": [
-    "clip_applier"
+    "clip_applier",
+    "grasper"
   ],
   "tissues": [
     "generic_tissue"
@@ -41,6 +44,8 @@
   "phase": null,
   "phase_ambiguous": false,
   "phase_candidates": [],
-  "raw_response": "ClippingTissue",
-  "hallucinated_tokens": []
+  "raw_response": "ClippingTissue, PullingTissue",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json"
 }

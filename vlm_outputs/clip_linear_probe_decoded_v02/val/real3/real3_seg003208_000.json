@@ -1,0 +1,77 @@
+{
+  "segment_id": "real3_seg003208_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 3208,
+  "frame_end": 3208,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "CuttingProstate",
+    "PullingProstate",
+    "SuckingBlood"
+  ],
+  "raw_actions": [
+    "CuttingProstate",
+    "PullingBladderNeck",
+    "PullingProstate",
+    "SuckingBlood",
+    "UrethraDissection"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.083,
+    "BladderAnastomosis": 0.1196,
+    "BladderNeckDissection": 0.4318,
+    "ClippingBladderNeck": 0.398,
+    "ClippingSeminalVesicle": 0.0432,
+    "ClippingTissue": 0.0705,
+    "ClippingVasDeferens": 0.016,
+    "CuttingMesocolon": 0.027,
+    "CuttingProstate": 0.8893,
+    "CuttingSeminalVesicle": 0.2158,
+    "CuttingThread": 0.0249,
+    "CuttingTissue": 0.4556,
+    "CuttingVasDeferens": 0.0483,
+    "PullingBladderNeck": 0.6063,
+    "PullingProstate": 0.7668,
+    "PullingSeminalVesicle": 0.2078,
+    "PullingTissue": 0.2298,
+    "PullingVasDeferens": 0.0739,
+    "SuckingBlood": 0.6035,
+    "SuckingSmoke": 0.3583,
+    "UrethraDissection": 0.8289
+  },
+  "raw_top1_prediction": "CuttingProstate",
+  "top1_prediction": "CuttingProstate",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "blood",
+    "prostate"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "prostate_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "prostate_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

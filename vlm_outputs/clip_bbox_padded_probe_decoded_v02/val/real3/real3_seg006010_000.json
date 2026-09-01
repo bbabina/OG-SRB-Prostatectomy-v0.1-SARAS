@@ -1,0 +1,68 @@
+{
+  "segment_id": "real3_seg006010_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 6010,
+  "frame_end": 6011,
+  "model": "clip-bbox-padded-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "BladderAnastomosis"
+  ],
+  "raw_actions": [
+    "BladderAnastomosis",
+    "BladderNeckDissection"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0571,
+    "BladderAnastomosis": 0.7011,
+    "BladderNeckDissection": 0.2485,
+    "ClippingBladderNeck": 0.0813,
+    "ClippingSeminalVesicle": 0.0024,
+    "ClippingTissue": 0.0029,
+    "ClippingVasDeferens": 0.0064,
+    "CuttingMesocolon": 0.0043,
+    "CuttingProstate": 0.0287,
+    "CuttingSeminalVesicle": 0.006,
+    "CuttingThread": 0.0727,
+    "CuttingTissue": 0.0031,
+    "CuttingVasDeferens": 0.0108,
+    "PullingBladderNeck": 0.0082,
+    "PullingProstate": 0.0068,
+    "PullingSeminalVesicle": 0.0133,
+    "PullingTissue": 0.0037,
+    "PullingVasDeferens": 0.0027,
+    "SuckingBlood": 0.0083,
+    "SuckingSmoke": 0.0029,
+    "UrethraDissection": 0.0356
+  },
+  "raw_top1_prediction": "BladderAnastomosis",
+  "top1_prediction": "BladderAnastomosis",
+  "tools": [
+    "needle_driver"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "urethra"
+  ],
+  "events": [],
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "bladder_anastomosis"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

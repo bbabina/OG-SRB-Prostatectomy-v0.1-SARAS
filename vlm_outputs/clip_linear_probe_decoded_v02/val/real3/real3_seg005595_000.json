@@ -1,0 +1,77 @@
+{
+  "segment_id": "real3_seg005595_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 5595,
+  "frame_end": 5595,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "BladderAnastomosis",
+    "SuckingBlood"
+  ],
+  "raw_actions": [
+    "BladderAnastomosis",
+    "ClippingBladderNeck",
+    "CuttingProstate",
+    "PullingBladderNeck",
+    "SuckingBlood",
+    "UrethraDissection"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.1328,
+    "BladderAnastomosis": 0.9065,
+    "BladderNeckDissection": 0.2501,
+    "ClippingBladderNeck": 0.7631,
+    "ClippingSeminalVesicle": 0.055,
+    "ClippingTissue": 0.1685,
+    "ClippingVasDeferens": 0.0482,
+    "CuttingMesocolon": 0.0149,
+    "CuttingProstate": 0.5067,
+    "CuttingSeminalVesicle": 0.0334,
+    "CuttingThread": 0.3269,
+    "CuttingTissue": 0.1153,
+    "CuttingVasDeferens": 0.0476,
+    "PullingBladderNeck": 0.8745,
+    "PullingProstate": 0.2881,
+    "PullingSeminalVesicle": 0.0458,
+    "PullingTissue": 0.2026,
+    "PullingVasDeferens": 0.0357,
+    "SuckingBlood": 0.5075,
+    "SuckingSmoke": 0.217,
+    "UrethraDissection": 0.6695
+  },
+  "raw_top1_prediction": "BladderAnastomosis",
+  "top1_prediction": "BladderAnastomosis",
+  "tools": [
+    "needle_driver",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "blood",
+    "urethra"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "bladder_anastomosis"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

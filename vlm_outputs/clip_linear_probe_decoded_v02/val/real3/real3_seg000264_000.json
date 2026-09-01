@@ -1,0 +1,74 @@
+{
+  "segment_id": "real3_seg000264_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 264,
+  "frame_end": 264,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "PullingTissue"
+  ],
+  "raw_actions": [
+    "ClippingVasDeferens",
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "CuttingVasDeferens",
+    "PullingTissue"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0176,
+    "BladderAnastomosis": 0.0106,
+    "BladderNeckDissection": 0.0157,
+    "ClippingBladderNeck": 0.0262,
+    "ClippingSeminalVesicle": 0.0048,
+    "ClippingTissue": 0.0361,
+    "ClippingVasDeferens": 0.518,
+    "CuttingMesocolon": 0.9916,
+    "CuttingProstate": 0.0627,
+    "CuttingSeminalVesicle": 0.0083,
+    "CuttingThread": 0.056,
+    "CuttingTissue": 0.6794,
+    "CuttingVasDeferens": 0.8969,
+    "PullingBladderNeck": 0.0255,
+    "PullingProstate": 0.0432,
+    "PullingSeminalVesicle": 0.0395,
+    "PullingTissue": 0.9337,
+    "PullingVasDeferens": 0.3642,
+    "SuckingBlood": 0.0526,
+    "SuckingSmoke": 0.4638,
+    "UrethraDissection": 0.0753
+  },
+  "raw_top1_prediction": "CuttingMesocolon",
+  "top1_prediction": "CuttingMesocolon",
+  "tools": [
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "mesocolon"
+  ],
+  "events": [],
+  "phase": "mesocolon_mobilization",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "mesocolon_mobilization"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

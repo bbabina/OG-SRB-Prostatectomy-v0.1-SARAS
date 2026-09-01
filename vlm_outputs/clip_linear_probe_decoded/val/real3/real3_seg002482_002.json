@@ -6,11 +6,9 @@
   "frame_end": 2487,
   "model": "clip-linear-probe+decoder",
   "actions": [
-    "ClippingVasDeferens",
+    "CuttingMesocolon",
     "CuttingTissue",
-    "PullingSeminalVesicle",
-    "PullingTissue",
-    "PullingVasDeferens"
+    "PullingTissue"
   ],
   "action_probs": {
     "BaggingProstate": 0.0087,
@@ -36,19 +34,17 @@
     "UrethraDissection": 0.0394
   },
   "tools": [
-    "clip_applier",
     "grasper",
     "monopolar_scissors"
   ],
   "tissues": [
     "generic_tissue",
-    "seminal_vesicle",
-    "vas_deferens"
+    "mesocolon"
   ],
   "events": [],
-  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase": "mesocolon_mobilization",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "vas_deferens_seminal_vesicle_dissection"
+    "mesocolon_mobilization"
   ]
 }

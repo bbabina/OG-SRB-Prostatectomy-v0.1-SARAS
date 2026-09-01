@@ -1,0 +1,78 @@
+{
+  "segment_id": "real3_seg000219_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 219,
+  "frame_end": 219,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "PullingTissue",
+    "SuckingSmoke"
+  ],
+  "raw_actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "PullingTissue",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0061,
+    "BladderAnastomosis": 0.0176,
+    "BladderNeckDissection": 0.0407,
+    "ClippingBladderNeck": 0.0329,
+    "ClippingSeminalVesicle": 0.0106,
+    "ClippingTissue": 0.0313,
+    "ClippingVasDeferens": 0.153,
+    "CuttingMesocolon": 0.8872,
+    "CuttingProstate": 0.072,
+    "CuttingSeminalVesicle": 0.0577,
+    "CuttingThread": 0.0321,
+    "CuttingTissue": 0.5505,
+    "CuttingVasDeferens": 0.2362,
+    "PullingBladderNeck": 0.0316,
+    "PullingProstate": 0.0441,
+    "PullingSeminalVesicle": 0.0836,
+    "PullingTissue": 0.8252,
+    "PullingVasDeferens": 0.0623,
+    "SuckingBlood": 0.2168,
+    "SuckingSmoke": 0.6431,
+    "UrethraDissection": 0.1914
+  },
+  "raw_top1_prediction": "CuttingMesocolon",
+  "top1_prediction": "CuttingMesocolon",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "mesocolon",
+    "smoke_plume"
+  ],
+  "events": [
+    "smoke_present"
+  ],
+  "phase": "mesocolon_mobilization",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "mesocolon_mobilization"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

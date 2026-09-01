@@ -1,0 +1,53 @@
+{
+  "segment_id": "real3_seg003632_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 3632,
+  "frame_end": 3632,
+  "model": "gpt-4o",
+  "actions": [
+    "CuttingProstate",
+    "CuttingTissue",
+    "CuttingThread"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0,
+    "BladderAnastomosis": 0.0,
+    "BladderNeckDissection": 0.0,
+    "ClippingBladderNeck": 0.0,
+    "ClippingSeminalVesicle": 0.0,
+    "ClippingTissue": 0.0,
+    "ClippingVasDeferens": 0.0,
+    "CuttingMesocolon": 0.0,
+    "CuttingProstate": 1.0,
+    "CuttingSeminalVesicle": 0.0,
+    "CuttingThread": 0.7,
+    "CuttingTissue": 0.85,
+    "CuttingVasDeferens": 0.0,
+    "PullingBladderNeck": 0.0,
+    "PullingProstate": 0.0,
+    "PullingSeminalVesicle": 0.0,
+    "PullingTissue": 0.0,
+    "PullingVasDeferens": 0.0,
+    "SuckingBlood": 0.0,
+    "SuckingSmoke": 0.0,
+    "UrethraDissection": 0.0
+  },
+  "tools": [
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "prostate",
+    "suture_thread"
+  ],
+  "events": [],
+  "phase": "prostate_dissection",
+  "phase_ambiguous": true,
+  "phase_candidates": [
+    "bladder_anastomosis",
+    "prostate_dissection"
+  ],
+  "raw_response": "CuttingProstate, CuttingTissue, CuttingThread",
+  "hallucinated_tokens": []
+}

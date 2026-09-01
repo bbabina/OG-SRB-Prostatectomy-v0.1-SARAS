@@ -6,6 +6,7 @@
   "frame_end": 3591,
   "model": "clip-bbox-padded-probe+decoder",
   "actions": [
+    "UrethraDissection",
     "SuckingSmoke"
   ],
   "action_probs": {
@@ -32,17 +33,19 @@
     "UrethraDissection": 0.2673
   },
   "tools": [
+    "monopolar_scissors",
     "suction_irrigator"
   ],
   "tissues": [
-    "smoke_plume"
+    "smoke_plume",
+    "urethra"
   ],
   "events": [
     "smoke_present"
   ],
-  "phase": "prostate_dissection",
+  "phase": "urethra_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "urethra_dissection"
   ]
 }

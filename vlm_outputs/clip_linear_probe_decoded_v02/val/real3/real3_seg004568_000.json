@@ -1,0 +1,73 @@
+{
+  "segment_id": "real3_seg004568_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 4568,
+  "frame_end": 4568,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "PullingSeminalVesicle",
+    "SuckingBlood"
+  ],
+  "raw_actions": [
+    "CuttingProstate",
+    "PullingSeminalVesicle",
+    "SuckingBlood"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.221,
+    "BladderAnastomosis": 0.0577,
+    "BladderNeckDissection": 0.3807,
+    "ClippingBladderNeck": 0.3971,
+    "ClippingSeminalVesicle": 0.0664,
+    "ClippingTissue": 0.0301,
+    "ClippingVasDeferens": 0.033,
+    "CuttingMesocolon": 0.057,
+    "CuttingProstate": 0.5997,
+    "CuttingSeminalVesicle": 0.488,
+    "CuttingThread": 0.0063,
+    "CuttingTissue": 0.3836,
+    "CuttingVasDeferens": 0.0762,
+    "PullingBladderNeck": 0.4981,
+    "PullingProstate": 0.4013,
+    "PullingSeminalVesicle": 0.5745,
+    "PullingTissue": 0.1967,
+    "PullingVasDeferens": 0.101,
+    "SuckingBlood": 0.5043,
+    "SuckingSmoke": 0.3349,
+    "UrethraDissection": 0.4189
+  },
+  "raw_top1_prediction": "CuttingProstate",
+  "top1_prediction": "PullingSeminalVesicle",
+  "tools": [
+    "grasper",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "blood",
+    "seminal_vesicle"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

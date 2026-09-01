@@ -1,0 +1,57 @@
+{
+  "segment_id": "real3_seg004289_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 4289,
+  "frame_end": 4289,
+  "model": "gpt-4o",
+  "actions": [
+    "CuttingSeminalVesicle",
+    "ClippingSeminalVesicle",
+    "PullingSeminalVesicle"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0,
+    "BladderAnastomosis": 0.0,
+    "BladderNeckDissection": 0.0,
+    "ClippingBladderNeck": 0.0,
+    "ClippingSeminalVesicle": 0.85,
+    "ClippingTissue": 0.0,
+    "ClippingVasDeferens": 0.0,
+    "CuttingMesocolon": 0.0,
+    "CuttingProstate": 0.0,
+    "CuttingSeminalVesicle": 1.0,
+    "CuttingThread": 0.0,
+    "CuttingTissue": 0.0,
+    "CuttingVasDeferens": 0.0,
+    "PullingBladderNeck": 0.0,
+    "PullingProstate": 0.0,
+    "PullingSeminalVesicle": 0.7,
+    "PullingTissue": 0.0,
+    "PullingVasDeferens": 0.0,
+    "SuckingBlood": 0.0,
+    "SuckingSmoke": 0.0,
+    "UrethraDissection": 0.0
+  },
+  "top1_prediction": "CuttingSeminalVesicle",
+  "tools": [
+    "clip_applier",
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "seminal_vesicle"
+  ],
+  "events": [],
+  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "raw_response": "CuttingSeminalVesicle, ClippingSeminalVesicle, PullingSeminalVesicle",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json",
+  "image_detail": "high",
+  "probability_status": "rank_pseudo_scores_not_calibrated"
+}

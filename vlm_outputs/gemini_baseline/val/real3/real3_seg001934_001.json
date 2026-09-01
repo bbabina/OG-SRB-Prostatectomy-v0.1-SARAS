@@ -7,7 +7,7 @@
   "model": "gemini-3.5-flash-lite",
   "actions": [
     "SuckingBlood",
-    "ClippingTissue",
+    "PullingTissue",
     "CuttingTissue"
   ],
   "action_probs": {
@@ -16,7 +16,7 @@
     "BladderNeckDissection": 0.0,
     "ClippingBladderNeck": 0.0,
     "ClippingSeminalVesicle": 0.0,
-    "ClippingTissue": 0.85,
+    "ClippingTissue": 0.0,
     "ClippingVasDeferens": 0.0,
     "CuttingMesocolon": 0.0,
     "CuttingProstate": 0.0,
@@ -27,14 +27,15 @@
     "PullingBladderNeck": 0.0,
     "PullingProstate": 0.0,
     "PullingSeminalVesicle": 0.0,
-    "PullingTissue": 0.0,
+    "PullingTissue": 0.85,
     "PullingVasDeferens": 0.0,
     "SuckingBlood": 1.0,
     "SuckingSmoke": 0.0,
     "UrethraDissection": 0.0
   },
+  "top1_prediction": "SuckingBlood",
   "tools": [
-    "clip_applier",
+    "grasper",
     "monopolar_scissors",
     "suction_irrigator"
   ],
@@ -48,6 +49,8 @@
   "phase": null,
   "phase_ambiguous": false,
   "phase_candidates": [],
-  "raw_response": "SuckingBlood, ClippingTissue, CuttingTissue",
-  "hallucinated_tokens": []
+  "raw_response": "SuckingBlood, PullingTissue, CuttingTissue",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json"
 }

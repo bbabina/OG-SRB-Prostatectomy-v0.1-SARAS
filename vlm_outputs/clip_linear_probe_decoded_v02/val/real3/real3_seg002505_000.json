@@ -1,0 +1,77 @@
+{
+  "segment_id": "real3_seg002505_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 2505,
+  "frame_end": 2506,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "ClippingTissue",
+    "CuttingTissue",
+    "CuttingVasDeferens",
+    "PullingTissue",
+    "PullingVasDeferens"
+  ],
+  "raw_actions": [
+    "ClippingTissue",
+    "CuttingTissue",
+    "CuttingVasDeferens",
+    "PullingTissue",
+    "PullingVasDeferens"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.013,
+    "BladderAnastomosis": 0.0107,
+    "BladderNeckDissection": 0.0246,
+    "ClippingBladderNeck": 0.0225,
+    "ClippingSeminalVesicle": 0.0641,
+    "ClippingTissue": 0.5139,
+    "ClippingVasDeferens": 0.4045,
+    "CuttingMesocolon": 0.3975,
+    "CuttingProstate": 0.0438,
+    "CuttingSeminalVesicle": 0.22,
+    "CuttingThread": 0.0281,
+    "CuttingTissue": 0.7,
+    "CuttingVasDeferens": 0.5421,
+    "PullingBladderNeck": 0.0325,
+    "PullingProstate": 0.0797,
+    "PullingSeminalVesicle": 0.3576,
+    "PullingTissue": 0.8398,
+    "PullingVasDeferens": 0.5656,
+    "SuckingBlood": 0.1476,
+    "SuckingSmoke": 0.3906,
+    "UrethraDissection": 0.0351
+  },
+  "raw_top1_prediction": "PullingTissue",
+  "top1_prediction": "PullingTissue",
+  "tools": [
+    "clip_applier",
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "vas_deferens"
+  ],
+  "events": [],
+  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

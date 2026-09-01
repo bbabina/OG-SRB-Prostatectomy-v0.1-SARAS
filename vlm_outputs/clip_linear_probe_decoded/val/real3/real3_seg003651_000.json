@@ -7,7 +7,8 @@
   "model": "clip-linear-probe+decoder",
   "actions": [
     "SuckingBlood",
-    "SuckingSmoke"
+    "SuckingSmoke",
+    "UrethraDissection"
   ],
   "action_probs": {
     "BaggingProstate": 0.0247,
@@ -33,19 +34,21 @@
     "UrethraDissection": 0.5006
   },
   "tools": [
+    "monopolar_scissors",
     "suction_irrigator"
   ],
   "tissues": [
     "blood",
-    "smoke_plume"
+    "smoke_plume",
+    "urethra"
   ],
   "events": [
     "blood_present",
     "smoke_present"
   ],
-  "phase": "prostate_dissection",
+  "phase": "urethra_dissection",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "prostate_dissection"
+    "urethra_dissection"
   ]
 }

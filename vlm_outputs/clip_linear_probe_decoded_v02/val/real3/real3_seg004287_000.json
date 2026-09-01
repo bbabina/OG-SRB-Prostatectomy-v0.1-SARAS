@@ -1,0 +1,75 @@
+{
+  "segment_id": "real3_seg004287_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 4287,
+  "frame_end": 4287,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "ClippingBladderNeck",
+    "PullingBladderNeck",
+    "SuckingBlood"
+  ],
+  "raw_actions": [
+    "ClippingBladderNeck",
+    "PullingBladderNeck",
+    "SuckingBlood"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0843,
+    "BladderAnastomosis": 0.4828,
+    "BladderNeckDissection": 0.2769,
+    "ClippingBladderNeck": 0.5071,
+    "ClippingSeminalVesicle": 0.1201,
+    "ClippingTissue": 0.4654,
+    "ClippingVasDeferens": 0.0757,
+    "CuttingMesocolon": 0.0187,
+    "CuttingProstate": 0.3846,
+    "CuttingSeminalVesicle": 0.1943,
+    "CuttingThread": 0.383,
+    "CuttingTissue": 0.1365,
+    "CuttingVasDeferens": 0.0222,
+    "PullingBladderNeck": 0.5556,
+    "PullingProstate": 0.3117,
+    "PullingSeminalVesicle": 0.3157,
+    "PullingTissue": 0.2774,
+    "PullingVasDeferens": 0.1602,
+    "SuckingBlood": 0.5796,
+    "SuckingSmoke": 0.4961,
+    "UrethraDissection": 0.3638
+  },
+  "raw_top1_prediction": "SuckingBlood",
+  "top1_prediction": "SuckingBlood",
+  "tools": [
+    "clip_applier",
+    "grasper",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "blood"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "bladder_neck_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "bladder_neck_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

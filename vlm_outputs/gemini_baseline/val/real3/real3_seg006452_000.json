@@ -32,13 +32,15 @@
     "SuckingSmoke": 0.0,
     "UrethraDissection": 0.0
   },
+  "top1_prediction": "BladderAnastomosis",
   "tools": [
     "needle_driver",
     "suction_irrigator"
   ],
   "tissues": [
     "bladder_neck",
-    "blood"
+    "blood",
+    "urethra"
   ],
   "events": [
     "blood_present"
@@ -49,5 +51,7 @@
     "bladder_anastomosis"
   ],
   "raw_response": "BladderAnastomosis, SuckingBlood",
-  "hallucinated_tokens": []
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json"
 }

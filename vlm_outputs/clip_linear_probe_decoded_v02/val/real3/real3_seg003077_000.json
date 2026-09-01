@@ -1,0 +1,74 @@
+{
+  "segment_id": "real3_seg003077_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 3077,
+  "frame_end": 3078,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "CuttingProstate",
+    "CuttingTissue",
+    "PullingProstate"
+  ],
+  "raw_actions": [
+    "CuttingProstate",
+    "CuttingTissue",
+    "PullingBladderNeck",
+    "PullingProstate",
+    "UrethraDissection"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0638,
+    "BladderAnastomosis": 0.0535,
+    "BladderNeckDissection": 0.4052,
+    "ClippingBladderNeck": 0.0996,
+    "ClippingSeminalVesicle": 0.0524,
+    "ClippingTissue": 0.1756,
+    "ClippingVasDeferens": 0.0468,
+    "CuttingMesocolon": 0.0107,
+    "CuttingProstate": 0.8905,
+    "CuttingSeminalVesicle": 0.4198,
+    "CuttingThread": 0.0148,
+    "CuttingTissue": 0.5763,
+    "CuttingVasDeferens": 0.1119,
+    "PullingBladderNeck": 0.501,
+    "PullingProstate": 0.905,
+    "PullingSeminalVesicle": 0.4437,
+    "PullingTissue": 0.4499,
+    "PullingVasDeferens": 0.2111,
+    "SuckingBlood": 0.3762,
+    "SuckingSmoke": 0.4091,
+    "UrethraDissection": 0.5217
+  },
+  "raw_top1_prediction": "PullingProstate",
+  "top1_prediction": "PullingProstate",
+  "tools": [
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "prostate"
+  ],
+  "events": [],
+  "phase": "prostate_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "prostate_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

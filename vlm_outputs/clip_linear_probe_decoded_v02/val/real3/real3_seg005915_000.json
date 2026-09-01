@@ -1,0 +1,75 @@
+{
+  "segment_id": "real3_seg005915_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 5915,
+  "frame_end": 5915,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "BladderAnastomosis",
+    "SuckingBlood"
+  ],
+  "raw_actions": [
+    "BladderAnastomosis",
+    "PullingBladderNeck",
+    "SuckingBlood",
+    "UrethraDissection"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0397,
+    "BladderAnastomosis": 0.8284,
+    "BladderNeckDissection": 0.3402,
+    "ClippingBladderNeck": 0.3929,
+    "ClippingSeminalVesicle": 0.0523,
+    "ClippingTissue": 0.1453,
+    "ClippingVasDeferens": 0.0274,
+    "CuttingMesocolon": 0.0159,
+    "CuttingProstate": 0.3451,
+    "CuttingSeminalVesicle": 0.1005,
+    "CuttingThread": 0.3884,
+    "CuttingTissue": 0.057,
+    "CuttingVasDeferens": 0.022,
+    "PullingBladderNeck": 0.7193,
+    "PullingProstate": 0.3093,
+    "PullingSeminalVesicle": 0.2707,
+    "PullingTissue": 0.1305,
+    "PullingVasDeferens": 0.0419,
+    "SuckingBlood": 0.6214,
+    "SuckingSmoke": 0.2278,
+    "UrethraDissection": 0.5123
+  },
+  "raw_top1_prediction": "BladderAnastomosis",
+  "top1_prediction": "BladderAnastomosis",
+  "tools": [
+    "needle_driver",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "blood",
+    "urethra"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "bladder_anastomosis"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

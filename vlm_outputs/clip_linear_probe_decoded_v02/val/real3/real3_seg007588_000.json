@@ -1,0 +1,78 @@
+{
+  "segment_id": "real3_seg007588_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 7588,
+  "frame_end": 7588,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "BladderAnastomosis",
+    "CuttingThread",
+    "SuckingBlood"
+  ],
+  "raw_actions": [
+    "BladderAnastomosis",
+    "CuttingThread",
+    "PullingBladderNeck",
+    "SuckingBlood"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.1329,
+    "BladderAnastomosis": 0.8181,
+    "BladderNeckDissection": 0.0841,
+    "ClippingBladderNeck": 0.2614,
+    "ClippingSeminalVesicle": 0.0642,
+    "ClippingTissue": 0.1624,
+    "ClippingVasDeferens": 0.0499,
+    "CuttingMesocolon": 0.0117,
+    "CuttingProstate": 0.0693,
+    "CuttingSeminalVesicle": 0.1403,
+    "CuttingThread": 0.6063,
+    "CuttingTissue": 0.0805,
+    "CuttingVasDeferens": 0.008,
+    "PullingBladderNeck": 0.5232,
+    "PullingProstate": 0.0901,
+    "PullingSeminalVesicle": 0.2972,
+    "PullingTissue": 0.3208,
+    "PullingVasDeferens": 0.1031,
+    "SuckingBlood": 0.5939,
+    "SuckingSmoke": 0.3055,
+    "UrethraDissection": 0.3737
+  },
+  "raw_top1_prediction": "BladderAnastomosis",
+  "top1_prediction": "BladderAnastomosis",
+  "tools": [
+    "monopolar_scissors",
+    "needle_driver",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "blood",
+    "suture_thread",
+    "urethra"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "bladder_anastomosis"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "segment_id": "real3_seg001770_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 1770,
+  "frame_end": 1770,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "PullingTissue",
+    "SuckingBlood",
+    "SuckingSmoke"
+  ],
+  "raw_actions": [
+    "PullingTissue",
+    "SuckingBlood",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0438,
+    "BladderAnastomosis": 0.1153,
+    "BladderNeckDissection": 0.1557,
+    "ClippingBladderNeck": 0.1553,
+    "ClippingSeminalVesicle": 0.09,
+    "ClippingTissue": 0.4497,
+    "ClippingVasDeferens": 0.2477,
+    "CuttingMesocolon": 0.0663,
+    "CuttingProstate": 0.1102,
+    "CuttingSeminalVesicle": 0.1903,
+    "CuttingThread": 0.192,
+    "CuttingTissue": 0.3041,
+    "CuttingVasDeferens": 0.1747,
+    "PullingBladderNeck": 0.1616,
+    "PullingProstate": 0.1236,
+    "PullingSeminalVesicle": 0.381,
+    "PullingTissue": 0.5281,
+    "PullingVasDeferens": 0.3374,
+    "SuckingBlood": 0.6174,
+    "SuckingSmoke": 0.5824,
+    "UrethraDissection": 0.1518
+  },
+  "raw_top1_prediction": "SuckingBlood",
+  "top1_prediction": "SuckingBlood",
+  "tools": [
+    "grasper",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "blood",
+    "generic_tissue",
+    "smoke_plume"
+  ],
+  "events": [
+    "blood_present",
+    "smoke_present"
+  ],
+  "phase": null,
+  "phase_ambiguous": false,
+  "phase_candidates": [],
+  "phase_evidence_source": null,
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "segment_id": "real3_seg000670_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 670,
+  "frame_end": 670,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "SuckingSmoke"
+  ],
+  "raw_actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0038,
+    "BladderAnastomosis": 0.0178,
+    "BladderNeckDissection": 0.3268,
+    "ClippingBladderNeck": 0.0137,
+    "ClippingSeminalVesicle": 0.0014,
+    "ClippingTissue": 0.004,
+    "ClippingVasDeferens": 0.0371,
+    "CuttingMesocolon": 0.7489,
+    "CuttingProstate": 0.0839,
+    "CuttingSeminalVesicle": 0.1699,
+    "CuttingThread": 0.0043,
+    "CuttingTissue": 0.6879,
+    "CuttingVasDeferens": 0.0191,
+    "PullingBladderNeck": 0.0525,
+    "PullingProstate": 0.056,
+    "PullingSeminalVesicle": 0.2492,
+    "PullingTissue": 0.402,
+    "PullingVasDeferens": 0.0718,
+    "SuckingBlood": 0.1858,
+    "SuckingSmoke": 0.6344,
+    "UrethraDissection": 0.1442
+  },
+  "raw_top1_prediction": "CuttingMesocolon",
+  "top1_prediction": "CuttingMesocolon",
+  "tools": [
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "mesocolon",
+    "smoke_plume"
+  ],
+  "events": [
+    "smoke_present"
+  ],
+  "phase": "mesocolon_mobilization",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "mesocolon_mobilization"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

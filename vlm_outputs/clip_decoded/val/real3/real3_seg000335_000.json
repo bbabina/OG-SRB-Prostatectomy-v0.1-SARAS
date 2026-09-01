@@ -6,7 +6,8 @@
   "frame_end": 335,
   "model": "clip-ViT-L-14-quickgelu-openai+decoder",
   "actions": [
-    "BladderAnastomosis"
+    "BladderAnastomosis",
+    "CuttingThread"
   ],
   "action_probs": {
     "BaggingProstate": 0.0049,
@@ -32,16 +33,18 @@
     "UrethraDissection": 0.0186
   },
   "tools": [
+    "monopolar_scissors",
     "needle_driver"
   ],
   "tissues": [
     "bladder_neck",
+    "suture_thread",
     "urethra"
   ],
   "events": [],
-  "phase": "bladder_neck_dissection",
+  "phase": "bladder_anastomosis",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "bladder_neck_dissection"
+    "bladder_anastomosis"
   ]
 }

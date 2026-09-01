@@ -6,26 +6,28 @@
   "frame_end": 4344,
   "model": "llava:7b",
   "actions": [
-    "PullingProstate",
+    "BaggingProstate",
+    "BladderNeckDissection",
+    "ClippingBladderNeck",
     "CuttingProstate",
-    "ClippingTissue"
+    "PullingProstate"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0,
+    "BaggingProstate": 1.0,
     "BladderAnastomosis": 0.0,
-    "BladderNeckDissection": 0.0,
-    "ClippingBladderNeck": 0.0,
+    "BladderNeckDissection": 0.85,
+    "ClippingBladderNeck": 0.7,
     "ClippingSeminalVesicle": 0.0,
-    "ClippingTissue": 0.7,
+    "ClippingTissue": 0.0,
     "ClippingVasDeferens": 0.0,
     "CuttingMesocolon": 0.0,
-    "CuttingProstate": 0.85,
+    "CuttingProstate": 0.55,
     "CuttingSeminalVesicle": 0.0,
     "CuttingThread": 0.0,
     "CuttingTissue": 0.0,
     "CuttingVasDeferens": 0.0,
     "PullingBladderNeck": 0.0,
-    "PullingProstate": 1.0,
+    "PullingProstate": 0.4,
     "PullingSeminalVesicle": 0.0,
     "PullingTissue": 0.0,
     "PullingVasDeferens": 0.0,
@@ -33,21 +35,27 @@
     "SuckingSmoke": 0.0,
     "UrethraDissection": 0.0
   },
+  "top1_prediction": "BaggingProstate",
   "tools": [
     "clip_applier",
     "grasper",
-    "monopolar_scissors"
+    "monopolar_scissors",
+    "specimen_bag"
   ],
   "tissues": [
-    "generic_tissue",
+    "bladder_neck",
     "prostate"
   ],
   "events": [],
-  "phase": "prostate_dissection",
-  "phase_ambiguous": false,
+  "phase": "bladder_neck_dissection",
+  "phase_ambiguous": true,
   "phase_candidates": [
-    "prostate_dissection"
+    "bladder_neck_dissection",
+    "prostate_dissection",
+    "specimen_bagging"
   ],
-  "raw_response": " PullingProstate, CuttingProstate, ClippingTissue ",
-  "hallucinated_tokens": []
+  "raw_response": " BaggingProstate, BladderNeckDissection, ClippingBladderNeck, CuttingProstate, PullingProstate ",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json"
 }

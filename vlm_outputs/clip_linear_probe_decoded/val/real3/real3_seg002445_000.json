@@ -6,10 +6,8 @@
   "frame_end": 2446,
   "model": "clip-linear-probe+decoder",
   "actions": [
-    "ClippingVasDeferens",
     "CuttingTissue",
     "PullingTissue",
-    "PullingVasDeferens",
     "SuckingSmoke"
   ],
   "action_probs": {
@@ -36,22 +34,20 @@
     "UrethraDissection": 0.0939
   },
   "tools": [
-    "clip_applier",
     "grasper",
     "monopolar_scissors",
     "suction_irrigator"
   ],
   "tissues": [
     "generic_tissue",
-    "smoke_plume",
-    "vas_deferens"
+    "smoke_plume"
   ],
   "events": [
     "smoke_present"
   ],
-  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase": "mesocolon_mobilization",
   "phase_ambiguous": false,
   "phase_candidates": [
-    "vas_deferens_seminal_vesicle_dissection"
+    "mesocolon_mobilization"
   ]
 }

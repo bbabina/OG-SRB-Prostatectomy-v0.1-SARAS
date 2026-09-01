@@ -1,0 +1,72 @@
+{
+  "segment_id": "real3_seg001418_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 1418,
+  "frame_end": 1418,
+  "model": "clip-bbox-padded-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "CuttingTissue",
+    "PullingTissue",
+    "PullingVasDeferens"
+  ],
+  "raw_actions": [
+    "CuttingTissue",
+    "PullingTissue",
+    "PullingVasDeferens"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0451,
+    "BladderAnastomosis": 0.0262,
+    "BladderNeckDissection": 0.0097,
+    "ClippingBladderNeck": 0.0234,
+    "ClippingSeminalVesicle": 0.0938,
+    "ClippingTissue": 0.0974,
+    "ClippingVasDeferens": 0.0142,
+    "CuttingMesocolon": 0.0546,
+    "CuttingProstate": 0.0341,
+    "CuttingSeminalVesicle": 0.0213,
+    "CuttingThread": 0.1401,
+    "CuttingTissue": 0.2702,
+    "CuttingVasDeferens": 0.0239,
+    "PullingBladderNeck": 0.1313,
+    "PullingProstate": 0.0467,
+    "PullingSeminalVesicle": 0.1231,
+    "PullingTissue": 0.1927,
+    "PullingVasDeferens": 0.1529,
+    "SuckingBlood": 0.0629,
+    "SuckingSmoke": 0.0221,
+    "UrethraDissection": 0.1095
+  },
+  "raw_top1_prediction": "CuttingTissue",
+  "top1_prediction": "CuttingTissue",
+  "tools": [
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "vas_deferens"
+  ],
+  "events": [],
+  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

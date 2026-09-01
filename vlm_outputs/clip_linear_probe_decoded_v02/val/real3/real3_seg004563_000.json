@@ -1,0 +1,75 @@
+{
+  "segment_id": "real3_seg004563_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 4563,
+  "frame_end": 4563,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "CuttingSeminalVesicle",
+    "PullingSeminalVesicle",
+    "SuckingBlood"
+  ],
+  "raw_actions": [
+    "CuttingSeminalVesicle",
+    "PullingSeminalVesicle",
+    "SuckingBlood"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.1228,
+    "BladderAnastomosis": 0.0227,
+    "BladderNeckDissection": 0.4304,
+    "ClippingBladderNeck": 0.3839,
+    "ClippingSeminalVesicle": 0.1199,
+    "ClippingTissue": 0.1274,
+    "ClippingVasDeferens": 0.1253,
+    "CuttingMesocolon": 0.0422,
+    "CuttingProstate": 0.2632,
+    "CuttingSeminalVesicle": 0.6705,
+    "CuttingThread": 0.0083,
+    "CuttingTissue": 0.3652,
+    "CuttingVasDeferens": 0.1613,
+    "PullingBladderNeck": 0.4063,
+    "PullingProstate": 0.1359,
+    "PullingSeminalVesicle": 0.7075,
+    "PullingTissue": 0.2307,
+    "PullingVasDeferens": 0.1699,
+    "SuckingBlood": 0.5523,
+    "SuckingSmoke": 0.4471,
+    "UrethraDissection": 0.3172
+  },
+  "raw_top1_prediction": "PullingSeminalVesicle",
+  "top1_prediction": "PullingSeminalVesicle",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "blood",
+    "seminal_vesicle"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

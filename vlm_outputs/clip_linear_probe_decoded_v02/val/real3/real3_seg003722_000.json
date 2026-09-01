@@ -1,0 +1,75 @@
+{
+  "segment_id": "real3_seg003722_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 3722,
+  "frame_end": 3722,
+  "model": "clip-linear-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "BladderNeckDissection",
+    "PullingBladderNeck",
+    "SuckingSmoke"
+  ],
+  "raw_actions": [
+    "BladderNeckDissection",
+    "PullingBladderNeck",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.2899,
+    "BladderAnastomosis": 0.2663,
+    "BladderNeckDissection": 0.8385,
+    "ClippingBladderNeck": 0.3123,
+    "ClippingSeminalVesicle": 0.0139,
+    "ClippingTissue": 0.0487,
+    "ClippingVasDeferens": 0.0388,
+    "CuttingMesocolon": 0.0067,
+    "CuttingProstate": 0.387,
+    "CuttingSeminalVesicle": 0.1357,
+    "CuttingThread": 0.0514,
+    "CuttingTissue": 0.2579,
+    "CuttingVasDeferens": 0.0176,
+    "PullingBladderNeck": 0.6936,
+    "PullingProstate": 0.4863,
+    "PullingSeminalVesicle": 0.3727,
+    "PullingTissue": 0.3325,
+    "PullingVasDeferens": 0.1161,
+    "SuckingBlood": 0.271,
+    "SuckingSmoke": 0.5079,
+    "UrethraDissection": 0.4738
+  },
+  "raw_top1_prediction": "BladderNeckDissection",
+  "top1_prediction": "BladderNeckDissection",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "smoke_plume"
+  ],
+  "events": [
+    "smoke_present"
+  ],
+  "phase": "bladder_neck_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "bladder_neck_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

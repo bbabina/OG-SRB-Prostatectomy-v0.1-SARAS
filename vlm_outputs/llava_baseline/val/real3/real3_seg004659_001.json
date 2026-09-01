@@ -6,24 +6,30 @@
   "frame_end": 4662,
   "model": "llava:7b",
   "actions": [
-    "CuttingProstate",
+    "BaggingProstate",
+    "BladderNeckDissection",
     "ClippingBladderNeck",
-    "ClippingSeminalVesicle"
+    "CuttingMesocolon",
+    "CuttingProstate",
+    "CuttingSeminalVesicle",
+    "CuttingThread",
+    "CuttingTissue",
+    "CuttingVasDeferens"
   ],
   "action_probs": {
-    "BaggingProstate": 0.0,
+    "BaggingProstate": 1.0,
     "BladderAnastomosis": 0.0,
-    "BladderNeckDissection": 0.0,
-    "ClippingBladderNeck": 0.85,
-    "ClippingSeminalVesicle": 0.7,
+    "BladderNeckDissection": 0.85,
+    "ClippingBladderNeck": 0.7,
+    "ClippingSeminalVesicle": 0.0,
     "ClippingTissue": 0.0,
     "ClippingVasDeferens": 0.0,
-    "CuttingMesocolon": 0.0,
-    "CuttingProstate": 1.0,
-    "CuttingSeminalVesicle": 0.0,
-    "CuttingThread": 0.0,
-    "CuttingTissue": 0.0,
-    "CuttingVasDeferens": 0.0,
+    "CuttingMesocolon": 0.55,
+    "CuttingProstate": 0.4,
+    "CuttingSeminalVesicle": 0.25,
+    "CuttingThread": 0.1,
+    "CuttingTissue": -0.05,
+    "CuttingVasDeferens": -0.2,
     "PullingBladderNeck": 0.0,
     "PullingProstate": 0.0,
     "PullingSeminalVesicle": 0.0,
@@ -33,23 +39,34 @@
     "SuckingSmoke": 0.0,
     "UrethraDissection": 0.0
   },
+  "top1_prediction": "BaggingProstate",
   "tools": [
     "clip_applier",
-    "monopolar_scissors"
+    "monopolar_scissors",
+    "specimen_bag"
   ],
   "tissues": [
     "bladder_neck",
+    "generic_tissue",
+    "mesocolon",
     "prostate",
-    "seminal_vesicle"
+    "seminal_vesicle",
+    "suture_thread",
+    "vas_deferens"
   ],
   "events": [],
-  "phase": "prostate_dissection",
+  "phase": "bladder_neck_dissection",
   "phase_ambiguous": true,
   "phase_candidates": [
+    "bladder_anastomosis",
     "bladder_neck_dissection",
+    "mesocolon_mobilization",
     "prostate_dissection",
+    "specimen_bagging",
     "vas_deferens_seminal_vesicle_dissection"
   ],
-  "raw_response": " CuttingProstate, ClippingBladderNeck, ClippingSeminalVesicle ",
-  "hallucinated_tokens": []
+  "raw_response": " BaggingProstate, BladderNeckDissection, ClippingBladderNeck, CuttingMesocolon, CuttingProstate, CuttingSeminalVesicle, CuttingThread, CuttingTissue, CuttingVasDeferens ",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "test180_v1.json"
 }

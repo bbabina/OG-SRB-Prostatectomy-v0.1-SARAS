@@ -1,0 +1,72 @@
+{
+  "segment_id": "real3_seg000794_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 794,
+  "frame_end": 794,
+  "model": "clip-bbox-padded-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "PullingSeminalVesicle",
+    "CuttingSeminalVesicle",
+    "ClippingSeminalVesicle"
+  ],
+  "raw_actions": [
+    "PullingSeminalVesicle",
+    "CuttingSeminalVesicle",
+    "ClippingSeminalVesicle"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0049,
+    "BladderAnastomosis": 0.0118,
+    "BladderNeckDissection": 0.0147,
+    "ClippingBladderNeck": 0.0122,
+    "ClippingSeminalVesicle": 0.1583,
+    "ClippingTissue": 0.1437,
+    "ClippingVasDeferens": 0.13,
+    "CuttingMesocolon": 0.0094,
+    "CuttingProstate": 0.0441,
+    "CuttingSeminalVesicle": 0.1675,
+    "CuttingThread": 0.0063,
+    "CuttingTissue": 0.0636,
+    "CuttingVasDeferens": 0.0443,
+    "PullingBladderNeck": 0.0694,
+    "PullingProstate": 0.055,
+    "PullingSeminalVesicle": 0.1869,
+    "PullingTissue": 0.1033,
+    "PullingVasDeferens": 0.0871,
+    "SuckingBlood": 0.081,
+    "SuckingSmoke": 0.1315,
+    "UrethraDissection": 0.0603
+  },
+  "raw_top1_prediction": "PullingSeminalVesicle",
+  "top1_prediction": "PullingSeminalVesicle",
+  "tools": [
+    "clip_applier",
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "seminal_vesicle"
+  ],
+  "events": [],
+  "phase": "vas_deferens_seminal_vesicle_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

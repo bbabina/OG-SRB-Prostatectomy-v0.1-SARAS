@@ -1,0 +1,76 @@
+{
+  "segment_id": "real3_seg003664_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 3664,
+  "frame_end": 3664,
+  "model": "clip-bbox-padded-probe+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "SuckingBlood",
+    "UrethraDissection",
+    "PullingTissue"
+  ],
+  "raw_actions": [
+    "SuckingBlood",
+    "UrethraDissection",
+    "PullingTissue"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0207,
+    "BladderAnastomosis": 0.0387,
+    "BladderNeckDissection": 0.0384,
+    "ClippingBladderNeck": 0.0444,
+    "ClippingSeminalVesicle": 0.0157,
+    "ClippingTissue": 0.0478,
+    "ClippingVasDeferens": 0.0118,
+    "CuttingMesocolon": 0.0072,
+    "CuttingProstate": 0.1161,
+    "CuttingSeminalVesicle": 0.0224,
+    "CuttingThread": 0.0203,
+    "CuttingTissue": 0.1211,
+    "CuttingVasDeferens": 0.0495,
+    "PullingBladderNeck": 0.143,
+    "PullingProstate": 0.0629,
+    "PullingSeminalVesicle": 0.0551,
+    "PullingTissue": 0.3154,
+    "PullingVasDeferens": 0.0245,
+    "SuckingBlood": 0.388,
+    "SuckingSmoke": 0.068,
+    "UrethraDissection": 0.3242
+  },
+  "raw_top1_prediction": "SuckingBlood",
+  "top1_prediction": "SuckingBlood",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "blood",
+    "generic_tissue",
+    "urethra"
+  ],
+  "events": [
+    "blood_present"
+  ],
+  "phase": "urethra_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "urethra_dissection"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

@@ -1,6 +1,7 @@
 from __future__ import annotations
 from collections import Counter
 
+
 def resolve_phase_from_actions(actions: list[str], onto) -> tuple[str | None, bool, list[str]]:
     votes = Counter(onto.phase_for(a) for a in actions if onto.phase_for(a))
     if not votes:
@@ -11,15 +12,32 @@ def resolve_phase_from_actions(actions: list[str], onto) -> tuple[str | None, bo
 
 def derive_nodes(actions: list[str], onto) -> tuple[list[str], list[str], list[str]]:
     tools = sorted({onto.tool_for(a) for a in actions if onto.tool_for(a)})
-    tissues = sorted({onto.tissue_for(a) for a in actions if onto.tissue_for(a)})
+
+    # v0.2 supports multi-target mappings (e.g. BladderAnastomosis).
+    targets = set()
+    for action in actions:
+        targets.update(onto.targets_for(action))
+    tissues = sorted(targets)
+
     events = sorted({onto.event_for(a) for a in actions if onto.event_for(a)})
     return tools, tissues, events
 
 
-def build_prediction_record(seg: dict, model_name: str, pred_actions: list[str],
-                             action_probs: dict[str, float], onto) -> dict:
+def build_prediction_record(
+    seg: dict,
+    model_name: str,
+    pred_actions: list[str],
+    action_probs: dict[str, float],
+    onto,
+) -> dict:
     tools, tissues, events = derive_nodes(pred_actions, onto)
     phase, phase_ambiguous, phase_candidates = resolve_phase_from_actions(pred_actions, onto)
+
+    if pred_actions:
+        top1 = max(pred_actions, key=lambda a: action_probs.get(a, 0.0))
+    else:
+        top1 = None
+
     return {
         "segment_id": seg["segment_id"],
         "split": seg["split"],
@@ -29,6 +47,7 @@ def build_prediction_record(seg: dict, model_name: str, pred_actions: list[str],
         "model": model_name,
         "actions": pred_actions,
         "action_probs": action_probs,
+        "top1_prediction": top1,
         "tools": tools,
         "tissues": tissues,
         "events": events,

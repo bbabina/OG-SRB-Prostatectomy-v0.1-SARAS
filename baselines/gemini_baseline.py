@@ -33,14 +33,17 @@ import sys
 import time
 from pathlib import Path
 
+from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+
+load_dotenv(Path(__file__).resolve().parent.parent.parent / ".env")
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from eval.ontology import load_ontology, DEFAULT_ONTOLOGY_PATH  # noqa: E402
 from baselines.common import build_prediction_record  # noqa: E402
 from baselines.llava_baseline import (  # noqa: E402
-    build_prompt, parse_response, representative_frame, build_stratified_sample,
+    build_prompt, parse_response, representative_frame, load_manifest_segments,
 )
 
 MODEL_NAME = "gemini-3.5-flash-lite"
@@ -73,11 +76,14 @@ def main():
     parser.add_argument("--out-dir", type=Path,
                          default=Path(__file__).resolve().parent.parent / "vlm_outputs" / "gemini_baseline")
     parser.add_argument("--ontology", type=Path, default=DEFAULT_ONTOLOGY_PATH)
-    parser.add_argument("--n-samples", type=int, default=180)
-    parser.add_argument("--seed", type=int, default=0)  # same seed as LLaVA -> same sampled segments
+    parser.add_argument("--manifest", type=Path,
+                         default=Path(__file__).resolve().parent.parent / "benchmarks" / "test180_v1.json")
     parser.add_argument("--sleep-between-calls", type=float, default=2.0,
                          help="Seconds to wait between requests, to stay under free-tier rate limits.")
     args = parser.parse_args()
+
+    if not args.manifest.exists():
+        raise SystemExit(f"Missing {args.manifest}. Run: python benchmarks/create_test180_manifest.py")
 
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     if not api_key:
@@ -90,10 +96,9 @@ def main():
     action_id_set = set(action_ids)
     prompt = build_prompt(action_ids)
 
-    segments = json.loads((args.reports_dir / "segments_val.json").read_text())
-    sample = build_stratified_sample(segments, action_ids, args.n_samples, args.seed)
-    print(f"Sampled {len(sample)} of {len(segments)} val segments "
-          f"(same stratified sampling as the LLaVA baseline, seed={args.seed})")
+    sample = load_manifest_segments(args.manifest, args.reports_dir)
+    print(f"Running Gemini on frozen manifest: {args.manifest}")
+    print(f"Segments: {len(sample)}")
 
     images_dir = args.mesad_root / "val" / "images"
     n_written = n_hallucinated_tokens = n_empty = 0
@@ -110,7 +115,6 @@ def main():
 
         if not valid_actions:
             n_empty += 1
-            valid_actions = [action_ids[0]]
 
         action_probs = {a: 0.0 for a in action_ids}
         for rank, a in enumerate(valid_actions):
@@ -119,6 +123,8 @@ def main():
         record = build_prediction_record(seg, MODEL_NAME, valid_actions, action_probs, onto)
         record["raw_response"] = raw_text
         record["hallucinated_tokens"] = invalid_tokens
+        record["parse_failure"] = not bool(valid_actions)
+        record["benchmark_manifest"] = args.manifest.name
 
         out_path = args.out_dir / "val" / seg["video"] / f"{seg['segment_id']}.json"
         out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -132,7 +138,7 @@ def main():
         time.sleep(args.sleep_between_calls)
 
     print(f"\nWrote {n_written} predictions -> {args.out_dir / 'val'}")
-    print(f"Segments with no valid action parsed (fell back to default): {n_empty}")
+    print(f"Parse failures (counted as wrong, no arbitrary fallback): {n_empty}")
     print(f"Out-of-vocabulary tokens across all responses (hallucination signal): {n_hallucinated_tokens}")
 
 

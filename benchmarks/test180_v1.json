@@ -1,0 +1,2177 @@
+{
+  "name": "test180_v1",
+  "purpose": "fair_cross_model_perception_comparison",
+  "n_segments": 180,
+  "split": "val",
+  "video": "real3",
+  "sampling_strategy": "stratified_class_coverage_then_random_remainder",
+  "seed": 0,
+  "ontology_version": "0.2",
+  "temporal_evaluation": false,
+  "temporal_note": "Sparse sample. Do not treat selected segments as consecutive for Viterbi/phase-transition metrics. Decode dense video outputs first, then optionally report recognition metrics on this manifest.",
+  "segment_id_sha256": "996d19e74751c6b9c83db4c76057bdcd3c8fb72ecd3a362395f8a356e6e96962",
+  "class_support": {
+    "BaggingProstate": 1,
+    "BladderAnastomosis": 49,
+    "BladderNeckDissection": 16,
+    "ClippingBladderNeck": 1,
+    "ClippingSeminalVesicle": 2,
+    "ClippingTissue": 3,
+    "ClippingVasDeferens": 3,
+    "CuttingMesocolon": 7,
+    "CuttingProstate": 2,
+    "CuttingSeminalVesicle": 10,
+    "CuttingThread": 2,
+    "CuttingTissue": 64,
+    "CuttingVasDeferens": 4,
+    "PullingBladderNeck": 3,
+    "PullingProstate": 18,
+    "PullingSeminalVesicle": 10,
+    "PullingTissue": 57,
+    "PullingVasDeferens": 3,
+    "SuckingBlood": 51,
+    "SuckingSmoke": 17,
+    "UrethraDissection": 14
+  },
+  "segment_ids": [
+    "real3_seg007125_000",
+    "real3_seg006970_000",
+    "real3_seg005692_000",
+    "real3_seg002964_000",
+    "real3_seg003758_000",
+    "real3_seg005289_001",
+    "real3_seg001139_000",
+    "real3_seg001710_000",
+    "real3_seg001730_000",
+    "real3_seg004248_000",
+    "real3_seg000868_000",
+    "real3_seg004277_000",
+    "real3_seg001905_000",
+    "real3_seg001934_001",
+    "real3_seg002823_000",
+    "real3_seg000566_000",
+    "real3_seg006711_000",
+    "real3_seg001870_000",
+    "real3_seg001767_000",
+    "real3_seg000443_000",
+    "real3_seg005985_000",
+    "real3_seg003091_000",
+    "real3_seg004915_000",
+    "real3_seg004263_000",
+    "real3_seg001451_000",
+    "real3_seg000161_000",
+    "real3_seg006937_000",
+    "real3_seg000407_000",
+    "real3_seg007560_000",
+    "real3_seg005616_000",
+    "real3_seg004666_000",
+    "real3_seg003189_000",
+    "real3_seg000308_000",
+    "real3_seg007364_000",
+    "real3_seg005862_000",
+    "real3_seg000712_000",
+    "real3_seg000242_001",
+    "real3_seg001694_000",
+    "real3_seg005959_000",
+    "real3_seg004451_000",
+    "real3_seg006959_000",
+    "real3_seg001392_000",
+    "real3_seg004505_000",
+    "real3_seg003497_000",
+    "real3_seg001701_000",
+    "real3_seg002368_000",
+    "real3_seg007156_000",
+    "real3_seg006007_000",
+    "real3_seg005444_000",
+    "real3_seg002568_001",
+    "real3_seg000225_000",
+    "real3_seg004219_000",
+    "real3_seg005694_001",
+    "real3_seg002356_000",
+    "real3_seg003812_000",
+    "real3_seg005652_000",
+    "real3_seg000489_000",
+    "real3_seg002224_000",
+    "real3_seg006448_000",
+    "real3_seg004816_000",
+    "real3_seg004846_000",
+    "real3_seg000382_000",
+    "real3_seg006475_000",
+    "real3_seg004150_000",
+    "real3_seg002163_000",
+    "real3_seg007085_000",
+    "real3_seg001145_000",
+    "real3_seg000155_000",
+    "real3_seg001191_000",
+    "real3_seg004287_000",
+    "real3_seg005759_000",
+    "real3_seg007626_001",
+    "real3_seg006768_000",
+    "real3_seg006773_001",
+    "real3_seg002777_000",
+    "real3_seg004560_000",
+    "real3_seg005048_000",
+    "real3_seg006047_000",
+    "real3_seg000344_000",
+    "real3_seg004165_000",
+    "real3_seg002388_000",
+    "real3_seg003145_000",
+    "real3_seg006452_000",
+    "real3_seg000721_000",
+    "real3_seg001532_000",
+    "real3_seg002940_000",
+    "real3_seg007599_000",
+    "real3_seg002973_000",
+    "real3_seg003986_000",
+    "real3_seg003684_000",
+    "real3_seg003213_000",
+    "real3_seg002513_000",
+    "real3_seg000073_002",
+    "real3_seg002243_000",
+    "real3_seg000631_001",
+    "real3_seg000417_000",
+    "real3_seg005798_000",
+    "real3_seg002609_000",
+    "real3_seg003690_000",
+    "real3_seg006655_000",
+    "real3_seg002217_000",
+    "real3_seg005464_000",
+    "real3_seg006714_000",
+    "real3_seg003143_000",
+    "real3_seg003932_000",
+    "real3_seg003834_000",
+    "real3_seg002287_000",
+    "real3_seg005605_000",
+    "real3_seg005009_000",
+    "real3_seg001385_000",
+    "real3_seg005362_000",
+    "real3_seg005289_000",
+    "real3_seg004964_000",
+    "real3_seg004659_002",
+    "real3_seg000702_000",
+    "real3_seg005896_000",
+    "real3_seg003827_000",
+    "real3_seg000953_000",
+    "real3_seg007594_000",
+    "real3_seg000165_000",
+    "real3_seg004659_001",
+    "real3_seg000391_000",
+    "real3_seg000112_000",
+    "real3_seg000704_000",
+    "real3_seg006022_000",
+    "real3_seg000277_001",
+    "real3_seg007285_000",
+    "real3_seg000776_000",
+    "real3_seg007540_000",
+    "real3_seg001290_000",
+    "real3_seg000697_000",
+    "real3_seg002668_000",
+    "real3_seg007320_000",
+    "real3_seg001568_000",
+    "real3_seg000612_000",
+    "real3_seg002115_000",
+    "real3_seg000788_000",
+    "real3_seg001418_000",
+    "real3_seg001096_000",
+    "real3_seg002766_001",
+    "real3_seg001579_000",
+    "real3_seg004687_000",
+    "real3_seg004884_000",
+    "real3_seg005103_000",
+    "real3_seg007347_000",
+    "real3_seg004541_000",
+    "real3_seg004344_000",
+    "real3_seg006440_000",
+    "real3_seg003787_000",
+    "real3_seg000250_000",
+    "real3_seg007529_000",
+    "real3_seg002405_000",
+    "real3_seg006634_000",
+    "real3_seg000837_000",
+    "real3_seg004488_000",
+    "real3_seg005724_001",
+    "real3_seg002764_000",
+    "real3_seg004289_000",
+    "real3_seg006669_000",
+    "real3_seg003063_000",
+    "real3_seg006370_000",
+    "real3_seg002844_000",
+    "real3_seg004807_000",
+    "real3_seg005947_000",
+    "real3_seg005874_000",
+    "real3_seg006940_000",
+    "real3_seg002157_000",
+    "real3_seg000860_000",
+    "real3_seg004337_000",
+    "real3_seg004041_000",
+    "real3_seg000459_000",
+    "real3_seg000082_000",
+    "real3_seg005918_000",
+    "real3_seg001809_000",
+    "real3_seg002830_000",
+    "real3_seg002731_000",
+    "real3_seg003722_000",
+    "real3_seg007619_000",
+    "real3_seg007473_000",
+    "real3_seg002904_000"
+  ],
+  "items": [
+    {
+      "segment_id": "real3_seg007125_000",
+      "video": "real3",
+      "frame_start": 7125,
+      "frame_end": 7125,
+      "representative_frame": 7125,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006970_000",
+      "video": "real3",
+      "frame_start": 6970,
+      "frame_end": 6970,
+      "representative_frame": 6970,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005692_000",
+      "video": "real3",
+      "frame_start": 5692,
+      "frame_end": 5692,
+      "representative_frame": 5692,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002964_000",
+      "video": "real3",
+      "frame_start": 2964,
+      "frame_end": 2964,
+      "representative_frame": 2964,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003758_000",
+      "video": "real3",
+      "frame_start": 3758,
+      "frame_end": 3758,
+      "representative_frame": 3758,
+      "raw_labels": [
+        "PullingProstate",
+        "SuckingSmoke",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005289_001",
+      "video": "real3",
+      "frame_start": 5291,
+      "frame_end": 5291,
+      "representative_frame": 5291,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001139_000",
+      "video": "real3",
+      "frame_start": 1139,
+      "frame_end": 1139,
+      "representative_frame": 1139,
+      "raw_labels": [
+        "CuttingSeminalVesicle",
+        "PullingSeminalVesicle",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001710_000",
+      "video": "real3",
+      "frame_start": 1710,
+      "frame_end": 1710,
+      "representative_frame": 1710,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "PullingTissue",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001730_000",
+      "video": "real3",
+      "frame_start": 1730,
+      "frame_end": 1731,
+      "representative_frame": 1731,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004248_000",
+      "video": "real3",
+      "frame_start": 4248,
+      "frame_end": 4249,
+      "representative_frame": 4249,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000868_000",
+      "video": "real3",
+      "frame_start": 868,
+      "frame_end": 868,
+      "representative_frame": 868,
+      "raw_labels": [
+        "CuttingSeminalVesicle",
+        "PullingSeminalVesicle",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004277_000",
+      "video": "real3",
+      "frame_start": 4277,
+      "frame_end": 4277,
+      "representative_frame": 4277,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001905_000",
+      "video": "real3",
+      "frame_start": 1905,
+      "frame_end": 1906,
+      "representative_frame": 1906,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001934_001",
+      "video": "real3",
+      "frame_start": 1936,
+      "frame_end": 1936,
+      "representative_frame": 1936,
+      "raw_labels": [
+        "CuttingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002823_000",
+      "video": "real3",
+      "frame_start": 2823,
+      "frame_end": 2824,
+      "representative_frame": 2824,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000566_000",
+      "video": "real3",
+      "frame_start": 566,
+      "frame_end": 567,
+      "representative_frame": 567,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingVasDeferens"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006711_000",
+      "video": "real3",
+      "frame_start": 6711,
+      "frame_end": 6711,
+      "representative_frame": 6711,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001870_000",
+      "video": "real3",
+      "frame_start": 1870,
+      "frame_end": 1871,
+      "representative_frame": 1871,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001767_000",
+      "video": "real3",
+      "frame_start": 1767,
+      "frame_end": 1767,
+      "representative_frame": 1767,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000443_000",
+      "video": "real3",
+      "frame_start": 443,
+      "frame_end": 443,
+      "representative_frame": 443,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005985_000",
+      "video": "real3",
+      "frame_start": 5985,
+      "frame_end": 5985,
+      "representative_frame": 5985,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003091_000",
+      "video": "real3",
+      "frame_start": 3091,
+      "frame_end": 3091,
+      "representative_frame": 3091,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004915_000",
+      "video": "real3",
+      "frame_start": 4915,
+      "frame_end": 4916,
+      "representative_frame": 4916,
+      "raw_labels": [
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004263_000",
+      "video": "real3",
+      "frame_start": 4263,
+      "frame_end": 4264,
+      "representative_frame": 4264,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001451_000",
+      "video": "real3",
+      "frame_start": 1451,
+      "frame_end": 1451,
+      "representative_frame": 1451,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "PullingBladderNeck"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000161_000",
+      "video": "real3",
+      "frame_start": 161,
+      "frame_end": 161,
+      "representative_frame": 161,
+      "raw_labels": [
+        "CuttingMesocolon",
+        "PullingTissue",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006937_000",
+      "video": "real3",
+      "frame_start": 6937,
+      "frame_end": 6937,
+      "representative_frame": 6937,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000407_000",
+      "video": "real3",
+      "frame_start": 407,
+      "frame_end": 407,
+      "representative_frame": 407,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007560_000",
+      "video": "real3",
+      "frame_start": 7560,
+      "frame_end": 7560,
+      "representative_frame": 7560,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005616_000",
+      "video": "real3",
+      "frame_start": 5616,
+      "frame_end": 5617,
+      "representative_frame": 5617,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004666_000",
+      "video": "real3",
+      "frame_start": 4666,
+      "frame_end": 4666,
+      "representative_frame": 4666,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003189_000",
+      "video": "real3",
+      "frame_start": 3189,
+      "frame_end": 3189,
+      "representative_frame": 3189,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000308_000",
+      "video": "real3",
+      "frame_start": 308,
+      "frame_end": 308,
+      "representative_frame": 308,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007364_000",
+      "video": "real3",
+      "frame_start": 7364,
+      "frame_end": 7364,
+      "representative_frame": 7364,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005862_000",
+      "video": "real3",
+      "frame_start": 5862,
+      "frame_end": 5862,
+      "representative_frame": 5862,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000712_000",
+      "video": "real3",
+      "frame_start": 712,
+      "frame_end": 712,
+      "representative_frame": 712,
+      "raw_labels": [
+        "CuttingVasDeferens"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000242_001",
+      "video": "real3",
+      "frame_start": 244,
+      "frame_end": 244,
+      "representative_frame": 244,
+      "raw_labels": [
+        "CuttingMesocolon",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001694_000",
+      "video": "real3",
+      "frame_start": 1694,
+      "frame_end": 1695,
+      "representative_frame": 1695,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005959_000",
+      "video": "real3",
+      "frame_start": 5959,
+      "frame_end": 5960,
+      "representative_frame": 5960,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004451_000",
+      "video": "real3",
+      "frame_start": 4451,
+      "frame_end": 4452,
+      "representative_frame": 4452,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006959_000",
+      "video": "real3",
+      "frame_start": 6959,
+      "frame_end": 6959,
+      "representative_frame": 6959,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001392_000",
+      "video": "real3",
+      "frame_start": 1392,
+      "frame_end": 1392,
+      "representative_frame": 1392,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "PullingBladderNeck"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004505_000",
+      "video": "real3",
+      "frame_start": 4505,
+      "frame_end": 4505,
+      "representative_frame": 4505,
+      "raw_labels": [
+        "CuttingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003497_000",
+      "video": "real3",
+      "frame_start": 3497,
+      "frame_end": 3498,
+      "representative_frame": 3498,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001701_000",
+      "video": "real3",
+      "frame_start": 1701,
+      "frame_end": 1701,
+      "representative_frame": 1701,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002368_000",
+      "video": "real3",
+      "frame_start": 2368,
+      "frame_end": 2369,
+      "representative_frame": 2369,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "PullingBladderNeck"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007156_000",
+      "video": "real3",
+      "frame_start": 7156,
+      "frame_end": 7156,
+      "representative_frame": 7156,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006007_000",
+      "video": "real3",
+      "frame_start": 6007,
+      "frame_end": 6007,
+      "representative_frame": 6007,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005444_000",
+      "video": "real3",
+      "frame_start": 5444,
+      "frame_end": 5444,
+      "representative_frame": 5444,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002568_001",
+      "video": "real3",
+      "frame_start": 2570,
+      "frame_end": 2570,
+      "representative_frame": 2570,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000225_000",
+      "video": "real3",
+      "frame_start": 225,
+      "frame_end": 226,
+      "representative_frame": 226,
+      "raw_labels": [
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004219_000",
+      "video": "real3",
+      "frame_start": 4219,
+      "frame_end": 4219,
+      "representative_frame": 4219,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005694_001",
+      "video": "real3",
+      "frame_start": 5696,
+      "frame_end": 5696,
+      "representative_frame": 5696,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002356_000",
+      "video": "real3",
+      "frame_start": 2356,
+      "frame_end": 2356,
+      "representative_frame": 2356,
+      "raw_labels": [
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003812_000",
+      "video": "real3",
+      "frame_start": 3812,
+      "frame_end": 3812,
+      "representative_frame": 3812,
+      "raw_labels": [
+        "PullingProstate",
+        "SuckingBlood",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005652_000",
+      "video": "real3",
+      "frame_start": 5652,
+      "frame_end": 5652,
+      "representative_frame": 5652,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000489_000",
+      "video": "real3",
+      "frame_start": 489,
+      "frame_end": 489,
+      "representative_frame": 489,
+      "raw_labels": [
+        "CuttingSeminalVesicle",
+        "PullingSeminalVesicle"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002224_000",
+      "video": "real3",
+      "frame_start": 2224,
+      "frame_end": 2224,
+      "representative_frame": 2224,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006448_000",
+      "video": "real3",
+      "frame_start": 6448,
+      "frame_end": 6449,
+      "representative_frame": 6449,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004816_000",
+      "video": "real3",
+      "frame_start": 4816,
+      "frame_end": 4816,
+      "representative_frame": 4816,
+      "raw_labels": [
+        "CuttingProstate",
+        "PullingProstate"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004846_000",
+      "video": "real3",
+      "frame_start": 4846,
+      "frame_end": 4846,
+      "representative_frame": 4846,
+      "raw_labels": [
+        "SuckingBlood",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000382_000",
+      "video": "real3",
+      "frame_start": 382,
+      "frame_end": 383,
+      "representative_frame": 383,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006475_000",
+      "video": "real3",
+      "frame_start": 6475,
+      "frame_end": 6475,
+      "representative_frame": 6475,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004150_000",
+      "video": "real3",
+      "frame_start": 4150,
+      "frame_end": 4151,
+      "representative_frame": 4151,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002163_000",
+      "video": "real3",
+      "frame_start": 2163,
+      "frame_end": 2164,
+      "representative_frame": 2164,
+      "raw_labels": [
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007085_000",
+      "video": "real3",
+      "frame_start": 7085,
+      "frame_end": 7086,
+      "representative_frame": 7086,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001145_000",
+      "video": "real3",
+      "frame_start": 1145,
+      "frame_end": 1145,
+      "representative_frame": 1145,
+      "raw_labels": [
+        "CuttingSeminalVesicle",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000155_000",
+      "video": "real3",
+      "frame_start": 155,
+      "frame_end": 155,
+      "representative_frame": 155,
+      "raw_labels": [
+        "CuttingMesocolon",
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001191_000",
+      "video": "real3",
+      "frame_start": 1191,
+      "frame_end": 1191,
+      "representative_frame": 1191,
+      "raw_labels": [
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004287_000",
+      "video": "real3",
+      "frame_start": 4287,
+      "frame_end": 4287,
+      "representative_frame": 4287,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005759_000",
+      "video": "real3",
+      "frame_start": 5759,
+      "frame_end": 5760,
+      "representative_frame": 5760,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007626_001",
+      "video": "real3",
+      "frame_start": 7628,
+      "frame_end": 7629,
+      "representative_frame": 7629,
+      "raw_labels": [
+        "CuttingThread"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006768_000",
+      "video": "real3",
+      "frame_start": 6768,
+      "frame_end": 6769,
+      "representative_frame": 6769,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006773_001",
+      "video": "real3",
+      "frame_start": 6775,
+      "frame_end": 6776,
+      "representative_frame": 6776,
+      "raw_labels": [
+        "CuttingThread"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002777_000",
+      "video": "real3",
+      "frame_start": 2777,
+      "frame_end": 2777,
+      "representative_frame": 2777,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingProstate",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004560_000",
+      "video": "real3",
+      "frame_start": 4560,
+      "frame_end": 4560,
+      "representative_frame": 4560,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005048_000",
+      "video": "real3",
+      "frame_start": 5048,
+      "frame_end": 5048,
+      "representative_frame": 5048,
+      "raw_labels": [
+        "BladderNeckDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006047_000",
+      "video": "real3",
+      "frame_start": 6047,
+      "frame_end": 6047,
+      "representative_frame": 6047,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000344_000",
+      "video": "real3",
+      "frame_start": 344,
+      "frame_end": 344,
+      "representative_frame": 344,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004165_000",
+      "video": "real3",
+      "frame_start": 4165,
+      "frame_end": 4165,
+      "representative_frame": 4165,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002388_000",
+      "video": "real3",
+      "frame_start": 2388,
+      "frame_end": 2388,
+      "representative_frame": 2388,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003145_000",
+      "video": "real3",
+      "frame_start": 3145,
+      "frame_end": 3145,
+      "representative_frame": 3145,
+      "raw_labels": [
+        "CuttingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006452_000",
+      "video": "real3",
+      "frame_start": 6452,
+      "frame_end": 6452,
+      "representative_frame": 6452,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000721_000",
+      "video": "real3",
+      "frame_start": 721,
+      "frame_end": 722,
+      "representative_frame": 722,
+      "raw_labels": [
+        "CuttingSeminalVesicle",
+        "PullingSeminalVesicle"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001532_000",
+      "video": "real3",
+      "frame_start": 1532,
+      "frame_end": 1532,
+      "representative_frame": 1532,
+      "raw_labels": [
+        "CuttingVasDeferens",
+        "PullingVasDeferens"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002940_000",
+      "video": "real3",
+      "frame_start": 2940,
+      "frame_end": 2941,
+      "representative_frame": 2941,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingProstate"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007599_000",
+      "video": "real3",
+      "frame_start": 7599,
+      "frame_end": 7600,
+      "representative_frame": 7600,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002973_000",
+      "video": "real3",
+      "frame_start": 2973,
+      "frame_end": 2973,
+      "representative_frame": 2973,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003986_000",
+      "video": "real3",
+      "frame_start": 3986,
+      "frame_end": 3986,
+      "representative_frame": 3986,
+      "raw_labels": [
+        "PullingProstate",
+        "SuckingBlood",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003684_000",
+      "video": "real3",
+      "frame_start": 3684,
+      "frame_end": 3684,
+      "representative_frame": 3684,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "PullingProstate",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003213_000",
+      "video": "real3",
+      "frame_start": 3213,
+      "frame_end": 3213,
+      "representative_frame": 3213,
+      "raw_labels": [
+        "CuttingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002513_000",
+      "video": "real3",
+      "frame_start": 2513,
+      "frame_end": 2513,
+      "representative_frame": 2513,
+      "raw_labels": [
+        "ClippingBladderNeck",
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000073_002",
+      "video": "real3",
+      "frame_start": 77,
+      "frame_end": 77,
+      "representative_frame": 77,
+      "raw_labels": [
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002243_000",
+      "video": "real3",
+      "frame_start": 2243,
+      "frame_end": 2243,
+      "representative_frame": 2243,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000631_001",
+      "video": "real3",
+      "frame_start": 633,
+      "frame_end": 633,
+      "representative_frame": 633,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000417_000",
+      "video": "real3",
+      "frame_start": 417,
+      "frame_end": 418,
+      "representative_frame": 418,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005798_000",
+      "video": "real3",
+      "frame_start": 5798,
+      "frame_end": 5798,
+      "representative_frame": 5798,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002609_000",
+      "video": "real3",
+      "frame_start": 2609,
+      "frame_end": 2610,
+      "representative_frame": 2610,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003690_000",
+      "video": "real3",
+      "frame_start": 3690,
+      "frame_end": 3690,
+      "representative_frame": 3690,
+      "raw_labels": [
+        "PullingProstate",
+        "SuckingSmoke",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006655_000",
+      "video": "real3",
+      "frame_start": 6655,
+      "frame_end": 6656,
+      "representative_frame": 6656,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002217_000",
+      "video": "real3",
+      "frame_start": 2217,
+      "frame_end": 2217,
+      "representative_frame": 2217,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005464_000",
+      "video": "real3",
+      "frame_start": 5464,
+      "frame_end": 5464,
+      "representative_frame": 5464,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006714_000",
+      "video": "real3",
+      "frame_start": 6714,
+      "frame_end": 6714,
+      "representative_frame": 6714,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003143_000",
+      "video": "real3",
+      "frame_start": 3143,
+      "frame_end": 3143,
+      "representative_frame": 3143,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003932_000",
+      "video": "real3",
+      "frame_start": 3932,
+      "frame_end": 3932,
+      "representative_frame": 3932,
+      "raw_labels": [
+        "PullingProstate",
+        "SuckingBlood",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003834_000",
+      "video": "real3",
+      "frame_start": 3834,
+      "frame_end": 3834,
+      "representative_frame": 3834,
+      "raw_labels": [
+        "PullingProstate",
+        "SuckingBlood",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002287_000",
+      "video": "real3",
+      "frame_start": 2287,
+      "frame_end": 2287,
+      "representative_frame": 2287,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005605_000",
+      "video": "real3",
+      "frame_start": 5605,
+      "frame_end": 5606,
+      "representative_frame": 5606,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005009_000",
+      "video": "real3",
+      "frame_start": 5009,
+      "frame_end": 5009,
+      "representative_frame": 5009,
+      "raw_labels": [
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001385_000",
+      "video": "real3",
+      "frame_start": 1385,
+      "frame_end": 1385,
+      "representative_frame": 1385,
+      "raw_labels": [
+        "BladderNeckDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005362_000",
+      "video": "real3",
+      "frame_start": 5362,
+      "frame_end": 5362,
+      "representative_frame": 5362,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005289_000",
+      "video": "real3",
+      "frame_start": 5289,
+      "frame_end": 5290,
+      "representative_frame": 5290,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004964_000",
+      "video": "real3",
+      "frame_start": 4964,
+      "frame_end": 4964,
+      "representative_frame": 4964,
+      "raw_labels": [
+        "PullingProstate",
+        "SuckingBlood",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004659_002",
+      "video": "real3",
+      "frame_start": 4663,
+      "frame_end": 4664,
+      "representative_frame": 4664,
+      "raw_labels": [
+        "CuttingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000702_000",
+      "video": "real3",
+      "frame_start": 702,
+      "frame_end": 702,
+      "representative_frame": 702,
+      "raw_labels": [
+        "ClippingTissue",
+        "ClippingVasDeferens"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005896_000",
+      "video": "real3",
+      "frame_start": 5896,
+      "frame_end": 5897,
+      "representative_frame": 5897,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003827_000",
+      "video": "real3",
+      "frame_start": 3827,
+      "frame_end": 3827,
+      "representative_frame": 3827,
+      "raw_labels": [
+        "PullingProstate",
+        "PullingTissue",
+        "SuckingBlood",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000953_000",
+      "video": "real3",
+      "frame_start": 953,
+      "frame_end": 953,
+      "representative_frame": 953,
+      "raw_labels": [
+        "CuttingSeminalVesicle",
+        "PullingSeminalVesicle"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007594_000",
+      "video": "real3",
+      "frame_start": 7594,
+      "frame_end": 7594,
+      "representative_frame": 7594,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000165_000",
+      "video": "real3",
+      "frame_start": 165,
+      "frame_end": 165,
+      "representative_frame": 165,
+      "raw_labels": [
+        "CuttingMesocolon",
+        "PullingTissue",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004659_001",
+      "video": "real3",
+      "frame_start": 4661,
+      "frame_end": 4662,
+      "representative_frame": 4662,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000391_000",
+      "video": "real3",
+      "frame_start": 391,
+      "frame_end": 391,
+      "representative_frame": 391,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000112_000",
+      "video": "real3",
+      "frame_start": 112,
+      "frame_end": 113,
+      "representative_frame": 113,
+      "raw_labels": [
+        "CuttingMesocolon",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000704_000",
+      "video": "real3",
+      "frame_start": 704,
+      "frame_end": 705,
+      "representative_frame": 705,
+      "raw_labels": [
+        "ClippingTissue",
+        "ClippingVasDeferens",
+        "CuttingVasDeferens"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006022_000",
+      "video": "real3",
+      "frame_start": 6022,
+      "frame_end": 6023,
+      "representative_frame": 6023,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000277_001",
+      "video": "real3",
+      "frame_start": 279,
+      "frame_end": 279,
+      "representative_frame": 279,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007285_000",
+      "video": "real3",
+      "frame_start": 7285,
+      "frame_end": 7285,
+      "representative_frame": 7285,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000776_000",
+      "video": "real3",
+      "frame_start": 776,
+      "frame_end": 776,
+      "representative_frame": 776,
+      "raw_labels": [
+        "ClippingSeminalVesicle",
+        "PullingSeminalVesicle"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007540_000",
+      "video": "real3",
+      "frame_start": 7540,
+      "frame_end": 7540,
+      "representative_frame": 7540,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001290_000",
+      "video": "real3",
+      "frame_start": 1290,
+      "frame_end": 1290,
+      "representative_frame": 1290,
+      "raw_labels": [
+        "PullingTissue",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000697_000",
+      "video": "real3",
+      "frame_start": 697,
+      "frame_end": 697,
+      "representative_frame": 697,
+      "raw_labels": [
+        "ClippingTissue",
+        "ClippingVasDeferens"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002668_000",
+      "video": "real3",
+      "frame_start": 2668,
+      "frame_end": 2668,
+      "representative_frame": 2668,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007320_000",
+      "video": "real3",
+      "frame_start": 7320,
+      "frame_end": 7321,
+      "representative_frame": 7321,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001568_000",
+      "video": "real3",
+      "frame_start": 1568,
+      "frame_end": 1568,
+      "representative_frame": 1568,
+      "raw_labels": [
+        "BladderNeckDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000612_000",
+      "video": "real3",
+      "frame_start": 612,
+      "frame_end": 612,
+      "representative_frame": 612,
+      "raw_labels": [
+        "CuttingVasDeferens",
+        "PullingTissue",
+        "PullingVasDeferens"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002115_000",
+      "video": "real3",
+      "frame_start": 2115,
+      "frame_end": 2116,
+      "representative_frame": 2116,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000788_000",
+      "video": "real3",
+      "frame_start": 788,
+      "frame_end": 788,
+      "representative_frame": 788,
+      "raw_labels": [
+        "CuttingSeminalVesicle",
+        "PullingSeminalVesicle"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001418_000",
+      "video": "real3",
+      "frame_start": 1418,
+      "frame_end": 1418,
+      "representative_frame": 1418,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "ClippingSeminalVesicle"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001096_000",
+      "video": "real3",
+      "frame_start": 1096,
+      "frame_end": 1096,
+      "representative_frame": 1096,
+      "raw_labels": [
+        "CuttingSeminalVesicle",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002766_001",
+      "video": "real3",
+      "frame_start": 2768,
+      "frame_end": 2768,
+      "representative_frame": 2768,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingProstate"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001579_000",
+      "video": "real3",
+      "frame_start": 1579,
+      "frame_end": 1579,
+      "representative_frame": 1579,
+      "raw_labels": [
+        "BladderNeckDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004687_000",
+      "video": "real3",
+      "frame_start": 4687,
+      "frame_end": 4687,
+      "representative_frame": 4687,
+      "raw_labels": [
+        "CuttingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004884_000",
+      "video": "real3",
+      "frame_start": 4884,
+      "frame_end": 4884,
+      "representative_frame": 4884,
+      "raw_labels": [
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005103_000",
+      "video": "real3",
+      "frame_start": 5103,
+      "frame_end": 5103,
+      "representative_frame": 5103,
+      "raw_labels": [
+        "BaggingProstate"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007347_000",
+      "video": "real3",
+      "frame_start": 7347,
+      "frame_end": 7347,
+      "representative_frame": 7347,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004541_000",
+      "video": "real3",
+      "frame_start": 4541,
+      "frame_end": 4541,
+      "representative_frame": 4541,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004344_000",
+      "video": "real3",
+      "frame_start": 4344,
+      "frame_end": 4344,
+      "representative_frame": 4344,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006440_000",
+      "video": "real3",
+      "frame_start": 6440,
+      "frame_end": 6440,
+      "representative_frame": 6440,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003787_000",
+      "video": "real3",
+      "frame_start": 3787,
+      "frame_end": 3788,
+      "representative_frame": 3788,
+      "raw_labels": [
+        "PullingProstate",
+        "SuckingSmoke",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000250_000",
+      "video": "real3",
+      "frame_start": 250,
+      "frame_end": 250,
+      "representative_frame": 250,
+      "raw_labels": [
+        "CuttingMesocolon",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007529_000",
+      "video": "real3",
+      "frame_start": 7529,
+      "frame_end": 7529,
+      "representative_frame": 7529,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002405_000",
+      "video": "real3",
+      "frame_start": 2405,
+      "frame_end": 2406,
+      "representative_frame": 2406,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006634_000",
+      "video": "real3",
+      "frame_start": 6634,
+      "frame_end": 6635,
+      "representative_frame": 6635,
+      "raw_labels": [
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000837_000",
+      "video": "real3",
+      "frame_start": 837,
+      "frame_end": 837,
+      "representative_frame": 837,
+      "raw_labels": [
+        "CuttingSeminalVesicle",
+        "PullingSeminalVesicle",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004488_000",
+      "video": "real3",
+      "frame_start": 4488,
+      "frame_end": 4489,
+      "representative_frame": 4489,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005724_001",
+      "video": "real3",
+      "frame_start": 5726,
+      "frame_end": 5726,
+      "representative_frame": 5726,
+      "raw_labels": [
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002764_000",
+      "video": "real3",
+      "frame_start": 2764,
+      "frame_end": 2764,
+      "representative_frame": 2764,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004289_000",
+      "video": "real3",
+      "frame_start": 4289,
+      "frame_end": 4289,
+      "representative_frame": 4289,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006669_000",
+      "video": "real3",
+      "frame_start": 6669,
+      "frame_end": 6669,
+      "representative_frame": 6669,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003063_000",
+      "video": "real3",
+      "frame_start": 3063,
+      "frame_end": 3063,
+      "representative_frame": 3063,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006370_000",
+      "video": "real3",
+      "frame_start": 6370,
+      "frame_end": 6370,
+      "representative_frame": 6370,
+      "raw_labels": [
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002844_000",
+      "video": "real3",
+      "frame_start": 2844,
+      "frame_end": 2844,
+      "representative_frame": 2844,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004807_000",
+      "video": "real3",
+      "frame_start": 4807,
+      "frame_end": 4807,
+      "representative_frame": 4807,
+      "raw_labels": [
+        "CuttingProstate",
+        "PullingProstate",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005947_000",
+      "video": "real3",
+      "frame_start": 5947,
+      "frame_end": 5948,
+      "representative_frame": 5948,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005874_000",
+      "video": "real3",
+      "frame_start": 5874,
+      "frame_end": 5875,
+      "representative_frame": 5875,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg006940_000",
+      "video": "real3",
+      "frame_start": 6940,
+      "frame_end": 6941,
+      "representative_frame": 6941,
+      "raw_labels": [
+        "BladderAnastomosis",
+        "SuckingBlood"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002157_000",
+      "video": "real3",
+      "frame_start": 2157,
+      "frame_end": 2157,
+      "representative_frame": 2157,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000860_000",
+      "video": "real3",
+      "frame_start": 860,
+      "frame_end": 860,
+      "representative_frame": 860,
+      "raw_labels": [
+        "CuttingSeminalVesicle",
+        "PullingSeminalVesicle",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004337_000",
+      "video": "real3",
+      "frame_start": 4337,
+      "frame_end": 4337,
+      "representative_frame": 4337,
+      "raw_labels": [
+        "CuttingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg004041_000",
+      "video": "real3",
+      "frame_start": 4041,
+      "frame_end": 4042,
+      "representative_frame": 4042,
+      "raw_labels": [
+        "PullingTissue",
+        "SuckingBlood",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000459_000",
+      "video": "real3",
+      "frame_start": 459,
+      "frame_end": 459,
+      "representative_frame": 459,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingSeminalVesicle"
+      ]
+    },
+    {
+      "segment_id": "real3_seg000082_000",
+      "video": "real3",
+      "frame_start": 82,
+      "frame_end": 83,
+      "representative_frame": 83,
+      "raw_labels": [
+        "CuttingMesocolon",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg005918_000",
+      "video": "real3",
+      "frame_start": 5918,
+      "frame_end": 5919,
+      "representative_frame": 5919,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg001809_000",
+      "video": "real3",
+      "frame_start": 1809,
+      "frame_end": 1809,
+      "representative_frame": 1809,
+      "raw_labels": [
+        "BladderNeckDissection",
+        "CuttingTissue",
+        "SuckingSmoke"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002830_000",
+      "video": "real3",
+      "frame_start": 2830,
+      "frame_end": 2830,
+      "representative_frame": 2830,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingProstate"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002731_000",
+      "video": "real3",
+      "frame_start": 2731,
+      "frame_end": 2732,
+      "representative_frame": 2732,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingTissue"
+      ]
+    },
+    {
+      "segment_id": "real3_seg003722_000",
+      "video": "real3",
+      "frame_start": 3722,
+      "frame_end": 3722,
+      "representative_frame": 3722,
+      "raw_labels": [
+        "PullingProstate",
+        "SuckingSmoke",
+        "UrethraDissection"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007619_000",
+      "video": "real3",
+      "frame_start": 7619,
+      "frame_end": 7620,
+      "representative_frame": 7620,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg007473_000",
+      "video": "real3",
+      "frame_start": 7473,
+      "frame_end": 7474,
+      "representative_frame": 7474,
+      "raw_labels": [
+        "BladderAnastomosis"
+      ]
+    },
+    {
+      "segment_id": "real3_seg002904_000",
+      "video": "real3",
+      "frame_start": 2904,
+      "frame_end": 2904,
+      "representative_frame": 2904,
+      "raw_labels": [
+        "CuttingTissue",
+        "PullingProstate"
+      ]
+    }
+  ]
+}

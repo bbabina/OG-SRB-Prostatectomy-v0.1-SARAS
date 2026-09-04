@@ -1,0 +1,64 @@
+{
+  "segment_id": "real3_seg002260_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 2260,
+  "frame_end": 2260,
+  "model": "gpt_clip_ensemble+calibrated-phase",
+  "actions": [
+    "PullingTissue",
+    "ClippingTissue",
+    "CuttingTissue"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.018342288381925483,
+    "BladderAnastomosis": 0.010376112040870255,
+    "BladderNeckDissection": 0.010443054699198448,
+    "ClippingBladderNeck": 0.06396371003259049,
+    "ClippingSeminalVesicle": 0.0173883555007487,
+    "ClippingTissue": 0.1110558149094219,
+    "ClippingVasDeferens": 0.07241522064652514,
+    "CuttingMesocolon": 0.03532898793270502,
+    "CuttingProstate": 0.016769135911212894,
+    "CuttingSeminalVesicle": 0.02158900731084295,
+    "CuttingThread": 0.03937901876156082,
+    "CuttingTissue": 0.09277616868997227,
+    "CuttingVasDeferens": 0.03638333480137409,
+    "PullingBladderNeck": 0.03248392495375672,
+    "PullingProstate": 0.022760503831586364,
+    "PullingSeminalVesicle": 0.031161807451774864,
+    "PullingTissue": 0.1540875090457217,
+    "PullingVasDeferens": 0.06088434774949352,
+    "SuckingBlood": 0.04152118382806306,
+    "SuckingSmoke": 0.07805513961067559,
+    "UrethraDissection": 0.032835373909979745
+  },
+  "top1_prediction": "PullingTissue",
+  "tools": [
+    "clip_applier",
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue"
+  ],
+  "events": [],
+  "phase": null,
+  "phase_ambiguous": false,
+  "phase_candidates": [],
+  "ensemble_probe_weight": 0.95,
+  "ensemble_sources": {
+    "gpt_model": "gpt_baseline_dense",
+    "probe_model": "clip_linear_probe"
+  },
+  "phase_probs": {
+    "bladder_anastomosis": 0.0839,
+    "bladder_neck_dissection": 0.1138,
+    "mesocolon_mobilization": 0.2674,
+    "prostate_dissection": 0.0989,
+    "specimen_bagging": 0.1229,
+    "urethra_dissection": 0.109,
+    "vas_deferens_seminal_vesicle_dissection": 0.2042
+  },
+  "phase_probs_source": "trained_softmax_on_clip_embeddings_zeroshot_actions_unchanged"
+}

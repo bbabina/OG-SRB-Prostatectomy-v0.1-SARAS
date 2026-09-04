@@ -1,0 +1,60 @@
+{
+  "segment_id": "real3_seg001761_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 1761,
+  "frame_end": 1761,
+  "model": "gpt_clip_ensemble",
+  "actions": [
+    "SuckingBlood",
+    "UrethraDissection",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.017654745196728452,
+    "BladderAnastomosis": 0.025577925115746337,
+    "BladderNeckDissection": 0.059216957847360016,
+    "ClippingBladderNeck": 0.02940925002823081,
+    "ClippingSeminalVesicle": 0.001854361257642485,
+    "ClippingTissue": 0.03245044424390288,
+    "ClippingVasDeferens": 0.010053396570359257,
+    "CuttingMesocolon": 0.0029884334317378885,
+    "CuttingProstate": 0.08102485924922162,
+    "CuttingSeminalVesicle": 0.02637484069754311,
+    "CuttingThread": 0.01808385358692671,
+    "CuttingTissue": 0.07838164835696657,
+    "CuttingVasDeferens": 0.013133781799996773,
+    "PullingBladderNeck": 0.08934649695913789,
+    "PullingProstate": 0.06287970446369517,
+    "PullingSeminalVesicle": 0.04640500734001193,
+    "PullingTissue": 0.07517059478294535,
+    "PullingVasDeferens": 0.0167045766184323,
+    "SuckingBlood": 0.1131560343248755,
+    "SuckingSmoke": 0.09323912307022214,
+    "UrethraDissection": 0.1068939650583168
+  },
+  "top1_prediction": "SuckingBlood",
+  "tools": [
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "blood",
+    "smoke_plume",
+    "urethra"
+  ],
+  "events": [
+    "blood_present",
+    "smoke_present"
+  ],
+  "phase": "urethra_dissection",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "urethra_dissection"
+  ],
+  "ensemble_probe_weight": 0.95,
+  "ensemble_sources": {
+    "gpt_model": "gpt_baseline_dense",
+    "probe_model": "clip_linear_probe"
+  }
+}

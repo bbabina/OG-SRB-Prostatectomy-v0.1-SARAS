@@ -1,0 +1,54 @@
+{
+  "segment_id": "real3_seg005798_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 5798,
+  "frame_end": 5798,
+  "model": "gpt_clip_ensemble_frozen",
+  "actions": [
+    "BladderAnastomosis",
+    "UrethraDissection",
+    "PullingBladderNeck"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.009981930129835365,
+    "BladderAnastomosis": 0.22418604188447586,
+    "BladderNeckDissection": 0.012821799848302324,
+    "ClippingBladderNeck": 0.07621023513139696,
+    "ClippingSeminalVesicle": 0.003920715656092446,
+    "ClippingTissue": 0.008371257752197386,
+    "ClippingVasDeferens": 0.004556507384107437,
+    "CuttingMesocolon": 0.0294159639494936,
+    "CuttingProstate": 0.06133270869584616,
+    "CuttingSeminalVesicle": 0.003072993352072458,
+    "CuttingThread": 0.09432999791385552,
+    "CuttingTissue": 0.03535002007763352,
+    "CuttingVasDeferens": 0.010405791281845357,
+    "PullingBladderNeck": 0.11312854147146748,
+    "PullingProstate": 0.025368089947798152,
+    "PullingSeminalVesicle": 0.007905010484986392,
+    "PullingTissue": 0.07256502922411101,
+    "PullingVasDeferens": 0.009727613438629368,
+    "SuckingBlood": 0.05622518181412573,
+    "SuckingSmoke": 0.020006246374871726,
+    "UrethraDissection": 0.12111832418685585
+  },
+  "top1_prediction": "BladderAnastomosis",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "needle_driver"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "urethra"
+  ],
+  "events": [],
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
+  "phase_candidates": [
+    "bladder_anastomosis",
+    "bladder_neck_dissection",
+    "urethra_dissection"
+  ]
+}

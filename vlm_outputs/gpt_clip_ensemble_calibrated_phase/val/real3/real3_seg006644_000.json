@@ -1,0 +1,68 @@
+{
+  "segment_id": "real3_seg006644_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 6644,
+  "frame_end": 6644,
+  "model": "gpt_clip_ensemble+calibrated-phase",
+  "actions": [
+    "BladderAnastomosis",
+    "UrethraDissection",
+    "CuttingThread"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.009072835377183203,
+    "BladderAnastomosis": 0.20125510962467488,
+    "BladderNeckDissection": 0.061550538833147525,
+    "ClippingBladderNeck": 0.06190356744704571,
+    "ClippingSeminalVesicle": 0.004942400594574508,
+    "ClippingTissue": 0.026477146042363432,
+    "ClippingVasDeferens": 0.028789483463396506,
+    "CuttingMesocolon": 0.018710516536603494,
+    "CuttingProstate": 0.03392604979561501,
+    "CuttingSeminalVesicle": 0.002735971757710888,
+    "CuttingThread": 0.10735600148643627,
+    "CuttingTissue": 0.013273875882571536,
+    "CuttingVasDeferens": 0.027801003344481604,
+    "PullingBladderNeck": 0.09642976588628763,
+    "PullingProstate": 0.03740338164251208,
+    "PullingSeminalVesicle": 0.017845596432552954,
+    "PullingTissue": 0.042116313638052766,
+    "PullingVasDeferens": 0.02282329988851728,
+    "SuckingBlood": 0.03224916387959866,
+    "SuckingSmoke": 0.03787997027127463,
+    "UrethraDissection": 0.11545800817539947
+  },
+  "top1_prediction": "BladderAnastomosis",
+  "tools": [
+    "monopolar_scissors",
+    "needle_driver"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "suture_thread",
+    "urethra"
+  ],
+  "events": [],
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
+  "phase_candidates": [
+    "bladder_anastomosis",
+    "urethra_dissection"
+  ],
+  "ensemble_probe_weight": 0.95,
+  "ensemble_sources": {
+    "gpt_model": "gpt_baseline_dense",
+    "probe_model": "clip_linear_probe"
+  },
+  "phase_probs": {
+    "bladder_anastomosis": 0.4588,
+    "bladder_neck_dissection": 0.1465,
+    "mesocolon_mobilization": 0.0582,
+    "prostate_dissection": 0.0663,
+    "specimen_bagging": 0.0392,
+    "urethra_dissection": 0.2001,
+    "vas_deferens_seminal_vesicle_dissection": 0.0309
+  },
+  "phase_probs_source": "trained_softmax_on_clip_embeddings_zeroshot_actions_unchanged"
+}

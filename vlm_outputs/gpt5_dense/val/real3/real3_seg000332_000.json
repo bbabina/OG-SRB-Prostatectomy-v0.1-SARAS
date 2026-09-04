@@ -1,0 +1,61 @@
+{
+  "segment_id": "real3_seg000332_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 332,
+  "frame_end": 332,
+  "model": "gpt-5",
+  "actions": [
+    "CuttingTissue",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0,
+    "BladderAnastomosis": 0.0,
+    "BladderNeckDissection": 0.0,
+    "ClippingBladderNeck": 0.0,
+    "ClippingSeminalVesicle": 0.0,
+    "ClippingTissue": 0.0,
+    "ClippingVasDeferens": 0.0,
+    "CuttingMesocolon": 0.0,
+    "CuttingProstate": 0.0,
+    "CuttingSeminalVesicle": 0.0,
+    "CuttingThread": 0.0,
+    "CuttingTissue": 1.0,
+    "CuttingVasDeferens": 0.0,
+    "PullingBladderNeck": 0.0,
+    "PullingProstate": 0.0,
+    "PullingSeminalVesicle": 0.0,
+    "PullingTissue": 0.0,
+    "PullingVasDeferens": 0.0,
+    "SuckingBlood": 0.0,
+    "SuckingSmoke": 0.85,
+    "UrethraDissection": 0.0
+  },
+  "top1_prediction": "CuttingTissue",
+  "tools": [
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "smoke_plume"
+  ],
+  "events": [
+    "smoke_present"
+  ],
+  "phase": null,
+  "phase_ambiguous": false,
+  "phase_candidates": [],
+  "raw_response": "CuttingTissue, SuckingSmoke",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "real3_dense_v1.json",
+  "image_detail": "high",
+  "prompt_variant": "baseline",
+  "n_frames": 1,
+  "frame_numbers": [
+    332
+  ],
+  "probability_status": "rank_pseudo_scores_not_calibrated"
+}

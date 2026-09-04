@@ -1,0 +1,69 @@
+{
+  "segment_id": "real3_seg005508_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 5508,
+  "frame_end": 5508,
+  "model": "gpt_clip_ensemble+calibrated-phase+ogsd_v0.2",
+  "decoder": "ontology_grounded_structured_decoder_v0.2",
+  "actions": [
+    "BladderAnastomosis"
+  ],
+  "raw_actions": [
+    "BladderAnastomosis",
+    "PullingBladderNeck",
+    "ClippingBladderNeck"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.048565948268765334,
+    "BladderAnastomosis": 0.16103563838562082,
+    "BladderNeckDissection": 0.06924362415002387,
+    "ClippingBladderNeck": 0.12406605528755124,
+    "ClippingSeminalVesicle": 0.0027215700479114873,
+    "ClippingTissue": 0.017565075654049425,
+    "ClippingVasDeferens": 0.003237729884584356,
+    "CuttingMesocolon": 0.0030656766056933993,
+    "CuttingProstate": 0.06397253733309184,
+    "CuttingSeminalVesicle": 0.003112600227209115,
+    "CuttingThread": 0.07863712948175469,
+    "CuttingTissue": 0.010917562605989759,
+    "CuttingVasDeferens": 0.001579761924362415,
+    "PullingBladderNeck": 0.13503054151505672,
+    "PullingProstate": 0.04695490393005911,
+    "PullingSeminalVesicle": 0.01331066730329124,
+    "PullingTissue": 0.047322803201330595,
+    "PullingVasDeferens": 0.008195992558078272,
+    "SuckingBlood": 0.08774717223438762,
+    "SuckingSmoke": 0.03261191695342213,
+    "UrethraDissection": 0.0411050924477666
+  },
+  "raw_top1_prediction": "BladderAnastomosis",
+  "top1_prediction": "BladderAnastomosis",
+  "tools": [
+    "needle_driver"
+  ],
+  "tissues": [
+    "bladder_neck",
+    "urethra"
+  ],
+  "events": [],
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "bladder_anastomosis"
+  ],
+  "phase_evidence_source": "calibrated_phase_probs",
+  "transition_policy": {
+    "mode": "soft_local_backtracking",
+    "allow_stay": true,
+    "allow_adjacent_forward": true,
+    "allow_adjacent_backward": true,
+    "allow_nonadjacent_transitions": false,
+    "recommended_costs": {
+      "stay": 0.0,
+      "adjacent_forward": 0.1,
+      "adjacent_backward": 0.5
+    },
+    "note": "Backward transitions are permitted but penalised; they are not treated as impossible."
+  }
+}

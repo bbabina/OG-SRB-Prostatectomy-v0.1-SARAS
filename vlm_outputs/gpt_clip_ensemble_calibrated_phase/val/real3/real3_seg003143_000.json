@@ -1,0 +1,67 @@
+{
+  "segment_id": "real3_seg003143_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 3143,
+  "frame_end": 3143,
+  "model": "gpt_clip_ensemble+calibrated-phase",
+  "actions": [
+    "CuttingProstate",
+    "UrethraDissection",
+    "PullingProstate"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.003635222628686881,
+    "BladderAnastomosis": 0.00769213108230144,
+    "BladderNeckDissection": 0.09538824177674375,
+    "ClippingBladderNeck": 0.0440298164786555,
+    "ClippingSeminalVesicle": 0.004449512497512741,
+    "ClippingTissue": 0.003198995913244455,
+    "ClippingVasDeferens": 0.0033589457089066776,
+    "CuttingMesocolon": 0.007706671972816186,
+    "CuttingProstate": 0.1488763598133604,
+    "CuttingSeminalVesicle": 0.046763503895428035,
+    "CuttingThread": 0.0005525538395604058,
+    "CuttingTissue": 0.09089399615784355,
+    "CuttingVasDeferens": 0.01390109133209863,
+    "PullingBladderNeck": 0.0804111245465538,
+    "PullingProstate": 0.09993954050785972,
+    "PullingSeminalVesicle": 0.04131066995239772,
+    "PullingTissue": 0.025330231276690183,
+    "PullingVasDeferens": 0.010963831448119632,
+    "SuckingBlood": 0.09430048112490372,
+    "SuckingSmoke": 0.05817810294950484,
+    "UrethraDissection": 0.1191189750968117
+  },
+  "top1_prediction": "CuttingProstate",
+  "tools": [
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "prostate",
+    "urethra"
+  ],
+  "events": [],
+  "phase": "prostate_dissection",
+  "phase_ambiguous": true,
+  "phase_candidates": [
+    "prostate_dissection",
+    "urethra_dissection"
+  ],
+  "ensemble_probe_weight": 0.95,
+  "ensemble_sources": {
+    "gpt_model": "gpt_baseline_dense",
+    "probe_model": "clip_linear_probe"
+  },
+  "phase_probs": {
+    "bladder_anastomosis": 0.0222,
+    "bladder_neck_dissection": 0.121,
+    "mesocolon_mobilization": 0.0392,
+    "prostate_dissection": 0.4353,
+    "specimen_bagging": 0.0175,
+    "urethra_dissection": 0.2963,
+    "vas_deferens_seminal_vesicle_dissection": 0.0685
+  },
+  "phase_probs_source": "trained_softmax_on_clip_embeddings_zeroshot_actions_unchanged"
+}

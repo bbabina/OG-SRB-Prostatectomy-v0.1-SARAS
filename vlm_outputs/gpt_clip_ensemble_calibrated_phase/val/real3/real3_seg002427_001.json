@@ -1,0 +1,67 @@
+{
+  "segment_id": "real3_seg002427_001",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 2429,
+  "frame_end": 2430,
+  "model": "gpt_clip_ensemble+calibrated-phase",
+  "actions": [
+    "CuttingTissue",
+    "PullingTissue",
+    "SuckingSmoke"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0024832897668461956,
+    "BladderAnastomosis": 0.0010833143278188102,
+    "BladderNeckDissection": 0.004683251171032087,
+    "ClippingBladderNeck": 0.006749881581024894,
+    "ClippingSeminalVesicle": 0.01629971404010456,
+    "ClippingTissue": 0.03771629737489987,
+    "ClippingVasDeferens": 0.05881563481342432,
+    "CuttingMesocolon": 0.1071481202084174,
+    "CuttingProstate": 0.031182786266907597,
+    "CuttingSeminalVesicle": 0.06633216961105946,
+    "CuttingThread": 0.0008166523394326415,
+    "CuttingTissue": 0.15262217621913066,
+    "CuttingVasDeferens": 0.023382923106612163,
+    "PullingBladderNeck": 0.004183259942808021,
+    "PullingProstate": 0.025832880124910088,
+    "PullingSeminalVesicle": 0.05219908422659251,
+    "PullingTissue": 0.14778980485722473,
+    "PullingVasDeferens": 0.04396589533516955,
+    "SuckingBlood": 0.04208259504219224,
+    "SuckingSmoke": 0.13138102840301047,
+    "UrethraDissection": 0.043249241241381735
+  },
+  "top1_prediction": "CuttingTissue",
+  "tools": [
+    "grasper",
+    "monopolar_scissors",
+    "suction_irrigator"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "smoke_plume"
+  ],
+  "events": [
+    "smoke_present"
+  ],
+  "phase": null,
+  "phase_ambiguous": false,
+  "phase_candidates": [],
+  "ensemble_probe_weight": 0.95,
+  "ensemble_sources": {
+    "gpt_model": "gpt_baseline_dense",
+    "probe_model": "clip_linear_probe"
+  },
+  "phase_probs": {
+    "bladder_anastomosis": 0.0108,
+    "bladder_neck_dissection": 0.0303,
+    "mesocolon_mobilization": 0.5511,
+    "prostate_dissection": 0.0957,
+    "specimen_bagging": 0.0176,
+    "urethra_dissection": 0.0725,
+    "vas_deferens_seminal_vesicle_dissection": 0.2219
+  },
+  "phase_probs_source": "trained_softmax_on_clip_embeddings_zeroshot_actions_unchanged"
+}

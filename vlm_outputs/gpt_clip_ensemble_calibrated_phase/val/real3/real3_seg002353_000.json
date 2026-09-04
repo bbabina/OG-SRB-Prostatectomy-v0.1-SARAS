@@ -1,0 +1,64 @@
+{
+  "segment_id": "real3_seg002353_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 2353,
+  "frame_end": 2353,
+  "model": "gpt_clip_ensemble+calibrated-phase",
+  "actions": [
+    "PullingTissue",
+    "CuttingTissue",
+    "ClippingTissue"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.016689422901875115,
+    "BladderAnastomosis": 0.02877412160932095,
+    "BladderNeckDissection": 0.021855088294192627,
+    "ClippingBladderNeck": 0.009144593118514472,
+    "ClippingSeminalVesicle": 0.011392909157109046,
+    "ClippingTissue": 0.1038094607039976,
+    "ClippingVasDeferens": 0.013619606772255597,
+    "CuttingMesocolon": 0.003826460950300382,
+    "CuttingProstate": 0.03182231931549244,
+    "CuttingSeminalVesicle": 0.014592435827416712,
+    "CuttingThread": 0.034330056435463316,
+    "CuttingTissue": 0.16045187190113622,
+    "CuttingVasDeferens": 0.005037092663389768,
+    "PullingBladderNeck": 0.0355406881485527,
+    "PullingProstate": 0.07084357363917713,
+    "PullingSeminalVesicle": 0.017100172947387585,
+    "PullingTissue": 0.17783315128345165,
+    "PullingVasDeferens": 0.03616762242854542,
+    "SuckingBlood": 0.08612779901693063,
+    "SuckingSmoke": 0.08552248316038594,
+    "UrethraDissection": 0.03551906972510468
+  },
+  "top1_prediction": "PullingTissue",
+  "tools": [
+    "clip_applier",
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue"
+  ],
+  "events": [],
+  "phase": null,
+  "phase_ambiguous": false,
+  "phase_candidates": [],
+  "ensemble_probe_weight": 0.95,
+  "ensemble_sources": {
+    "gpt_model": "gpt_baseline_dense",
+    "probe_model": "clip_linear_probe"
+  },
+  "phase_probs": {
+    "bladder_anastomosis": 0.1614,
+    "bladder_neck_dissection": 0.124,
+    "mesocolon_mobilization": 0.0664,
+    "prostate_dissection": 0.2228,
+    "specimen_bagging": 0.1002,
+    "urethra_dissection": 0.1494,
+    "vas_deferens_seminal_vesicle_dissection": 0.1758
+  },
+  "phase_probs_source": "trained_softmax_on_clip_embeddings_zeroshot_actions_unchanged"
+}

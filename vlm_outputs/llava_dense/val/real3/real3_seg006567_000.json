@@ -1,0 +1,56 @@
+{
+  "segment_id": "real3_seg006567_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 6567,
+  "frame_end": 6567,
+  "model": "llava:7b",
+  "actions": [
+    "CuttingThread",
+    "CuttingTissue",
+    "CuttingVasDeferens"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0,
+    "BladderAnastomosis": 0.0,
+    "BladderNeckDissection": 0.0,
+    "ClippingBladderNeck": 0.0,
+    "ClippingSeminalVesicle": 0.0,
+    "ClippingTissue": 0.0,
+    "ClippingVasDeferens": 0.0,
+    "CuttingMesocolon": 0.0,
+    "CuttingProstate": 0.0,
+    "CuttingSeminalVesicle": 0.0,
+    "CuttingThread": 1.0,
+    "CuttingTissue": 0.85,
+    "CuttingVasDeferens": 0.7,
+    "PullingBladderNeck": 0.0,
+    "PullingProstate": 0.0,
+    "PullingSeminalVesicle": 0.0,
+    "PullingTissue": 0.0,
+    "PullingVasDeferens": 0.0,
+    "SuckingBlood": 0.0,
+    "SuckingSmoke": 0.0,
+    "UrethraDissection": 0.0
+  },
+  "top1_prediction": "CuttingThread",
+  "tools": [
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "suture_thread",
+    "vas_deferens"
+  ],
+  "events": [],
+  "phase": "bladder_anastomosis",
+  "phase_ambiguous": true,
+  "phase_candidates": [
+    "bladder_anastomosis",
+    "vas_deferens_seminal_vesicle_dissection"
+  ],
+  "raw_response": " CuttingThread, CuttingTissue, CuttingVasDeferens ",
+  "hallucinated_tokens": [],
+  "parse_failure": false,
+  "benchmark_manifest": "real3_dense_v1.json"
+}

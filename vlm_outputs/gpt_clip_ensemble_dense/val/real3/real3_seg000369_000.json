@@ -1,0 +1,56 @@
+{
+  "segment_id": "real3_seg000369_000",
+  "split": "val",
+  "video": "real3",
+  "frame_start": 369,
+  "frame_end": 370,
+  "model": "gpt_clip_ensemble",
+  "actions": [
+    "CuttingMesocolon",
+    "CuttingTissue",
+    "PullingTissue"
+  ],
+  "action_probs": {
+    "BaggingProstate": 0.0018492384057618376,
+    "BladderAnastomosis": 0.00295878144921894,
+    "BladderNeckDissection": 0.024641101756776487,
+    "ClippingBladderNeck": 0.002195970606842182,
+    "ClippingSeminalVesicle": 0.0038602851720278357,
+    "ClippingTissue": 0.005200983016205168,
+    "ClippingVasDeferens": 0.031298360017519095,
+    "CuttingMesocolon": 0.21855686408097716,
+    "CuttingProstate": 0.020410968903596283,
+    "CuttingSeminalVesicle": 0.016458221811280354,
+    "CuttingThread": 0.00147939072460947,
+    "CuttingTissue": 0.1970367576686619,
+    "CuttingVasDeferens": 0.016620030171784518,
+    "PullingBladderNeck": 0.0036753613314516524,
+    "PullingProstate": 0.031159667137086965,
+    "PullingSeminalVesicle": 0.03700788359530877,
+    "PullingTissue": 0.14584147981057236,
+    "PullingVasDeferens": 0.053442989926517095,
+    "SuckingBlood": 0.02574553983353039,
+    "SuckingSmoke": 0.13899338167307412,
+    "UrethraDissection": 0.021566742907197428
+  },
+  "top1_prediction": "CuttingMesocolon",
+  "tools": [
+    "grasper",
+    "monopolar_scissors"
+  ],
+  "tissues": [
+    "generic_tissue",
+    "mesocolon"
+  ],
+  "events": [],
+  "phase": "mesocolon_mobilization",
+  "phase_ambiguous": false,
+  "phase_candidates": [
+    "mesocolon_mobilization"
+  ],
+  "ensemble_probe_weight": 0.95,
+  "ensemble_sources": {
+    "gpt_model": "gpt_baseline_dense",
+    "probe_model": "clip_linear_probe"
+  }
+}

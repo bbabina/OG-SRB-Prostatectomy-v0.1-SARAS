@@ -1,58 +1,81 @@
-# Reasoning-validity and recognition metrics
+# Recognition and ontology-grounded benchmark metrics.
 
 from __future__ import annotations
-from collections import Counter
 
-
-# Ontology-rule checks (operate on a single segment's predicted/annotated node set, or on a video's ordered segment list)
 
 def check_requires(segment: dict, onto) -> list[str]:
+    """Legacy function name; measures canonical tool mapping conformance."""
     violations = []
-    tool_set = set(segment["tools"])
-    for action in segment["actions"]:
+    tool_set = set(segment.get("tools", []))
+    for action in segment.get("actions", []):
         required_tool = onto.tool_for(action)
         if required_tool and required_tool not in tool_set:
-            violations.append(f"requires: action {action} missing tool {required_tool}")
+            violations.append(
+                f"canonical_tool_mapping: action {action} missing tool {required_tool}"
+            )
     return violations
 
 
 def check_acts_on(segment: dict, onto) -> list[str]:
+    """Legacy function name; measures canonical target mapping conformance."""
     violations = []
-    tissue_set = set(segment["tissues"])
-    for action in segment["actions"]:
-        tissue = onto.tissue_for(action)
-        if tissue and tissue not in tissue_set:
-            violations.append(f"acts_on: action {action} missing tissue {tissue}")
+    target_set = set(segment.get("tissues", []))
+    for action in segment.get("actions", []):
+        required_targets = set(onto.targets_for(action))
+        missing = sorted(required_targets - target_set)
+        if missing:
+            violations.append(
+                f"canonical_target_mapping: action {action} missing targets {missing}"
+            )
     return violations
 
 
 def check_contradicts(segment: dict, onto) -> list[str]:
-    nodes = set(segment["actions"]) | set(segment["tools"]) | set(segment["tissues"]) | set(segment["events"])
+    """Evaluate only contradiction rules actually present in the canonical ontology.
+
+    Ontology v0.2 intentionally contains no validated global contradiction pairs, so
+    this normally returns an empty list. The evaluator reports the rate as N/A when
+    there are no validated rules rather than claiming a misleading 0%.
+    """
+    nodes = (
+        set(segment.get("actions", []))
+        | set(segment.get("tools", []))
+        | set(segment.get("tissues", []))
+        | set(segment.get("events", []))
+    )
     if segment.get("phase"):
         nodes.add(segment["phase"])
+
     violations = []
     for pair in onto.contradicts:
         if pair.issubset(nodes):
-            violations.append(f"contradicts: {sorted(pair)} co-occur")
+            violations.append(f"validated_rule: {sorted(pair)} co-occur")
     return violations
 
 
 def check_phase_order(segments_for_video: list[dict], onto) -> tuple[list[str], int]:
+    """Proxy phase transition consistency under the v0.2 legal transition graph."""
     violations = []
     ordered = sorted(segments_for_video, key=lambda s: s["frame_start"])
     phased = [s for s in ordered if s.get("phase")]
     for prev, nxt in zip(phased, phased[1:]):
         if not onto.is_legal_phase_transition(prev["phase"], nxt["phase"]):
             violations.append(
-                f"phase_order: {prev['segment_id']}({prev['phase']}) -> "
+                f"proxy_phase_transition: "
+                f"{prev['segment_id']}({prev['phase']}) -> "
                 f"{nxt['segment_id']}({nxt['phase']}) illegal"
             )
     return violations, (len(phased) - 1 if len(phased) > 1 else 0)
 
 
-def ontology_factuality(segment: dict, onto) -> float:
+def schema_vocabulary_conformance(segment: dict, onto) -> float:
     valid_ids = onto.valid_node_ids()
-    nodes = list(segment["actions"]) + list(segment["tools"]) + list(segment["tissues"]) + list(segment["events"])
+    nodes = (
+        list(segment.get("actions", []))
+        + list(segment.get("tools", []))
+        + list(segment.get("tissues", []))
+        + list(segment.get("events", []))
+    )
     if segment.get("phase"):
         nodes.append(segment["phase"])
     if not nodes:
@@ -61,7 +84,9 @@ def ontology_factuality(segment: dict, onto) -> float:
     return n_valid / len(nodes)
 
 
-# Temporal Coherence: edit distance between predicted and true phase sequences for a video (1 - normalized Levenshtein distance)
+# Backwards-compatible alias; do not use this old name in new reports.
+ontology_factuality = schema_vocabulary_conformance
+
 
 def _levenshtein(a: list[str], b: list[str]) -> int:
     if not a:
@@ -86,10 +111,11 @@ def temporal_coherence(pred_phase_seq: list[str], true_phase_seq: list[str]) -> 
     return 1 - dist / max_len
 
 
-# Recognition metrics: predicted actions vs ground-truth actions, per segment
-
-def macro_f1(pred_by_segment: dict[str, list[str]], gt_by_segment: dict[str, list[str]],
-             action_classes: list[str]) -> dict:
+def macro_f1(
+    pred_by_segment: dict[str, list[str]],
+    gt_by_segment: dict[str, list[str]],
+    action_classes: list[str],
+) -> dict:
     """Multi-label macro-F1 over action classes, matched by segment_id."""
     per_class = {}
     for cls in action_classes:
@@ -104,24 +130,45 @@ def macro_f1(pred_by_segment: dict[str, list[str]], gt_by_segment: dict[str, lis
                 fp += 1
             elif gt_has and not pred_has:
                 fn += 1
+
         precision = tp / (tp + fp) if (tp + fp) else 0.0
         recall = tp / (tp + fn) if (tp + fn) else 0.0
-        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
-        per_class[cls] = {"precision": precision, "recall": recall, "f1": f1, "support": tp + fn}
+        f1 = (
+            2 * precision * recall / (precision + recall)
+            if (precision + recall)
+            else 0.0
+        )
+        per_class[cls] = {
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "support": tp + fn,
+        }
 
-    classes_with_support = [c for c in action_classes if per_class[c]["support"] > 0]
-    macro = sum(per_class[c]["f1"] for c in classes_with_support) / len(classes_with_support) if classes_with_support else 0.0
+    classes_with_support = [
+        c for c in action_classes if per_class[c]["support"] > 0
+    ]
+    macro = (
+        sum(per_class[c]["f1"] for c in classes_with_support)
+        / len(classes_with_support)
+        if classes_with_support
+        else 0.0
+    )
     return {"macro_f1": macro, "per_class": per_class}
 
 
-def top1_accuracy(pred_top_by_segment: dict[str, str], gt_by_segment: dict[str, list[str]]) -> float:
-    #Fraction of segments where the model's single top-ranked action is anywhere in that segment's (possibly multi-label) ground-truth action set
+def top1_accuracy(
+    pred_top_by_segment: dict[str, str | None],
+    gt_by_segment: dict[str, list[str]],
+) -> float:
+    """Count explicit no-prediction/parse failures as incorrect, not as missing."""
     n = 0
     correct = 0
     for seg_id, gt_actions in gt_by_segment.items():
         if seg_id not in pred_top_by_segment:
             continue
         n += 1
-        if pred_top_by_segment[seg_id] in gt_actions:
+        pred = pred_top_by_segment[seg_id]
+        if pred is not None and pred in gt_actions:
             correct += 1
     return correct / n if n else 0.0

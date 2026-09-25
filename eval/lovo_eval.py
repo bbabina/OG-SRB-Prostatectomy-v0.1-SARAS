@@ -1,24 +1,3 @@
-"""Leave-one-video-out (LOVO) evaluation for the linear probe + decoder.
-
-Per supervisor guidance: a single fixed train/val split (real1+real2+real4
-train, real3 val) only tells you how the model does on one specific held-out
-video. With only 4 procedures total and real videos differing in lighting,
-anatomy, and camera angle, that's a thin basis for a robustness claim. LOVO
-retrains 4 times, holding out a different one of the 4 videos each time, and
-reports the spread across folds -- if performance swings wildly between
-folds, that's itself an important finding (the model doesn't generalize
-across procedures), not something a single train/val split could reveal.
-
-No new embeddings are needed: features/<split>/<video>/*.npz already covers
-every video regardless of which "official" split (train/val folder) it sits
-under, so this just re-partitions the existing embeddings by video for each
-fold and retrains the same architecture as clip_linear_probe.py (one-vs-rest
-action classifier + softmax phase classifier), then runs the same decoder
-logic and scores with the same eval/metrics.py functions used everywhere
-else in this project.
-
-Output: reports/lovo_summary.json (per-fold metrics + aggregate).
-"""
 from __future__ import annotations
 
 import argparse

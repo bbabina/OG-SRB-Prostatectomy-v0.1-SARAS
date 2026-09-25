@@ -15,7 +15,7 @@ from eval.evaluator import load_segments, evaluate  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 
-MODELS = ["clip", "clip_linear_probe", "clip_bbox_padded_probe", "llava_baseline", "gemini_baseline"]
+MODELS = ["clip", "clip_linear_probe", "clip_bbox_padded_probe", "llava_baseline", "gemini_baseline", "gpt4v_baseline"]
 
 
 def common_180_ids() -> set[str]:

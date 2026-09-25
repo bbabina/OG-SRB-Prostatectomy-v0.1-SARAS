@@ -61,16 +61,7 @@ pip install torch torchvision open_clip_torch numpy pandas scikit-learn pillow s
 
 Requires the SARAS-MESAD-Real dataset (four annotated RARP procedures), not included here.
 
-## Run
 
-```bash
-python data_prep/build_segments.py
-python data_prep/validate_annotations.py
-python baselines/clip_linear_probe.py
-python baselines/decoder_constrained.py
-python eval/evaluator.py
-streamlit run streamlit_app.py
-```
 
 ## Status
 

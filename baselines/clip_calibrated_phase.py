@@ -1,20 +1,3 @@
-"""Attach a calibrated phase classifier to zero-shot CLIP's existing val predictions.
-
-Controlled ablation, not a new "zero-shot CLIP" baseline: this does NOT touch zero-shot
-CLIP's actions/action_probs at all (still pure zero-shot, unchanged accuracy). It only
-adds a `phase_probs` field, trained the same way clip_linear_probe.py trains its phase
-classifier -- a single softmax LogisticRegression over CLIP embeddings, fit on the train
-split's ground-truth phases. That lets the decoder use real calibrated phase evidence
-for CLIP zero-shot instead of falling back to summing its raw (unreliable) action
-probabilities per phase.
-
-Purpose: isolate whether the decoder harms CLIP zero-shot because of its weak raw
-accuracy, or specifically because it lacks calibrated phase evidence -- see
-SUPERVISOR_REPLY_v0.2.1.md, "what I'd propose next."
-
-Usage:
-    python baselines/clip_calibrated_phase.py
-"""
 
 from __future__ import annotations
 

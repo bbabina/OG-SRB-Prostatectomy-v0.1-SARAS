@@ -1,16 +1,3 @@
-"""Ontology-Grounded Structured Decoder for Surgical Action Recognition.
-
-Corrected v0.2 semantics:
-- uses ontology v0.2 by default;
-- allows local backward phase transitions with a penalty;
-- applies transition costs in log-space Viterbi decoding;
-- disallows non-adjacent transitions;
-- does NOT apply unsupported global contradiction rules;
-- recomputes top-1 after action filtering.
-
-This is structured post-processing / temporal decoding, not a token-level VLM decoder.
-"""
-
 from __future__ import annotations
 
 import argparse

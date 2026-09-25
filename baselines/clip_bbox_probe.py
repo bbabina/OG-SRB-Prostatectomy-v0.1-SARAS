@@ -1,35 +1,3 @@
-"""Localization experiment: action classifier trained on bounding-box crops
-instead of whole frames (see data_prep/extract_bbox_embeddings.py for the
-motivation and the ground-truth-box caveat).
-
-Two classifiers, different granularity, for a deliberate reason:
-
-  - Action classifier: trained at the CROP level. Each box has exactly one
-    label, so unlike the whole-frame probe (multi-label, one blurry
-    embedding representing a whole ~15-frame window that may span more
-    than one action 40% of the time), this is clean single-label
-    multiclass classification -- a single softmax LogisticRegression over
-    all 21 actions, one genuinely comparable distribution per crop.
-
-  - Phase classifier: kept at the SEGMENT level, reusing the existing
-    whole-frame multi-frame-pooled embeddings (extract_embeddings.py).
-    Phase is a broader "which stage of the surgery" judgment, not tied to
-    one small instrument-tissue region -- there's no reason to expect
-    zooming into one box to help it, so the part of the pipeline that
-    already works (see PROGRESS_REPORT.md decoder section) is left alone.
-
-Segment-level action prediction: every crop in a segment gets scored by
-the action classifier, then scores are MAX-pooled across all of a
-segment's crops -- if any single crop strongly suggests an action, the
-segment gets credit for it. This mirrors how ground truth itself is
-defined (a segment's true actions are the UNION over all its frames'
-box labels), so max-pooling is the natural aggregation, not an
-arbitrary choice.
-
-Output:
-  - models/clip_bbox_probe.joblib
-  - vlm_outputs/clip_bbox_probe/val/<video>/<segment_id>.json
-"""
 from __future__ import annotations
 
 import argparse

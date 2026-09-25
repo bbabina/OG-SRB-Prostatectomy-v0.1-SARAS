@@ -1,24 +1,3 @@
-"""GPT vision baseline, prompt-variant experiment on the frozen Test-180 manifest.
-
-This is an OPTIONAL EXTENSION on top of baselines/gpt_baseline.py's clean single-image/
-21-bare-label baseline (per the instructions doc, extension item 1: "image-only vs
-image+ontology prompt"). It does not replace or overwrite that baseline -- it writes to
-a separate vlm_outputs/gpt_baseline_<variant>/ folder so the canonical Table 1 result
-stays untouched and reproducible.
-
-Motivation: per-segment analysis of the baseline GPT-4o run showed it systematically
-confuses PullingTissue (grasper, no cutting) with CuttingTissue (monopolar_scissors) and
-ClippingTissue (clip_applier) -- the bare label list gives the model no reason to look at
-instrument shape. The ontology already encodes exactly that distinction per action
-(verb + tool + target), so the "ontology_grounded" prompt variant surfaces it directly.
-
-Requires:
-    pip install openai python-dotenv
-
-Environment:
-    OPENAI_API_KEY=... (loaded from SARAS_new/.env if not already set)
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -127,6 +106,9 @@ def main():
         default=Path(__file__).resolve().parent.parent / "benchmarks" / "test180_v1.json",
     )
     parser.add_argument("--detail", choices=["low", "high", "auto"], default="high")
+    parser.add_argument("--reasoning-effort", choices=["minimal", "low", "medium", "high"], default=None,
+                         help="Only meaningful for reasoning models (e.g. gpt-5.x). Omit for non-reasoning "
+                              "models like gpt-4o.")
     parser.add_argument("--sleep", type=float, default=0.0)
     args = parser.parse_args()
 
@@ -151,10 +133,15 @@ def main():
     print(f"Model: {args.model}")
     print(f"Segments: {len(sample)}")
 
-    n_written = n_empty = n_invalid = 0
+    n_written = n_empty = n_invalid = n_skipped = 0
     started = time.time()
 
     for i, seg in enumerate(sample, 1):
+        out_path = out_dir / "val" / seg["video"] / f"{seg['segment_id']}.json"
+        if out_path.exists():
+            n_skipped += 1
+            continue
+
         frame_nums = select_frames(seg, args.n_frames)
         image_blocks = [
             {"type": "input_image",
@@ -163,12 +150,17 @@ def main():
             for fn in frame_nums
         ]
 
+        kwargs = {}
+        if args.reasoning_effort:
+            kwargs["reasoning"] = {"effort": args.reasoning_effort}
+
         response = client.responses.create(
             model=args.model,
             input=[{
                 "role": "user",
                 "content": [{"type": "input_text", "text": prompt}] + image_blocks,
             }],
+            **kwargs,
         )
         raw_text = response.output_text.strip()
         valid_actions, invalid_tokens = parse_response(raw_text, action_id_set)
@@ -191,7 +183,6 @@ def main():
         record["frame_numbers"] = frame_nums
         record["probability_status"] = "rank_pseudo_scores_not_calibrated"
 
-        out_path = out_dir / "val" / seg["video"] / f"{seg['segment_id']}.json"
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(json.dumps(record, indent=2))
         n_written += 1
@@ -204,6 +195,7 @@ def main():
             print(f"{i}/{len(sample)} ({elapsed:.0f}s elapsed)")
 
     print(f"Wrote {n_written} predictions -> {out_dir / 'val'}")
+    print(f"Skipped (already present, resumed run): {n_skipped}")
     print(f"Parse failures (counted as wrong): {n_empty}")
     print(f"Out-of-vocabulary tokens: {n_invalid}")
     print(f"Exact model used: {args.model}")

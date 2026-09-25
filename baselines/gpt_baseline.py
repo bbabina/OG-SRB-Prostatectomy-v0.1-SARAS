@@ -1,16 +1,3 @@
-"""OpenAI vision baseline on the frozen Test-180 manifest.
-
-The model name is deliberately REQUIRED rather than hard-coded so the experiment
-records the exact OpenAI model used at run time. Use a vision-capable model available
-to the project account and report its exact model identifier and run date.
-
-Requires:
-    pip install openai
-
-Environment:
-    OPENAI_API_KEY=...
-"""
-
 from __future__ import annotations
 
 import argparse

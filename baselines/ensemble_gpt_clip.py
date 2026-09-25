@@ -1,24 +1,3 @@
-"""Ensemble: GPT-4o + the trained CLIP linear probe.
-
-GPT-4o has real, structured signal (93% decoder correction precision on the dense set --
-see eval/decoder_effects.py) but is weaker than the trained probe overall. This blends
-their action_probs (each independently normalized to sum to 1 across the 21 classes, so
-GPT's rank-based pseudo-scores and the probe's calibrated probabilities are comparable)
-using a fixed weight in favor of the probe.
-
-The weight (default 0.95) was chosen by scanning 0.5-1.0 on the 1358 dense val segments
-NOT in benchmarks/test180_v1.json, then frozen -- do not re-tune it by looking at Test-180
-scores, that's evaluating on the tuning set. If you want a different weight, re-tune it on
-a held-out split, not on whatever you're about to report.
-
-Usage:
-    python baselines/ensemble_gpt_clip.py --gpt-model gpt_baseline --probe-model clip_linear_probe \
-        --manifest benchmarks/test180_v1.json --out-dir vlm_outputs/gpt_clip_ensemble
-
-    python baselines/ensemble_gpt_clip.py --gpt-model gpt_baseline_dense --probe-model clip_linear_probe \
-        --split val --out-dir vlm_outputs/gpt_clip_ensemble_dense
-"""
-
 from __future__ import annotations
 
 import argparse

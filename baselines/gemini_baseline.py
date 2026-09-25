@@ -1,29 +1,3 @@
-"""Step 7b (VLM comparison): Gemini baseline -- the free substitute for the
-proprietary vision-capable model comparison the supervisor asked for
-(GPT-4V access needs paid billing she hadn't yet confirmed; Gemini's Flash
-tier is a genuine, permanent, no-card-required free tier as of Aug 2026).
-
-Reuses the exact same sampling, prompt, and parsing logic as
-llava_baseline.py -- same label vocabulary, same stratified sample, same
-structured-output format -- so this is a fair, like-for-like comparison
-against every other baseline, per her explicit instruction to keep the
-evaluation format consistent across models.
-
-Model: gemini-3.5-flash-lite. Two real pilot runs (not assumptions) shaped
-this choice: gemini-3.6-flash's free quota turned out to be just 20
-requests/day; gemini-2.5-flash-lite turned out to be fully retired for new
-API keys, with the API's own error response naming gemini-3.5-flash-lite
-as its replacement -- more authoritative than any web search, since it's
-live, first-party, and specific to this actual key. Flash-Lite tiers
-generally carry more generous free quotas than the newest flagship model.
-Check the free-tier model list again if re-running much later, since
-Google rotates which versions stay free and what their quotas are.
-
-Requires GEMINI_API_KEY (or GOOGLE_API_KEY) in the environment -- get one
-free, no credit card, at https://aistudio.google.com/apikey.
-
-Output: vlm_outputs/gemini_baseline/val/<video>/<segment_id>.json
-"""
 from __future__ import annotations
 
 import argparse

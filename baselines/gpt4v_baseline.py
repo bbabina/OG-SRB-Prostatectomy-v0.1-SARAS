@@ -1,31 +1,3 @@
-"""Step 7c (VLM comparison): GPT-4V baseline -- the proprietary model
-comparison Inna originally asked for, now that funded API access is
-available.
-
-Reuses the exact same prompt and parsing logic as llava_baseline.py /
-gemini_baseline.py -- same label vocabulary, same structured-output format
--- so this is a fair, like-for-like comparison against every other
-baseline.
-
-Unlike LLaVA/Gemini (stratified 180-segment sample, for cost/rate-limit
-reasons), this runs on the FULL val split by default, matching the
-CLIP-family models. For the apples-to-apples "Common Test-180" comparison,
-eval/common_test_180.py subsets these full-val predictions down to the
-same 180 segment_ids afterward -- same pattern already used there for the
-CLIP models.
-
-Model: gpt-4o -- the direct, documented successor in the GPT-4V lineage
-(vision-capable from the base model, not a preview/add-on), chosen over
-newer gpt-5.x models in the account's catalog because its chat-completions
-image-input format is well-established and verified working with this key,
-where the newer models' behavior isn't independently confirmed here.
-
-Requires OPENAI_API_KEY in the environment or in a .env file discoverable
-by python-dotenv (this project keeps it at the SARAS_new/.env level, one
-directory above this repo, so it's never inside anything git could push).
-
-Output: vlm_outputs/gpt4v_baseline/val/<video>/<segment_id>.json
-"""
 from __future__ import annotations
 
 import argparse

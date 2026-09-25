@@ -1,6 +1,4 @@
-# OG-SRB-Prostatectomy
-
-**Ontology-Grounded Surgical Reasoning Benchmark for Robotic-Assisted Radical Prostatectomy**
+# Ontology-Grounded Surgical Reasoning Benchmark for Robotic-Assisted Radical Prostatectomy
 
 MSc dissertation project testing whether grounding a model's surgical action predictions in an explicit ontology of tools, targets and phase order via an **Ontology-Grounded Structured Decoder (OGSD)**  can correct recognition errors without introducing new ones.
 

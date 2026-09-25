@@ -33,7 +33,7 @@ Calibrating a model's phase evidence, leaving its raw predictions completely unt
 
 A base model produces raw action probabilities; OGSD combines these with the ontology's rules and the model's phase evidence to decode a corrected prediction. Whether that correction is trustworthy depends entirely on the calibration of the phase evidence, not on which base model is used:
 
-# Localisation
+### Localisation
 
 The padded-crop probe above ("best raw model") works by cropping to the tool-tissue interaction, with some padding kept for surrounding context, rather than encoding the whole frame:
 
